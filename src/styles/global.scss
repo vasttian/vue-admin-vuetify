@@ -1,0 +1,175 @@
+html, body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-y: auto !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  background: #fff;
+  font-family: Roboto, sans-serif, serif, Helvetica Neue, Helvetica,"Open Sans", open-sans, PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  color: #183a6f;
+  overflow: hidden;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+// LAYOUT
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+// HEADER
+.el-header {
+  background-color: #065bc9;
+  font-weight: 500;
+
+  .logo {
+    margin-right: 60px;
+    img {
+      display: inline-block;
+      height: 32px;
+      vertical-align: middle;
+    }
+  }
+
+  .el-menu {
+    &--horizontal {
+      border-bottom: 0;
+      background-color: transparent;
+    }
+
+    .el-menu-item {
+      border-bottom: 0;
+      color: #91bdf0;
+      margin: 0px 20px;
+      font-size: 16px;
+      font-weight: 600;
+
+      &:hover, &:active {
+        color: #237ae0;
+        background-color: transparent;
+      }
+
+      &.is-active {
+        color: #fff;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .userinfo {
+    color: #91bdf0;
+    line-height: 26px;
+    cursor: pointer;
+
+    .avatar {
+      font-size: 20px;
+      margin-right: 8px;
+      width: 45px;
+      height: 45px;
+
+      img {
+        border-radius: 50%;
+        display: inline-flex;
+        height: inherit;
+        width: inherit;
+      }
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.change-lang {
+  display: block;
+  cursor: pointer;
+  margin-left: 20px;
+
+  span {
+    cursor: pointer;
+    padding: 0 2px;
+    color: #c0c4cc;
+
+    &.active-lang {
+      color: #0302f5;
+    }
+  }
+}
+
+// MAIN
+.el-container {
+  height: 100%;
+}
+
+.el-main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 0;
+  transition: 80ms;
+}
+
+.sub-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  z-index: 2001;
+  background-color: #065bc9;
+}
+
+.wrapper {
+  height: 100%;
+  position: relative;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.el-footer {
+  text-align: center;
+  color: gray;
+  font-size: 12px;
+}
+
+// COMMON
+.flex-box {
+  display: flex;
+  align-items: center;
+
+  &.space-btw {
+    justify-content: space-between;
+  }
+
+  &.end {
+    justify-content: flex-end;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+}

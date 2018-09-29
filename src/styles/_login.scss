@@ -1,0 +1,153 @@
+.panel-wrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  .logo {
+    display: block;
+    position: absolute;
+    width: 175px;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+
+    img {
+      display: inline-block;
+      height: 36px;
+    }
+  }
+}
+
+.slogan-wrapper {
+  height: 100%;
+  background: linear-gradient(#011738,#065bc9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .slogan {
+    margin: 0 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 420px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .panel-wrapper {
+    padding-left: 720px;
+  }
+
+  .slogan-wrapper {
+    position: absolute;
+    width: 720px;
+    left: 0;
+    top: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  .panel-wrapper {
+    padding-left: 50%;
+  }
+
+  .slogan-wrapper {
+    position: absolute;
+    width: 50%;
+    left: 0;
+    top: 0;
+  }
+}
+@media (max-width: 768px) {
+  .slogan-wrapper {
+    display: none;
+  }
+}
+
+.panel-content {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 480px;
+
+  .login-con {
+    width: 100%;
+    padding: 0 20px;
+
+    .frame {
+      max-width: 520px;
+      margin: auto;
+    }
+
+    h1 {
+      font-family: Source Sans Pro, Futura, Century Gothic, Arial Black;
+      font-size: 40px;
+      font-weight: 800;
+      color: #5d7498;
+      margin-bottom: 40px;
+    }
+
+    .el-button--large {
+      margin-top: 0;
+    }
+  }
+
+  .el-footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .change-lang {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    span {
+      cursor: pointer;
+      padding: 0 4px;
+      color: #53546a;
+
+      &.active-lang {
+        color: #237ae0;
+      }
+    }
+  }
+}
+
+.resetpsw-result {
+  display: block;
+  width: 300px;
+  margin: 80px auto;
+  position: relative;
+
+  h3 {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+
+  .el-icon-success {
+    font-size: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  .el-button {
+    margin-left: 36px;
+  }
+}
