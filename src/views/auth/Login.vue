@@ -93,7 +93,7 @@
 </template>
 
 <script>
-import { isMobile, isEmptyObject } from '@/utils/util';
+import { isMobile } from '@/utils/util';
 
 export default {
   data() {
