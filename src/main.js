@@ -1,6 +1,7 @@
 import '@babel/polyfill';
 import Vue from 'vue';
 import moment from 'moment';
+import '@/styles/index.scss';
 import App from './App.vue';
 import router from './router';
 import store from './store';
