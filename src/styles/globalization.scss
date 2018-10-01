@@ -1,24 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body{
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   position: relative;
-  overflow-y: auto !important;
-}
-
-* {
-  box-sizing: border-box;
+  // overflow-y: auto !important;
 }
 
 body {
   font-size: 14px;
-  background: #fff;
   font-family: Roboto, sans-serif, serif, Helvetica Neue, Helvetica,"Open Sans", open-sans, PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  color: #183a6f;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow: hidden;
+}
+
+div:focus{
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 }
 
 ul, li {
@@ -26,7 +42,6 @@ ul, li {
   padding: 0;
   margin: 0;
 }
-
 
 // LAYOUT
 #app {
