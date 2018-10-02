@@ -1,13 +1,7 @@
 #app {
   .sidebar-container {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: $sidebar-width;
     height: 100%;
     z-index: 1001;
-    position: fixed;
-    padding-top: 56px;
     overflow: hidden;
   }
 }

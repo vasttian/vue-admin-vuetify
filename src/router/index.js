@@ -1,30 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/views/auth/Login.vue';
-import Index from '@/views/Index.vue';
-import Homepage from '@/views/admin/Homepage.vue';
+import Layout from '@/views/layouts/Layout.vue';
+
+import components from './modules/components';
 
 Vue.use(Router);
 
-const Root = Vue.component('temp', {
+const View = Vue.component('temp', {
   template: '<router-view></router-view>',
 });
-
-const Create = {
-  template: '<div class="title">Create</div>',
-};
-
-const Read = {
-  template: '<div class="title">Read</div>',
-};
-
-const Update = {
-  template: '<div class="title">Update</div>',
-};
-
-const Delete = {
-  template: '<div class="title">Delete</div>',
-};
 
 export default new Router({
   mode: 'history',
@@ -36,78 +21,24 @@ export default new Router({
       component: Login,
     },
     {
-      path: '/',
-      name: 'Index',
-      component: Index,
-      redirect: { name: 'Homepage' },
-      meta: {},
+      path: '',
+      name: 'Layout',
+      component: Layout,
+      redirect: 'index',
       children: [
         {
-          path: '/homepage',
-          name: 'Homepage',
-          component: Homepage,
-          meta: {
-            icon: 'home',
-            hidden: false,
-            auth: [],
-          },
-        },
-        {
-          path: '/users',
-          name: 'Users',
-          component: {
-            template: '<div class="title">Users</div>',
-          },
-          meta: {
-            icon: 'people_outline',
-            auth: [],
-          },
-        },
-        {
-          path: '/actions',
-          name: 'Actions',
-          component: Root,
-          meta: {
-            hasSub: true,
-          },
+          path: 'index',
+          name: 'Index',
+          component: View,
+          redirect: '/components',
           children: [
-            {
-              path: '/create',
-              name: 'Create',
-              component: Create,
-              meta: {
-                icon: 'add',
-                auth: [],
-              },
-            },
-            {
-              path: '/read',
-              name: 'Read',
-              component: Read,
-              meta: {
-                icon: 'insert_drive_file',
-                auth: [],
-              },
-            },
-            {
-              path: '/update',
-              name: 'Update',
-              component: Update,
-              meta: {
-                icon: 'update',
-                auth: [],
-              },
-            },
-            {
-              path: '/delete',
-              name: 'Delete',
-              component: Delete,
-              meta: {
-                icon: 'delete',
-                auth: [],
-              },
-            },
+            components,
           ],
+        },
+        {
+          path: 'admin',
+          name: 'Admin',
+          component: () => import('@/views/admin/Homepage.vue'),
         },
       ],
     },

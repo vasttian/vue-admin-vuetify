@@ -49,70 +49,6 @@ ul, li {
   width: 100%;
 }
 
-// HEADER
-.el-header {
-  background-color: #065bc9;
-  font-weight: 500;
-
-  .logo {
-    margin-right: 60px;
-    img {
-      display: inline-block;
-      height: 32px;
-      vertical-align: middle;
-    }
-  }
-
-  .el-menu {
-    &--horizontal {
-      border-bottom: 0;
-      background-color: transparent;
-    }
-
-    .el-menu-item {
-      border-bottom: 0;
-      color: #91bdf0;
-      margin: 0px 20px;
-      font-size: 16px;
-      font-weight: 600;
-
-      &:hover, &:active {
-        color: #237ae0;
-        background-color: transparent;
-      }
-
-      &.is-active {
-        color: #fff;
-        background-color: transparent;
-      }
-    }
-  }
-
-  .userinfo {
-    color: #91bdf0;
-    line-height: 26px;
-    cursor: pointer;
-
-    .avatar {
-      font-size: 20px;
-      margin-right: 8px;
-      width: 45px;
-      height: 45px;
-
-      img {
-        border-radius: 50%;
-        display: inline-flex;
-        height: inherit;
-        width: inherit;
-      }
-    }
-
-    &:hover {
-      color: #fff;
-    }
-  }
-}
-
 .change-lang {
   display: block;
   cursor: pointer;
@@ -127,19 +63,6 @@ ul, li {
       color: #0302f5;
     }
   }
-}
-
-// MAIN
-.el-container {
-  height: 100%;
-}
-
-.el-main {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  padding: 0;
-  transition: 80ms;
 }
 
 .sub-header {
@@ -163,12 +86,6 @@ ul, li {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-.el-footer {
-  text-align: center;
-  color: gray;
-  font-size: 12px;
 }
 
 // COMMON

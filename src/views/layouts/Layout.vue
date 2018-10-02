@@ -1,10 +1,12 @@
 <template>
   <v-app class="app-wrapper">
-    <navbar class="nav-container"/>
-    <div>
-      <sidebar class="sidebar-container"/>
-      <app-main class="main-container"/>
-    </div>
+    <navbar
+      class="nav-container"
+      @toggleSidebar="toggleSidebar"/>
+    <sidebar
+      class="sidebar-container"
+      :drawer="drawer"/>
+    <app-main class="main-container"/>
   </v-app>
 </template>
 
@@ -19,6 +21,16 @@ export default {
     Navbar,
     Sidebar,
     AppMain,
+  },
+  data() {
+    return {
+      drawer: true,
+    };
+  },
+  methods: {
+    toggleSidebar() {
+      this.drawer = !this.drawer;
+    },
   },
 };
 </script>
