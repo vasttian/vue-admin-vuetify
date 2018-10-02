@@ -1,62 +1,42 @@
 <template>
   <v-navigation-drawer
     stateless
-    width="200"
+    width="210"
     clipped
     fixed
     app
     :mini-variant="miniVariant"
     v-model="drawer">
     <v-list>
-      <v-list-tile>
-        <v-list-tile-action>
-          <v-icon>home</v-icon>
-        </v-list-tile-action>
-        <v-list-tile-title>Home</v-list-tile-title>
-      </v-list-tile>
-
-      <v-list-group
-        prepend-icon="account_circle"
-        value="true">
-        <v-list-tile slot="activator">
-          <v-list-tile-title>Users</v-list-tile-title>
-        </v-list-tile>
-
-        <v-list-group
-          no-action
-          sub-group
-          value="true">
-          <v-list-tile slot="activator">
-            <v-list-tile-title>Admin</v-list-tile-title>
-          </v-list-tile>
-
+      <template v-for="(route, index) in routes[0].children">
+        <template v-if="route.meta && route.meta.hasSub">
+          <v-list-group
+            :prepend-icon="route.meta && route.meta.icon"
+            value="true"
+            :key="index">
+            <v-list-tile slot="activator">
+              <v-list-tile-title>{{ route.name }}</v-list-tile-title>
+            </v-list-tile>
+            <v-list-tile
+              v-for="(cRoute, idx) in route.children"
+              :key="idx">
+              <v-list-tile-action>
+                <v-icon>{{ cRoute.meta && cRoute.meta.icon }}</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-title>{{ cRoute.name }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list-group>
+        </template>
+        <template v-else>
           <v-list-tile
-            v-for="(admin, i) in admins"
-            :key="i">
-            <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
+            :key="index">
             <v-list-tile-action>
-              <v-icon v-text="admin[1]"></v-icon>
+              <v-icon>{{ route.meta && route.meta.icon }}</v-icon>
             </v-list-tile-action>
+            <v-list-tile-title>{{ route.name }}</v-list-tile-title>
           </v-list-tile>
-        </v-list-group>
-
-        <v-list-group
-          sub-group
-          no-action>
-          <v-list-tile slot="activator">
-            <v-list-tile-title>Actions</v-list-tile-title>
-          </v-list-tile>
-
-          <v-list-tile
-            v-for="(crud, i) in cruds"
-            :key="i">
-            <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
-            <v-list-tile-action>
-              <v-icon v-text="crud[1]"></v-icon>
-            </v-list-tile-action>
-          </v-list-tile>
-        </v-list-group>
-      </v-list-group>
+        </template>
+      </template>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -70,17 +50,12 @@ export default {
   data() {
     return {
       miniVariant: false,
-      admins: [
-        ['Management', 'people_outline'],
-        ['Settings', 'settings'],
-      ],
-      cruds: [
-        ['Create', 'add'],
-        ['Read', 'insert_drive_file'],
-        ['Update', 'update'],
-        ['Delete', 'delete'],
-      ],
     };
+  },
+  computed: {
+    routes() {
+      return this.$router.options.routes[1].children;
+    },
   },
   methods: {},
 };

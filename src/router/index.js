@@ -30,8 +30,16 @@ export default new Router({
           path: 'index',
           name: 'Index',
           component: View,
-          redirect: '/components',
+          redirect: '/dashboard',
           children: [
+            {
+              path: '/dashboard',
+              name: 'Dashboard',
+              component: () => import('@/views/dashboard/Index.vue'),
+              meta: {
+                icon: 'dashboard',
+              },
+            },
             components,
           ],
         },
