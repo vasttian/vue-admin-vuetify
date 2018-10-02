@@ -1,5 +1,6 @@
 <template>
   <v-navigation-drawer
+    class="blue-grey lighten-5"
     stateless
     width="210"
     clipped

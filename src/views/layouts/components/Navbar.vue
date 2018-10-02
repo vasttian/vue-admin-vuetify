@@ -1,6 +1,8 @@
 <template>
   <header>
     <v-toolbar
+      class="primary"
+      dark
       app
       flat
       dense

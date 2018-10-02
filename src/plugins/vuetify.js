@@ -48,7 +48,6 @@ import {
   VTooltip,
   transitions,
 } from 'vuetify';
-import 'vuetify/src/stylus/app.styl';
 import enLang from 'vuetify/es5/locale/en';
 import zhLang from 'vuetify/es5/locale/zh-Hans';
 import i18n from '../i18n';
