@@ -46,6 +46,7 @@
           <template v-else>
             <v-btn
               :key="index"
+              :input-value="activeMenu === route.name"
               flat
               :to="{ name: route.name }">
               {{ route.name }}
@@ -95,7 +96,7 @@
 
 <script>
 export default {
-  name: 'Index',
+  name: 'NavBar',
   data() {
     return {
       currentYear: (new Date()).getFullYear(),
@@ -105,6 +106,10 @@ export default {
   },
   computed: {
     activeMenu() {
+      if (this.$route.name === 'Dashboard') {
+        return 'Index';
+      }
+
       return this.$route.name;
     },
     user() {
