@@ -1,11 +1,11 @@
 <template>
-  <div class="app-wrapper">
+  <v-app class="app-wrapper">
     <navbar class="nav-container"/>
     <div>
       <sidebar class="sidebar-container"/>
       <app-main class="main-container"/>
     </div>
-  </div>
+  </v-app>
 </template>
 
 <script>
