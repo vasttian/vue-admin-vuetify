@@ -39,8 +39,7 @@
                     clearable
                     :label="$t('common.username')"
                     @keyup.enter.native="login"
-                    required
-                  ></v-text-field>
+                    required></v-text-field>
                   <v-text-field
                     v-model="form.password"
                     prepend-icon="lock"
@@ -48,8 +47,7 @@
                     clearable
                     type="password"
                     :label="$t('common.password')"
-                    required
-                  ></v-text-field>
+                    required></v-text-field>
                   <v-layout
                     column
                     wrap
@@ -83,7 +81,7 @@
           height="auto">
           <v-layout>
             <v-flex text-xs-center>
-              {{ $t('common.copyrightMessage', { currentYear }) }}
+              <!-- {{ $t('common.copyrightMessage', { currentYear }) }} -->
             </v-flex>
           </v-layout>
         </v-footer>
@@ -100,8 +98,8 @@ export default {
     return {
       currentYear: (new Date()).getFullYear(),
       form: {
-        username: 'general-demo',
-        password: 'Ymdata123',
+        username: 'admin',
+        password: 'admin123',
       },
       loginLoading: false,
       currentLang: this.$i18n.locale,
@@ -114,13 +112,17 @@ export default {
   },
   methods: {
     login() {
-      console.log('login');
-      this.$router.push({ name: 'Index' });
-      // this.$message.info('Ahem: Please add login function');
-      this.$message({
-        type: 'info',
-        text: 'Ahem: Please add login function',
-      });
+      this.$store.dispatch('login', this.form)
+        .then(() => {
+          this.$router.push({ name: 'Index' });
+        })
+        .catch((res) => {
+          console.log('login-failed', res);
+          this.$message({
+            type: 'error',
+            text: this.$t('common.invalid_password_username'),
+          });
+        });
     },
     switchLang(lang) {
       this.currentLang = lang;

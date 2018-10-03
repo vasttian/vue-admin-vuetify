@@ -2,14 +2,15 @@
 /* eslint-disable max-len  */
 import request from './utils';
 
-// const authUrls = {
-
-// };
+const authUrls = {
+  login: '/login',
+  logout: '/logout',
+  readMe: '/users/me',
+};
 
 const urlPrefix = '/api/common';
 const urls = {
   // users
-  readMe: '/users/me',
   readUser: '/users/<id>',
   readUsers: '/users',
   createUsers: '/users',
@@ -23,8 +24,12 @@ Object.keys(urls).map((url) => {
 });
 
 export default new function API() {
+  // auth
+  this.login = params => request.post(authUrls.login, params);
+  this.logout = () => request.post(authUrls.logout);
+  this.readMe = params => request.get(authUrls.readMe, params);
+
   // users
-  this.readMe = () => request.get(urls.readMe);
   this.readUser = id => request.get(urls.readUser.replace('<id>', id));
   this.readUsers = () => request.get(urls.readUsers, {});
   this.createUsers = params => request.post(urls.createUsers, params);

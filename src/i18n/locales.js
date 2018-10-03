@@ -129,8 +129,8 @@ export default {
       'zh-CN': '网络错误',
     },
     copyrightMessage: {
-      en: '© 2014 - {currentYear} Shenzhen Yimian Network Technology Co.,Ltd.',
-      'zh-CN': '© 2014 - {currentYear} 深圳市一面网络技术有限公司 粤 ICP 备 14054704 号 - 4',
+      en: 'vasttian',
+      'zh-CN': 'vasttian',
     },
     all: {
       en: 'All',

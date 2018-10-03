@@ -47,6 +47,10 @@ export function deepCopy(obj, cache = []) {
   return copy
 }
 
+export function simpleDeepCopy(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
 /**
  * forEach for object
  */
@@ -167,10 +171,6 @@ export function isEmptyObject(e) {
 
   return !0;
 };
-
-export function simpleDeepCopy(obj) {
-  return JSON.parse(JSON.stringify(obj));
-}
 
 export function deepCompare() {
   var i, l, leftChain, rightChain;
