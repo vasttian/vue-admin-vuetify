@@ -12,6 +12,7 @@
       <template v-for="(route, index) in routes[0].children">
         <template v-if="route.meta && route.meta.hasSub">
           <v-list-group
+            v-if="roleShow(route)"
             :prepend-icon="route.meta && route.meta.icon"
             value="true"
             :key="index">
@@ -30,6 +31,7 @@
         </template>
         <template v-else>
           <v-list-tile
+            v-if="roleShow(route)"
             :key="index">
             <v-list-tile-action>
               <v-icon>{{ route.meta && route.meta.icon }}</v-icon>
@@ -43,6 +45,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'Sidebar',
   props: [
@@ -54,10 +58,27 @@ export default {
     };
   },
   computed: {
+    ...mapState({
+      user: state => state.auth.me,
+    }),
     routes() {
       return this.$router.options.routes[1].children;
     },
   },
-  methods: {},
+  methods: {
+    roleShow(route) {
+      // hack, there is no user when logout
+      if (!route.meta) {
+        return true;
+      }
+
+      if (!this.user || route.meta.hidden) {
+        return false;
+      }
+
+      const { auth } = route.meta;
+      return auth ? (!auth.length && !this.user.role) || auth.includes(this.user.role) : !auth;
+    },
+  },
 };
 </script>

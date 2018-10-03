@@ -15,6 +15,7 @@
         <template v-for="(route, index) in $router.options.routes[1].children">
           <template v-if="route.meta && route.meta.hasSub">
             <v-menu
+              v-if="roleShow(route)"
               :key="index"
               bottom
               origin="bottom center"
@@ -45,6 +46,7 @@
           </template>
           <template v-else>
             <v-btn
+              v-if="roleShow(route)"
               :key="index"
               :input-value="activeMenu === route.name"
               flat
@@ -59,10 +61,10 @@
         <v-toolbar-title slot="activator">
           <v-avatar size="40">
             <img
-              src="http://67.218.155.2:8082/1.png"
-              alt="Demo">
+              :src="user.avatar"
+              alt="">
           </v-avatar>
-          <span style="margin-left: 10px;">vasttian</span>
+          <span style="margin-left: 10px;">{{ user.name }}</span>
           <v-icon>arrow_drop_down</v-icon>
         </v-toolbar-title>
         <v-list>
@@ -95,6 +97,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'NavBar',
   data() {
@@ -105,6 +109,9 @@ export default {
     };
   },
   computed: {
+    ...mapState({
+      user: state => state.auth.me,
+    }),
     activeMenu() {
       if (this.$route.name === 'Dashboard') {
         return 'Index';
@@ -112,19 +119,20 @@ export default {
 
       return this.$route.name;
     },
-    user() {
-      return { username: 'Demo' };
-    },
   },
   methods: {
     roleShow(route) {
       // hack, there is no user when logout
+      if (!route.meta) {
+        return true;
+      }
+
       if (!this.user || route.meta.hidden) {
         return false;
       }
 
       const { auth } = route.meta;
-      return auth ? (!auth.length && !this.user.role) || auth.indexOf(this.user.role) !== -1 : !auth;
+      return auth ? (!auth.length && !this.user.role) || auth.includes(this.user.role) : !auth;
     },
     switchLang(lang = 'zh-CN') {
       this.currentLang = lang;

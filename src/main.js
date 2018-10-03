@@ -34,6 +34,25 @@ const supportedLangs = ['zh-CN', 'en'];
 const userLocale = navigator.language || navigator.userLanguage;
 
 Vue.router.beforeEach((to, from, next) => {
+  const { token } = store.getters;
+  if (to.path === '/login') {
+    store.dispatch('logout');
+    next();
+  } else if (!token) {
+    next(`/login?redirect=${to.fullPath}`);
+  } else {
+    const { me } = store.getters;
+    if (!me || !me.name) {
+      store.dispatch('readMe', { token })
+        .then(() => {
+          next();
+        });
+    } else {
+      next();
+    }
+  }
+});
+Vue.router.beforeEach((to, from, next) => {
   const { locale } = to.query;
 
   if (locale) {

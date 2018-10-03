@@ -3,17 +3,17 @@ import { okJsonify, failJsonify } from './utils';
 
 const users = {
   general: {
-    name: 'vasttian',
-    email: 'tianyiming26@gmail.com',
+    name: 'visitor',
+    email: 'visitor@gmail.com',
     role: 'general',
-    avatar: 'http://67.218.155.2:8082/1.png',
+    avatar: 'http://67.218.155.2:8082/cloud.jpg',
     token: 'mock-token-general',
   },
   admin: {
     name: 'vasttian',
     email: 'tianyiming26@gmail.com',
     role: 'admin',
-    avatar: 'http://67.218.155.2:8082/1.png',
+    avatar: 'http://67.218.155.2:8082/vasttian.png',
     token: 'mock-token-admin',
   },
 };

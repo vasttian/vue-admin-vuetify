@@ -6,6 +6,7 @@ const routes = {
   component: Index,
   meta: {
     hasSub: true,
+    hidden: false,
     icon: 'developer_board',
   },
   children: [

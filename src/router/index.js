@@ -31,6 +31,9 @@ export default new Router({
           name: 'Index',
           component: View,
           redirect: '/dashboard',
+          meta: {
+            hidden: false,
+          },
           children: [
             {
               path: '/dashboard',
@@ -47,6 +50,7 @@ export default new Router({
           path: 'admin',
           name: 'Admin',
           component: () => import('@/views/admin/Homepage.vue'),
+          meta: {},
         },
       ],
     },

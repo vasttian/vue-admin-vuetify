@@ -2,8 +2,7 @@ import API from '@/api';
 import * as types from './types';
 
 const state = {
-  users: [],
-  user: {},
+  token: localStorage.getItem('token') || null,
   me: {},
 };
 
@@ -24,14 +23,23 @@ const actions = {
       commit(types.READ_ME, { value });
     }, res => Promise.reject(res));
   },
+  logout({ commit }) {
+    return API.logout().then(() => {
+      commit(types.LOGOUT);
+    }, res => Promise.reject(res));
+  },
 };
 
 const mutations = {
   [types.READ_ME](state, { value }) {
     state.me = value.data;
   },
-  [types.LOGIN]() {
-
+  [types.LOGIN](state, { value }) {
+    state.token = value.data.access_token;
+  },
+  [types.LOGOUT](state) {
+    localStorage.removeItem('token');
+    state.token = null;
   },
 };
 
