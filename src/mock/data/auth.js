@@ -1,3 +1,4 @@
+import { parseURL } from '@/utils/util';
 import { okJsonify, failJsonify } from './utils';
 
 const users = {
@@ -21,12 +22,12 @@ export default {
   login: (params) => {
     const { username } = JSON.parse(params.body);
     const user = users[username];
-    return user ? okJsonify(users[username]) : failJsonify('invalid login or password');
+    return user ? okJsonify({ access_token: users[username].token }) : failJsonify('invalid login or password');
   },
   usersMe: (params) => {
-    const { token } = JSON.parse(params.body);
-    const user = users[token];
-    return user ? okJsonify(users[token]) : failJsonify();
+    const { token } = parseURL(params.url).params;
+    const user = users[token.match(/mock-token-(.*)/)[1]];
+    return user ? okJsonify(user) : failJsonify();
   },
   logout: () => (okJsonify()),
 };
