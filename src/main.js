@@ -11,6 +11,9 @@ import './utils/compatible-ie';
 import i18n from './i18n';
 import './plugins/vuetify';
 import './plugins/echarts';
+import Mock from './mock';
+
+Mock.bootstrap();
 
 Vue.router = router;
 Vue.store = store;
