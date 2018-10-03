@@ -21,6 +21,7 @@ module.exports = {
     https: false,
     open: false,
   },
+  lintOnSave: process.env.NODE_ENV !== 'production',
   css: {
     sourceMap: true,
   },
