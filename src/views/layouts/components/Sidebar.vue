@@ -16,11 +16,13 @@
             :prepend-icon="route.meta && route.meta.icon"
             value="true"
             :key="index">
-            <v-list-tile slot="activator">
+            <v-list-tile
+              slot="activator">
               <v-list-tile-title>{{ route.name }}</v-list-tile-title>
             </v-list-tile>
             <v-list-tile
               v-for="(cRoute, idx) in route.children"
+              :to="{ name: cRoute.name }"
               :key="idx">
               <v-list-tile-action>
                 <v-icon>{{ cRoute.meta && cRoute.meta.icon }}</v-icon>
@@ -32,6 +34,7 @@
         <template v-else>
           <v-list-tile
             v-if="roleShow(route)"
+            :to="{ name: route.name }"
             :key="index">
             <v-list-tile-action>
               <v-icon>{{ route.meta && route.meta.icon }}</v-icon>
@@ -54,7 +57,8 @@ export default {
   ],
   data() {
     return {
-      miniVariant: false,
+      // miniVariant: false,
+      miniVariant: true,
     };
   },
   computed: {
