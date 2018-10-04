@@ -5,7 +5,7 @@
       <h3>This is a beta version.</h3>
       <h3>Start your creation as much as you can.</h3>
     </div>
-    <v-layout justify-center align-center column>
+    <v-layout justify-center align-center>
       <v-flex>
         <v-tooltip right>
           <v-btn

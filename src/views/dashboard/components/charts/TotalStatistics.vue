@@ -1,0 +1,234 @@
+<template>
+  <v-card
+    dark>
+    <div>
+      <v-chart
+        style='width: 100%'
+        :options='chartOption'
+        auto-resize></v-chart>
+    </div>
+  </v-card>
+</template>
+
+<script>
+/* eslint-disable import/no-extraneous-dependencies */
+import echarts from 'echarts/lib/echarts';
+
+export default {
+  name: 'TotalStatistics',
+  data() {
+    return {
+      chartOption: {},
+    };
+  },
+  computed: {
+  },
+  methods: {
+    buildChartOption() {
+      const xAxisData = [
+        '03:00',
+        '06:00',
+        '09:00',
+        '12:00',
+        '15:00',
+        '18:00',
+        '21:00',
+        '24:00',
+      ];
+      const series1Data = [52, 140, 170, 182, 241, 160, 210, 140];
+      const series2Data = [70, 130, 160, 200, 225, 185, 202, 120];
+      return {
+        backgroundColor: '#424956',
+        grid: {
+          left: '3%',
+          right: '3%',
+          bottom: '3%',
+          containLabel: true,
+        },
+        title: {
+          text: '请求数',
+          textStyle: {
+            fontWeight: 'normal',
+            fontSize: 19,
+            color: '#fff',
+          },
+          left: '1%',
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {},
+        },
+        legend: {
+          icon: 'rect',
+          itemWidth: 16,
+          itemHeight: 10,
+          itemGap: 13,
+          data: ['昨天', '前天'],
+          right: '3%',
+          textStyle: {
+            fontSize: 14,
+            color: '#ffd285',
+          },
+        },
+        xAxis: [
+          {
+            type: 'category',
+            boundaryGap: false,
+            axisTick: {
+              show: false,
+            },
+            axisLine: {
+              show: false,
+              lineStyle: {
+                color: '#6485a4',
+              },
+            },
+            data: xAxisData,
+          },
+        ],
+        yAxis: [
+          {
+            type: 'value',
+            name: '单位（K）',
+            axisTick: {
+              show: false,
+            },
+            axisLine: {
+              show: false,
+              lineStyle: {
+                color: '#6485a4',
+              },
+            },
+            axisLabel: {
+              margin: 10,
+              textStyle: {
+                fontSize: 14,
+              },
+            },
+            splitLine: {
+              lineStyle: {
+                color: '#57617B',
+              },
+            },
+          },
+        ],
+        series: [
+          {
+            name: '昨天',
+            type: 'line',
+            smooth: true,
+            symbol: 'circle',
+            symbolSize: 5,
+            showSymbol: false,
+            lineStyle: {
+              normal: {
+                width: 3,
+              },
+            },
+            areaStyle: {
+              color: new echarts.graphic.LinearGradient(
+                0,
+                0,
+                1,
+                0,
+                [
+                  {
+                    offset: 0,
+                    color: 'rgba(16,97,204, 0.3)',
+                  },
+                  {
+                    offset: 0.8,
+                    color: 'rgba(17,235,210, 0)',
+                  },
+                ],
+                false,
+              ),
+              shadowColor: 'rgba(0, 0, 0, 0.1)',
+              shadowBlur: 10,
+            },
+            itemStyle: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                {
+                  offset: 0,
+                  color: 'rgba(16,97,204,1)',
+                },
+                {
+                  offset: 1,
+                  color: 'rgba(17,235,210,1)',
+                },
+              ]),
+            },
+            emphasis: {
+              itemStyle: {
+                color: 'rgb(0,196,132)',
+                borderColor: 'rgba(0,196,132,0.2)',
+                extraCssText: 'box-shadow: 8px 8px 8px rgba(0, 0, 0, 1);',
+                borderWidth: 10,
+              },
+            },
+            data: series1Data,
+          },
+          {
+            name: '前天',
+            type: 'line',
+            smooth: true,
+            symbol: 'circle',
+            symbolSize: 5,
+            showSymbol: false,
+            lineStyle: {
+              normal: {
+                width: 3,
+              },
+            },
+            areaStyle: {
+              color: new echarts.graphic.LinearGradient(
+                0,
+                0,
+                0,
+                1,
+                [
+                  {
+                    offset: 0,
+                    color: 'rgba(205,52,42, 0.5)',
+                  },
+                  {
+                    offset: 0.8,
+                    color: 'rgba(235,235,21, 0)',
+                  },
+                ],
+                false,
+              ),
+              shadowColor: 'rgba(0, 0, 0, 0.1)',
+              shadowBlur: 10,
+            },
+            itemStyle: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                {
+                  offset: 0,
+                  color: 'rgba(205,52,42,1)',
+                },
+                {
+                  offset: 1,
+                  color: 'rgba(235,235,21,1)',
+                },
+              ]),
+            },
+            emphasis: {
+              itemStyle: {
+                color: 'rgb(99,250,235)',
+                borderColor: 'rgba(99,250,235,0.2)',
+                extraCssText: 'box-shadow: 8px 8px 8px rgba(0, 0, 0, 1);',
+                borderWidth: 10,
+              },
+            },
+            data: series2Data,
+          },
+        ],
+      };
+    },
+  },
+  created() {
+    this.chartOption = this.buildChartOption();
+  },
+};
+</script>
