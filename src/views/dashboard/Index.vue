@@ -34,24 +34,28 @@ export default {
       chartOption: {},
       indicatorConfig: [
         {
-          icon: 'face',
-          title: 'CUSTOMERS',
-          count: 1368,
+          color: 'teal',
+          icon: 'people',
+          title: 'VISITORS',
+          count: 3206,
         },
         {
+          color: 'light-blue',
           icon: 'message',
-          title: 'CUSTOMERS',
+          title: 'MESSAGES',
           count: 127,
         },
         {
-          icon: 'assessment',
-          title: 'CUSTOMERS',
-          count: 283,
+          color: 'cyan accent-3',
+          icon: 'share',
+          title: 'SHARES',
+          count: 983,
         },
         {
+          color: 'indigo',
           icon: 'get_app',
-          title: 'CUSTOMERS',
-          count: 3206,
+          title: 'DOWNLOADS',
+          count: 2368,
         },
       ],
     };

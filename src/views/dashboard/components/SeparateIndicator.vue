@@ -1,7 +1,7 @@
 <template>
   <v-card class="indicator">
     <v-icon
-      color="#42A5F5"
+      :color="config.color"
       size="56">{{ config.icon }}</v-icon>
     <v-card-text class="info-title">
       <span>{{ config.count }}</span>
@@ -26,7 +26,7 @@ export default {
 .indicator {
   position: relative;
   text-align: center;
-  padding-top: 8px;
+  padding-top: 10px;
 }
 
 .indicator:after {

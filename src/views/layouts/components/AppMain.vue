@@ -2,9 +2,9 @@
   <section>
     <v-content>
       <v-container fluid>
-        <v-fade-transition mode="out-in">
+        <v-slide-y-transition mode="out-in">
           <router-view/>
-        </v-fade-transition>
+        </v-slide-y-transition>
       </v-container>
     </v-content>
   </section>
