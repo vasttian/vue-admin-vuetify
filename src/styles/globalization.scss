@@ -18,6 +18,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow: hidden;
+
+  &>div {
+    height: 100%;
+  }
 }
 
 div:focus{
@@ -73,19 +77,6 @@ ul, li {
   width: 100%;
   z-index: 2001;
   background-color: #065bc9;
-}
-
-.wrapper {
-  height: 100%;
-  position: relative;
-  background-color: #fff;
-  overflow-y: auto;
-}
-
-.content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 // COMMON
