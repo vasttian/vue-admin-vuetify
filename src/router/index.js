@@ -4,6 +4,7 @@ import Login from '@/views/auth/Login.vue';
 import Layout from '@/views/layouts/Layout.vue';
 
 import components from './modules/components';
+import widgets from './modules/widgets';
 
 Vue.use(Router);
 
@@ -44,6 +45,7 @@ export default new Router({
               },
             },
             components,
+            widgets,
           ],
         },
         {
