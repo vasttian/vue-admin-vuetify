@@ -113,7 +113,7 @@ export default {
       user: state => state.auth.me,
     }),
     activeMenu() {
-      if (this.$route.name === 'Dashboard') {
+      if (this.$route.name !== 'Admin') {
         return 'Index';
       }
 

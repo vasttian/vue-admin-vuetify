@@ -57,8 +57,8 @@ export default {
   ],
   data() {
     return {
-      // miniVariant: false,
-      miniVariant: true,
+      miniVariant: false,
+      // miniVariant: true,
     };
   },
   computed: {

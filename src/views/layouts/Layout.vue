@@ -4,6 +4,7 @@
       class="nav-container"
       @toggleSidebar="toggleSidebar"/>
     <sidebar
+      v-if="$route.name !== 'Admin'"
       class="sidebar-container"
       :drawer="drawer"/>
     <app-main class="main-container"/>
