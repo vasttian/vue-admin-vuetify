@@ -3,7 +3,7 @@
     dark>
     <div>
       <v-chart
-        style='width: 100%'
+        style='width:100%;'
         :options='chartOption'
         auto-resize></v-chart>
     </div>
