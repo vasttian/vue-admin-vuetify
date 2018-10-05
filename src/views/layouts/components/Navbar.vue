@@ -57,6 +57,23 @@
         </template>
       </v-toolbar-items>
       <v-spacer></v-spacer>
+      <v-menu
+        offset-y
+        origin="center center"
+        :close-on-content-click="false"
+        transition="scale-transition">
+        <v-btn
+          icon
+          flat
+          slot="activator">
+          <v-badge color="red" overlap>
+            <span slot="badge">6</span>
+            <v-icon medium>notifications</v-icon>
+          </v-badge>
+        </v-btn>
+        <notification-list></notification-list>
+      </v-menu>
+
       <v-menu offset-y>
         <v-toolbar-title slot="activator">
           <v-avatar size="40">
@@ -98,9 +115,13 @@
 
 <script>
 import { mapState } from 'vuex';
+import NotificationList from '@/components/widgets/NotificationList';
 
 export default {
   name: 'NavBar',
+  components: {
+    NotificationList,
+  },
   data() {
     return {
       currentYear: (new Date()).getFullYear(),
