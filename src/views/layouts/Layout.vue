@@ -5,8 +5,8 @@
       @toggleSidebar="toggleSidebar"/>
     <sidebar
       v-if="$route.name !== 'Admin'"
-      class="sidebar-container"
-      :drawer="drawer"/>
+      ref="sidebar"
+      class="sidebar-container"/>
     <app-main class="main-container"/>
   </v-app>
 </template>
@@ -25,12 +25,14 @@ export default {
   },
   data() {
     return {
-      drawer: true,
+
     };
   },
   methods: {
     toggleSidebar() {
-      this.drawer = !this.drawer;
+      if (this.$refs.sidebar) {
+        this.$refs.sidebar.toggleSidebar();
+      }
     },
   },
 };

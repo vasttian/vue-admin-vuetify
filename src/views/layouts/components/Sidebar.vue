@@ -1,9 +1,8 @@
 <template>
   <v-navigation-drawer
     class="blue-grey lighten-5"
-    stateless
     width="210"
-    clipped
+    :clipped="$vuetify && $vuetify.breakpoint.mdAndUp"
     fixed
     app
     :mini-variant="miniVariant"
@@ -52,11 +51,12 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'Sidebar',
-  props: [
-    'drawer',
-  ],
+  // props: [
+  //   'drawer',
+  // ],
   data() {
     return {
+      drawer: this.$vuetify && this.$vuetify.breakpoint.mdAndUp,
       miniVariant: false,
       // miniVariant: true,
     };
@@ -82,6 +82,9 @@ export default {
 
       const { auth } = route.meta;
       return auth ? (!auth.length && !this.user.role) || auth.includes(this.user.role) : !auth;
+    },
+    toggleSidebar() {
+      this.drawer = !this.drawer;
     },
   },
 };

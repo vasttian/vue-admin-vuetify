@@ -7,9 +7,13 @@
       flat
       dense
       height="56"
-      :clipped-left="$vuetify && $vuetify.breakpoint.mdAndUp">
-      <v-toolbar-side-icon @click.stop="$emit('toggleSidebar')"></v-toolbar-side-icon>
-      <v-toolbar-title>VUE-ADMIN-VUETIFY</v-toolbar-title>
+      :clipped-left="true">
+      <v-toolbar-side-icon
+        v-if="$route.name !== 'Admin'"
+        @click.stop="$emit('toggleSidebar')"></v-toolbar-side-icon>
+      <v-toolbar-title v-if="$vuetify && $vuetify.breakpoint.smAndUp">
+        VUE-ADMIN-VUETIFY
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <template v-for="(route, index) in $router.options.routes[1].children">
@@ -59,6 +63,7 @@
       <v-spacer></v-spacer>
       <v-menu
         offset-y
+        nudge-bottom="7"
         origin="center center"
         :close-on-content-click="false"
         transition="scale-transition">
@@ -73,9 +78,12 @@
         </v-btn>
         <notification-list></notification-list>
       </v-menu>
-
-      <v-menu offset-y>
-        <v-toolbar-title slot="activator">
+      <v-menu
+        offset-y
+        nudge-bottom="7">
+        <v-toolbar-title
+          v-if="$vuetify && $vuetify.breakpoint.smAndUp"
+          slot="activator">
           <v-avatar size="40">
             <img
               :src="user.avatar"
@@ -84,7 +92,19 @@
           <span style="margin-left: 10px;">{{ user.name }}</span>
           <v-icon>arrow_drop_down</v-icon>
         </v-toolbar-title>
+        <v-btn
+          v-else
+          icon
+          dark
+          slot="activator">
+          <v-icon>more_vert</v-icon>
+        </v-btn>
         <v-list>
+          <v-list-tile v-if="$vuetify && $vuetify.breakpoint.xs">
+            <v-list-tile-title>
+              <lang-bar></lang-bar>
+            </v-list-tile-title>
+          </v-list-tile>
           <v-list-tile>
             <v-list-tile-title>
               {{ $t('common.account') }}
@@ -97,35 +117,25 @@
           </v-list-tile>
         </v-list>
       </v-menu>
-      <div class="change-lang">
-        <span
-          @click="switchLang('zh-CN')"
-          :class="{ 'active-lang': currentLang === 'zh-CN' }">
-          中文
-        </span> /
-        <span
-          @click="switchLang('en')"
-          :class="{ 'active-lang': currentLang === 'en' }">
-          En
-        </span>
-      </div>
+      <lang-bar v-if="$vuetify && $vuetify.breakpoint.smAndUp"></lang-bar>
     </v-toolbar>
   </header>
 </template>
 
 <script>
 import { mapState } from 'vuex';
-import NotificationList from '@/components/widgets/NotificationList';
+import NotificationList from '@/components/widgets/NotificationList.vue';
+import LangBar from '@/components/widgets/LangBar.vue';
 
 export default {
   name: 'NavBar',
   components: {
+    LangBar,
     NotificationList,
   },
   data() {
     return {
       currentYear: (new Date()).getFullYear(),
-      currentLang: this.$i18n.locale,
       drawerRight: true,
     };
   },
@@ -143,22 +153,17 @@ export default {
   },
   methods: {
     roleShow(route) {
-      // hack, there is no user when logout
       if (!route.meta) {
         return true;
       }
 
+      // hack, there is no user when logout
       if (!this.user || route.meta.hidden) {
         return false;
       }
 
       const { auth } = route.meta;
       return auth ? (!auth.length && !this.user.role) || auth.includes(this.user.role) : !auth;
-    },
-    switchLang(lang = 'zh-CN') {
-      this.currentLang = lang;
-      this.$locale.use(lang);
-      localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', lang);
     },
     logout() {
       console.log('logout');
