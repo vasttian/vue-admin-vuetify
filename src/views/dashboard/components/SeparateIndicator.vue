@@ -1,5 +1,7 @@
 <template>
-  <v-card class="indicator">
+  <v-card
+    color="grey lighten-3"
+    class="indicator">
     <v-icon
       :color="config.color"
       size="56">{{ config.icon }}</v-icon>
