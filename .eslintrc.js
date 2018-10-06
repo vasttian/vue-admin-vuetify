@@ -31,7 +31,8 @@ module.exports = {
           "e"
         ]
       }
-    ]
+    ],
+    'import/no-extraneous-dependencies': true,
   },
   "parserOptions": {
     "parser": "babel-eslint"

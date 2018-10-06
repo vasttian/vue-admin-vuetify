@@ -3,15 +3,14 @@
     dark>
     <div>
       <v-chart
-        style='width:100%;'
-        :options='chartOption'
+        style="width:100%;"
+        :options="chartOption"
         auto-resize></v-chart>
     </div>
   </v-card>
 </template>
 
 <script>
-/* eslint-disable import/no-extraneous-dependencies */
 import echarts from 'echarts/lib/echarts';
 
 export default {

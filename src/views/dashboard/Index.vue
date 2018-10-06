@@ -16,18 +16,25 @@
         </v-card>
       </v-flex>
     </v-layout>
+    <v-layout justify-center align-center wrap>
+      <v-flex lg12 sm12 xs12>
+        <visitors-location></visitors-location>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
 <script>
 import TotalStatistics from './components/charts/TotalStatistics.vue';
 import SeparateIndicator from './components/SeparateIndicator.vue';
+import VisitorsLocation from './components/charts/VisitorsLocation.vue';
 
 export default {
   name: 'Dashboard',
   components: {
     TotalStatistics,
     SeparateIndicator,
+    VisitorsLocation,
   },
   data() {
     return {

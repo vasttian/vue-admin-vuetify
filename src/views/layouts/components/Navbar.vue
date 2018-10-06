@@ -63,7 +63,7 @@
       <v-spacer></v-spacer>
       <v-menu
         offset-y
-        nudge-bottom="7"
+        nudge-bottom="8"
         origin="center center"
         :close-on-content-click="false"
         transition="scale-transition">
