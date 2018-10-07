@@ -1,11 +1,34 @@
 {
   "name": "vue-admin-vuetify",
   "version": "0.1.0",
+  "description": "Basic plugin for YM",
+  "main": "index.js",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "vue-basis",
+    "vue-admin",
+    "vuetify",
+    "admin",
+    "vue-admin-vuetify"
+  ],
+  "author": {
+    "name": "vasttian",
+    "email": "tianyiming26@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vasttian/vue-admin-vuetify/issues"
+  },
+  "homepage": "https://github.com/vasttian/vue-admin-vuetify#readme",
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-rc.1",
