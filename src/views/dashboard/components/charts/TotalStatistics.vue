@@ -34,8 +34,8 @@ export default {
         '21:00',
         '24:00',
       ];
-      const series1Data = [52, 140, 170, 182, 241, 160, 210, 140];
-      const series2Data = [70, 130, 160, 200, 225, 185, 202, 120];
+      const series1Data = [52, 150, 190, 182, 241, 160, 210, 140];
+      const series2Data = [70, 140, 180, 200, 225, 185, 202, 120];
       return {
         backgroundColor: '#424956',
         grid: {
@@ -55,7 +55,6 @@ export default {
         },
         tooltip: {
           trigger: 'axis',
-          axisPointer: {},
         },
         legend: {
           icon: 'rect',
@@ -88,7 +87,7 @@ export default {
         yAxis: [
           {
             type: 'value',
-            name: '单位（K）',
+            name: '（K）',
             axisTick: {
               show: false,
             },
@@ -128,16 +127,16 @@ export default {
               color: new echarts.graphic.LinearGradient(
                 0,
                 0,
-                1,
                 0,
+                1,
                 [
                   {
                     offset: 0,
-                    color: 'rgba(16,97,204, 0.3)',
+                    color: 'rgba(16, 97, 204, 0.3)',
                   },
                   {
                     offset: 0.8,
-                    color: 'rgba(17,235,210, 0)',
+                    color: 'rgba(17, 235, 210, 0)',
                   },
                 ],
                 false,
@@ -149,18 +148,18 @@ export default {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
                 {
                   offset: 0,
-                  color: 'rgba(16,97,204,1)',
+                  color: 'rgba(16, 97, 204, 1)',
                 },
                 {
                   offset: 1,
-                  color: 'rgba(17,235,210,1)',
+                  color: 'rgba(17, 235, 210, 1)',
                 },
               ]),
             },
             emphasis: {
               itemStyle: {
-                color: 'rgb(0,196,132)',
-                borderColor: 'rgba(0,196,132,0.2)',
+                color: 'rgb(0, 196, 132)',
+                borderColor: 'rgba(0, 196, 132, 0.2)',
                 extraCssText: 'box-shadow: 8px 8px 8px rgba(0, 0, 0, 1);',
                 borderWidth: 10,
               },
@@ -183,16 +182,16 @@ export default {
               color: new echarts.graphic.LinearGradient(
                 0,
                 0,
-                0,
                 1,
+                0,
                 [
                   {
                     offset: 0,
-                    color: 'rgba(205,52,42, 0.5)',
+                    color: 'rgba(205, 52, 42, 0.5)',
                   },
                   {
                     offset: 0.8,
-                    color: 'rgba(235,235,21, 0)',
+                    color: 'rgba(235, 235, 21, 0)',
                   },
                 ],
                 false,
@@ -204,18 +203,18 @@ export default {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
                 {
                   offset: 0,
-                  color: 'rgba(205,52,42,1)',
+                  color: 'rgba(205, 52, 42, 1)',
                 },
                 {
                   offset: 1,
-                  color: 'rgba(235,235,21,1)',
+                  color: 'rgba(235, 235, 21, 1)',
                 },
               ]),
             },
             emphasis: {
               itemStyle: {
-                color: 'rgb(99,250,235)',
-                borderColor: 'rgba(99,250,235,0.2)',
+                color: 'rgb(99, 250, 235)',
+                borderColor: 'rgba(99, 250, 235, 0.2)',
                 extraCssText: 'box-shadow: 8px 8px 8px rgba(0, 0, 0, 1);',
                 borderWidth: 10,
               },

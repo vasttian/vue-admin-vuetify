@@ -3,6 +3,9 @@
     <!-- <h2>Dashboard</h2> -->
     <v-layout justify-center align-center wrap>
       <v-flex lg12 sm12 xs12>
+        <dynamic-analysis></dynamic-analysis>
+      </v-flex>
+      <v-flex lg12 sm12 xs12>
         <total-statistics></total-statistics>
       </v-flex>
       <v-flex
@@ -25,6 +28,7 @@
 </template>
 
 <script>
+import DynamicAnalysis from './components/charts/DynamicAnalysis';
 import TotalStatistics from './components/charts/TotalStatistics.vue';
 import SeparateIndicator from './components/SeparateIndicator.vue';
 import VisitorsLocation from './components/charts/VisitorsLocation.vue';
@@ -32,6 +36,7 @@ import VisitorsLocation from './components/charts/VisitorsLocation.vue';
 export default {
   name: 'Dashboard',
   components: {
+    DynamicAnalysis,
     TotalStatistics,
     SeparateIndicator,
     VisitorsLocation,
