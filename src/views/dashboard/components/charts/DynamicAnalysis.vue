@@ -1,12 +1,9 @@
 <template>
-  <v-card
-    dark>
-    <div>
-      <v-chart
-        style="width:100%;"
-        :options="chartOption"
-        auto-resize></v-chart>
-    </div>
+  <v-card dark>
+    <v-chart
+      style="width:100%;"
+      :options="chartOption"
+      auto-resize></v-chart>
   </v-card>
 </template>
 
@@ -42,6 +39,7 @@ export default {
     },
     buildChartOption(data) {
       const option = {
+        backgroundColor: '#37474F',
         grid: {
           left: '3%',
           right: '3%',
@@ -114,6 +112,9 @@ export default {
             showSymbol: false,
             symbol: 'circle',
             smooth: true,
+            itemStyle: {
+              color: '#0288D1',
+            },
             areaStyle: {
               color: new echarts.graphic.LinearGradient(
                 0,
@@ -123,7 +124,7 @@ export default {
                 [
                   {
                     offset: 0,
-                    color: 'rgba(7, 203, 247, 0.4)'
+                    color: 'rgba(7, 203, 247, 0.4)',
                   },
                   {
                     offset: 0.8,
@@ -140,11 +141,14 @@ export default {
                 {
                   name: '最新值',
                   yAxis: data.slice(-1) || 0,
-                }
+                  lineStyle: {
+                    color: '#40C4FF',
+                  },
+                  label: {
+                    position: this.$vuetify && this.$vuetify.breakpoint.xs ? 'middle' : 'end',
+                  },
+                },
               ],
-              lineStyle: {
-                color: '#40C4FF',
-              },
             },
             data,
           },
@@ -152,7 +156,7 @@ export default {
       };
 
       const that = this;
-      that.timer = setInterval(function() {
+      that.timer = setInterval(() => {
         const xAxisData = option.xAxis[0].data;
         const seriesData = option.series[0].data;
 
@@ -165,7 +169,7 @@ export default {
 
       return option;
     },
-    initialData(num) {
+    initialData() {
       const cnt = [];
 
       for (let i = 0; i < this.num; i += 1) {

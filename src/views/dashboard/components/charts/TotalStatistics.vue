@@ -1,12 +1,9 @@
 <template>
-  <v-card
-    dark>
-    <div>
-      <v-chart
-        style="width:100%;"
-        :options="chartOption"
-        auto-resize></v-chart>
-    </div>
+  <v-card dark>
+    <v-chart
+      style="width:100%;"
+      :options="chartOption"
+      auto-resize></v-chart>
   </v-card>
 </template>
 

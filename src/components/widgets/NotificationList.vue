@@ -23,7 +23,7 @@
           ripple
           :key="item.title"
           @click="toggle(index)">
-          <v-list-tile-avatar :color="item.color">
+          <v-list-tile-avatar size="38" :color="item.color">
             <v-icon dark>{{ item.icon }}</v-icon>
           </v-list-tile-avatar>
           <v-list-tile-content>

@@ -15,7 +15,7 @@ const routes = {
       name: 'JsonEditor',
       component: () => import('@/views/components/JsonEditor.vue'),
       meta: {
-        icon: 'format_quote',
+        icon: '',
       },
     },
     {
@@ -23,7 +23,7 @@ const routes = {
       name: 'Markdown',
       component: () => import('@/views/components/Markdown.vue'),
       meta: {
-        icon: 'format_list_bulleted',
+        icon: '',
       },
     },
   ],

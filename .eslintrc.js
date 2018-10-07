@@ -33,6 +33,7 @@ module.exports = {
       }
     ],
     'import/no-extraneous-dependencies': true,
+    "no-mixed-operators": 0,
   },
   "parserOptions": {
     "parser": "babel-eslint"
