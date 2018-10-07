@@ -106,14 +106,24 @@
             </v-list-tile-title>
           </v-list-tile>
           <v-list-tile>
-            <v-list-tile-title>
-              {{ $t('common.account') }}
-            </v-list-tile-title>
+            <v-list-tile-avatar>
+              <v-icon>account_circle</v-icon>
+            </v-list-tile-avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>
+                {{ $t('common.account') }}
+              </v-list-tile-title>
+            </v-list-tile-content>
           </v-list-tile>
           <v-list-tile @click="logout">
-            <v-list-tile-title>
-              {{ $t('common.logout') }}
-            </v-list-tile-title>
+            <v-list-tile-avatar>
+              <v-icon>lock_open</v-icon>
+            </v-list-tile-avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>
+                {{ $t('common.logout') }}
+              </v-list-tile-title>
+            </v-list-tile-content>
           </v-list-tile>
         </v-list>
       </v-menu>
