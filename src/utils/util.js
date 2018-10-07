@@ -509,4 +509,11 @@ export function sortObject (obj, order = 'asc') {
 */
 export function fistLetterUpper(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
-};
+}
+
+/**
+ * 当前时间
+ */
+export function currentTimeStr() {
+  return new Date().toLocaleTimeString('chinese', { hour12: false });
+}
