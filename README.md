@@ -37,7 +37,10 @@ npm run lint
 ```
 
 ### :white_check_mark: TODO
-- [ ] add:
+- [ ] add: Dashboard.
+- [ ] add: Editor components.
+- [ ] add: Charts components.
+- [ ] add: UI components.
 
 ### :exclamation: Issues
 
