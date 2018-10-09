@@ -25,13 +25,13 @@ export default new Router({
       path: '',
       name: 'Layout',
       component: Layout,
-      redirect: 'index',
+      redirect: { name: 'Index' },
       children: [
         {
           path: 'index',
           name: 'Index',
           component: View,
-          redirect: '/dashboard',
+          redirect: { name: 'Dashboard' },
           meta: {
             hidden: false,
           },
