@@ -1,7 +1,7 @@
 ## vue-admin-vuetify
 `vue-admin-vuetify` is a Front-end component project.
 
-<p align="center>
+<p align="center">
   <a href="https://github.com/vasttian/vue-admin-vuetify/releases">
     <img src="https://img.shields.io/github/release/vasttian/vue-admin-vuetify/all.svg" alt="RELEASE">
   </a>
