@@ -32,7 +32,7 @@ export default {
         '24:00',
       ];
       const series1Data = [52, 150, 190, 182, 241, 160, 210, 140];
-      const series2Data = [70, 140, 180, 200, 225, 185, 202, 120];
+      const series2Data = [70, 170, 165, 200, 225, 185, 202, 120];
       return {
         backgroundColor: '#424956',
         grid: {
