@@ -19,6 +19,14 @@ const routes = {
       },
     },
     {
+      path: 'sql-editor',
+      name: 'SqlEditor',
+      component: () => import('@/views/components/SqlEditor.vue'),
+      meta: {
+        icon: '',
+      },
+    },
+    {
       path: 'markdown',
       name: 'Markdown',
       component: () => import('@/views/components/Markdown.vue'),
