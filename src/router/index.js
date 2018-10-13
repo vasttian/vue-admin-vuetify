@@ -12,6 +12,15 @@ const View = Vue.component('temp', {
   template: '<router-view></router-view>',
 });
 
+/**
+* TIPS:
+* meta: {
+*   hidden: false,    // If `hidden:true` will not appear in the navigation bar or sidebar(default is false)
+*   auth: [],         // It will control the page roles (you can set multiple roles)
+*   icon: 'home',     // Icon will appear in the navigation bar or sidebar
+*   hasMulSub: false, // It has multiple children
+* }
+*/
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -20,20 +29,22 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login,
+      meta: {
+        hidden: true,
+      },
     },
     {
-      path: '',
-      name: 'Layout',
+      path: '/',
       component: Layout,
-      redirect: { name: 'Index' },
+      redirect: { name: 'Dashboard' },
       children: [
         {
-          path: 'index',
+          path: '/index',
           name: 'Index',
           component: View,
           redirect: { name: 'Dashboard' },
           meta: {
-            hidden: false,
+            hasMulSub: false,
           },
           children: [
             {
@@ -48,8 +59,15 @@ export default new Router({
             widgets,
           ],
         },
+      ],
+    },
+    {
+      path: '/admin',
+      component: Layout,
+      redirect: { name: 'Admin' },
+      children: [
         {
-          path: 'admin',
+          path: '/admin',
           name: 'Admin',
           component: () => import('@/views/admin/Homepage.vue'),
           meta: {},
@@ -67,6 +85,9 @@ export default new Router({
     {
       path: '*',
       redirect: { name: 'Index' },
+      meta: {
+        hidden: true,
+      },
     },
   ],
 });
