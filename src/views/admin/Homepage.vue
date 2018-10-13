@@ -5,8 +5,8 @@
       <h3>This is a beta version.</h3>
       <h3>Start your creation as much as you can.</h3>
     </div>
-    <v-layout justify-center align-center>
-      <v-flex>
+    <v-layout column>
+      <v-flex justify-center>
         <v-tooltip right>
           <v-btn
             icon
@@ -20,7 +20,10 @@
         </v-tooltip>
       </v-flex>
       <v-flex>
-        <v-chart :options="chartOption"></v-chart>
+        <v-chart
+          :options="chartOption"
+          style="width:100%;"
+          auto-resize></v-chart>
       </v-flex>
     </v-layout>
   </div>
