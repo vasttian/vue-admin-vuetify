@@ -9,13 +9,16 @@
       height="56"
       :clipped-left="true">
       <v-toolbar-side-icon
-        v-if="$route.name !== 'Admin'"
+        :disabled="!toggleBtn"
         @click.stop="$emit('toggleSidebar')"></v-toolbar-side-icon>
       <v-toolbar-title v-if="$vuetify && $vuetify.breakpoint.smAndUp">
         VUE-ADMIN-VUETIFY
       </v-toolbar-title>
       <v-spacer></v-spacer>
+
+      <!-- menu -->
       <navbar-menu></navbar-menu>
+
       <v-spacer></v-spacer>
       <v-menu
         offset-y
@@ -100,6 +103,12 @@ export default {
     navbarMenu,
     LangBar,
     NotificationList,
+  },
+  props: {
+    toggleBtn: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {

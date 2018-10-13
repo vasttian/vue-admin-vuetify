@@ -1,10 +1,10 @@
 <template>
   <v-app class="app-wrapper">
     <navbar
+      :toggle-btn="true"
       class="nav-container"
       @toggleSidebar="toggleSidebar"/>
     <sidebar
-      v-if="$route.name !== 'Admin'"
       ref="sidebar"
       class="sidebar-container"/>
     <app-main class="main-container"/>

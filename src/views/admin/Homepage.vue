@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       isCollapse: true,
-      source: 'https://github.com/vasttian/vue-cli-plugin-basis/blob/master/generator/template/src/views/admin/Homepage.vue',
+      source: 'https://github.com/vasttian/vue-admin-vuetify/blob/master/src/views/admin/Homepage.vue',
       chartOption: {
         backgroundColor: '#394056',
         title: {

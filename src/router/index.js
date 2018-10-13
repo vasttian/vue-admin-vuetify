@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/views/auth/Login.vue';
 import Layout from '@/views/layouts/Layout.vue';
+import LayoutWithoutSidebar from '@/views/layouts/LayoutWithoutSidebar.vue';
 
 import components from './modules/components';
 import widgets from './modules/widgets';
@@ -37,15 +38,15 @@ export default new Router({
       path: '/',
       component: Layout,
       redirect: { name: 'Dashboard' },
+      meta: {
+        hasMulSub: false,
+      },
       children: [
         {
           path: '/index',
           name: 'Index',
           component: View,
           redirect: { name: 'Dashboard' },
-          meta: {
-            hasMulSub: false,
-          },
           children: [
             {
               path: '/dashboard',
@@ -63,7 +64,7 @@ export default new Router({
     },
     {
       path: '/admin',
-      component: Layout,
+      component: LayoutWithoutSidebar,
       redirect: { name: 'Admin' },
       children: [
         {

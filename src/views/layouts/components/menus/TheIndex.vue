@@ -46,7 +46,7 @@
         <v-btn
           v-if="roleShow(route.children[0])"
           :key="index"
-          :input-value="activeMenu === route.name"
+          :input-value="activeMenu === route.children[0].name"
           flat
           :to="{ name: route.children[0].name }">
           {{ route.children[0].name }}
