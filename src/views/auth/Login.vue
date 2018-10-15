@@ -64,8 +64,9 @@
                     </v-flex>
                     <v-flex>
                       <v-btn
-                        :disabled="loginLoading"
+                        :loading="loginLoading"
                         @click="login">
+                        <span slot="loader">Loading...</span>
                         {{ $t('common.login') }}
                       </v-btn>
                     </v-flex>
@@ -112,9 +113,18 @@ export default {
   },
   methods: {
     login() {
+      if (!this.form.password || !this.form.username) {
+        return;
+      }
+
+      this.loginLoading = true;
       this.$store.dispatch('login', this.form)
         .then(() => {
-          this.$router.push({ name: 'Index' });
+          try {
+            this.$router.push({ name: 'Index' });
+          } catch (err) {
+            this.$router.push({ path: '/' });
+          }
         })
         .catch((res) => {
           console.log('login-failed', res);
@@ -122,6 +132,9 @@ export default {
             type: 'error',
             text: this.$t('common.invalid_password_username'),
           });
+        })
+        .finally(() => {
+          this.loginLoading = false;
         });
     },
     switchLang(lang) {
