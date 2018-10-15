@@ -14,18 +14,7 @@
       <v-app class="login-con">
         <!-- <v-spacer></v-spacer> -->
         <v-content>
-          <div class="change-lang">
-            <span
-              @click="switchLang('zh-CN')"
-              :class="{ 'active-lang': currentLang === 'zh-CN' }">
-              中文
-            </span> /
-            <span
-              @click="switchLang('en')"
-              :class="{ 'active-lang': currentLang === 'en' }">
-              En
-            </span>
-          </div>
+          <lang-bar></lang-bar>
           <v-container fluid fill-height>
             <v-layout align-center justify-center>
               <v-flex class="frame">
@@ -93,8 +82,13 @@
 
 <script>
 import { isMobile } from '@/utils/util';
+import langBar from '@/components/widgets/LangBar.vue';
 
 export default {
+  name: 'Login',
+  components: {
+    langBar,
+  },
   data() {
     return {
       currentYear: (new Date()).getFullYear(),
@@ -103,7 +97,6 @@ export default {
         password: 'admin123',
       },
       loginLoading: false,
-      currentLang: this.$i18n.locale,
     };
   },
   computed: {
@@ -136,11 +129,6 @@ export default {
         .finally(() => {
           this.loginLoading = false;
         });
-    },
-    switchLang(lang) {
-      this.currentLang = lang;
-      this.$locale.use(lang);
-      localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', lang);
     },
     redirectForgotPassword() {
       console.log('redirectForgotPassword');
