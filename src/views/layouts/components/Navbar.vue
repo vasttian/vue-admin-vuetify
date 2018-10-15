@@ -112,7 +112,6 @@ export default {
   },
   data() {
     return {
-      currentYear: (new Date()).getFullYear(),
       drawerRight: true,
     };
   },

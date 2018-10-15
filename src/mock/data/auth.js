@@ -26,7 +26,8 @@ export default {
   },
   usersMe: (params) => {
     const { token } = parseURL(params.url).params;
-    const user = users[token.match(/mock-token-(.*)/)[1]];
+    const temp = token.match(/mock-token-(.*)/);
+    const user = temp ? users[token.match(/mock-token-(.*)/)[1]] : '';
     return user ? okJsonify(user) : failJsonify();
   },
   logout: () => (okJsonify()),

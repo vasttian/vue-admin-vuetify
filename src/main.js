@@ -46,6 +46,9 @@ Vue.router.beforeEach((to, from, next) => {
       store.dispatch('readMe', { token })
         .then(() => {
           next();
+        })
+        .catch(() => {
+          next('/login');
         });
     } else {
       next();
