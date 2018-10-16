@@ -44,7 +44,7 @@ export default new Router({
       redirect: { name: 'Dashboard' },
       meta: {
         hidden: false,
-        hasMulSub: true,
+        hasMulSub: false,
       },
       children: [
         {
