@@ -1,9 +1,9 @@
-import Index from '@/views/components/Index.vue';
-
 const routes = {
   path: '/widgets',
   name: 'Widgets',
-  component: Index,
+  component: {
+    template: '<router-view></router-view>',
+  },
   meta: {
     hasSub: true,
     hidden: false,

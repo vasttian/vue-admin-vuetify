@@ -8,7 +8,7 @@
     :mini-variant="miniVariant"
     v-model="drawer">
     <v-list>
-      <template v-for="(route, index) in routes[0].children">
+      <template v-for="(route, index) in routes">
         <template v-if="route.meta && route.meta.hasSub">
           <v-list-group
             v-if="roleShow(route)"
@@ -66,7 +66,7 @@ export default {
       user: state => state.auth.me,
     }),
     routes() {
-      return this.$router.options.routes[1].children;
+      return this.$router.options.routes[2].children;
     },
   },
   methods: {

@@ -9,10 +9,6 @@ import widgets from './modules/widgets';
 
 Vue.use(Router);
 
-const View = Vue.component('temp', {
-  template: '<router-view></router-view>',
-});
-
 /**
 * TIPS:
 * meta: {
@@ -36,30 +32,31 @@ export default new Router({
     },
     {
       path: '/',
+      redirect: { name: 'Dashboard' },
+      meta: {
+        hidden: true,
+      },
+    },
+    {
+      path: '/index',
+      name: 'Index',
       component: Layout,
       redirect: { name: 'Dashboard' },
       meta: {
-        hasMulSub: false,
+        hidden: false,
+        hasMulSub: true,
       },
       children: [
         {
-          path: '/index',
-          name: 'Index',
-          component: View,
-          redirect: { name: 'Dashboard' },
-          children: [
-            {
-              path: '/dashboard',
-              name: 'Dashboard',
-              component: () => import('@/views/dashboard/Index.vue'),
-              meta: {
-                icon: 'dashboard',
-              },
-            },
-            components,
-            widgets,
-          ],
+          path: '/dashboard',
+          name: 'Dashboard',
+          component: () => import('@/views/dashboard/Index.vue'),
+          meta: {
+            icon: 'dashboard',
+          },
         },
+        components,
+        widgets,
       ],
     },
     {
