@@ -41,6 +41,7 @@ npm run lint
 - [ ] add: Editor components.
 - [ ] add: Charts components.
 - [ ] add: UI components.
+- [ ] add: Render Functions & Functional Components.
 
 ### :exclamation: Issues
 
