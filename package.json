@@ -49,7 +49,7 @@
     "@vue/eslint-config-airbnb": "^3.0.4",
     "babel-plugin-transform-imports": "^1.5.0",
     "css-loader": "^1.0.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.4",
     "sass-loader": "^7.0.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
