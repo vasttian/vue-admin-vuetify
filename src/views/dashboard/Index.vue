@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import DynamicAnalysis from './components/charts/DynamicAnalysis';
+import DynamicAnalysis from './components/charts/DynamicAnalysis.vue';
 import TotalStatistics from './components/charts/TotalStatistics.vue';
 import SeparateIndicator from './components/SeparateIndicator.vue';
 import VisitorsLocation from './components/charts/VisitorsLocation.vue';
