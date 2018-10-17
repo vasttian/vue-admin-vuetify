@@ -31,4 +31,27 @@ module.exports = {
     /\/node_modules\/vue-echarts\//,
     /\/node_modules\/resize-detector\//,
   ],
+  chainWebpack: config => {
+    // 修改 `svg` Loader
+    const svgRule = config.module.rule('svg');
+
+    // svgRule.uses.clear();
+    svgRule
+      .exclude
+        .add(/src\/components\/svg-icon\/icons/)
+        .end()
+
+    // 添加 `svg-sprite-loader` Loader
+    config.module
+      .rule('svgicons')
+      .test(/\.svg$/)
+      .include
+        .add(/src\/components\/svg-icon\/icons/)
+        .end()
+      .use('svg-sprite-loader')
+        .loader('svg-sprite-loader')
+        .options({
+          symbolId: 'icon-[name]',
+        });
+  }
 };

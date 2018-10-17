@@ -9,9 +9,10 @@ import API from './api';
 import * as consts from './utils/consts';
 import './utils/compatible-ie';
 import i18n from './i18n';
+import Mock from './mock';
 import './plugins/vuetify';
 import './plugins/echarts';
-import Mock from './mock';
+import './components/svg-icon/index';
 
 Mock.bootstrap();
 
