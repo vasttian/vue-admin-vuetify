@@ -4,10 +4,18 @@
     <div>
       <div
         v-for="(item, index) in iconsMap"
-        :key="index"
-        class="icon-item">
-        <svg-icon :icon-class="item"></svg-icon>
-        <span>{{ item }}</span>
+        :key="index">
+        <v-tooltip
+          z-index="1003"
+          top>
+          <div
+            slot="activator"
+            class="icon-item">
+            <svg-icon :icon-class="item"/>
+            <span>{{ item }}</span>
+          </div>
+          <span>{{ generateCode(item) }}</span>
+        </v-tooltip>
       </div>
     </div>
   </div>
@@ -22,6 +30,11 @@ export default {
     return {
       iconsMap: icons,
     };
+  },
+  methods: {
+    generateCode(item) {
+      return `<svg-icon icon-class="${item}"/>`;
+    },
   },
 };
 </script>
