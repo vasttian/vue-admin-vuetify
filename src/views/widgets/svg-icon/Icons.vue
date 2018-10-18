@@ -4,6 +4,7 @@
     <div>
       <div
         v-for="(item, index) in iconsMap"
+        @click="handleClipboard('.icon-item', generateCode(item))"
         :key="index">
         <v-tooltip
           z-index="1003"
@@ -22,6 +23,7 @@
 </template>
 
 <script>
+import handleClipboard from '@/utils/clipboard';
 import icons from './requireIcons';
 
 export default {
@@ -35,6 +37,9 @@ export default {
     generateCode(item) {
       return `<svg-icon icon-class="${item}"/>`;
     },
+    handleClipboard(target, text) {
+      handleClipboard(target, text);
+    },
   },
 };
 </script>
@@ -47,7 +52,7 @@ export default {
   font-size: 32px;
   text-align: center;
   float: left;
-  color: #020a13;
+  color: #666666;
   cursor: pointer;
 }
 

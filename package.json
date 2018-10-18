@@ -33,6 +33,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0-rc.1",
     "axios": "^0.18.0",
+    "clipboard": "^2.0.1",
     "mockjs": "^1.0.1-beta3",
     "moment": "^2.22.2",
     "vue": "^2.5.17",
