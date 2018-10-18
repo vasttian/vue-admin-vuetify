@@ -47,7 +47,7 @@ export default {
           containLabel: true,
         },
         title: {
-          text: '访问人数',
+          text: this.$t('dashboard.visitorsNumber'),
           textStyle: {
             fontWeight: 'normal',
             fontSize: 19,

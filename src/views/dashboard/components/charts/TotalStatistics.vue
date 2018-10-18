@@ -42,7 +42,7 @@ export default {
           containLabel: true,
         },
         title: {
-          text: '请求数',
+          text: this.$t('dashboard.requestsNumber'),
           textStyle: {
             fontWeight: 'normal',
             fontSize: 19,
@@ -58,7 +58,7 @@ export default {
           itemWidth: 16,
           itemHeight: 10,
           itemGap: 13,
-          data: ['昨天', '前天'],
+          data: [this.$t('dashboard.yesterday'), this.$t('dashboard.dayBeforeYesterday')],
           right: '3%',
           textStyle: {
             fontSize: 14,
@@ -109,7 +109,7 @@ export default {
         ],
         series: [
           {
-            name: '昨天',
+            name: this.$t('dashboard.yesterday'),
             type: 'line',
             smooth: true,
             symbol: 'circle',
@@ -164,7 +164,7 @@ export default {
             data: series1Data,
           },
           {
-            name: '前天',
+            name: this.$t('dashboard.dayBeforeYesterday'),
             type: 'line',
             smooth: true,
             symbol: 'circle',

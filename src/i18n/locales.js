@@ -159,4 +159,26 @@ export default {
       'zh-CN': '请输入用户名',
     },
   },
+  dashboard: {
+    visitorsNumber: {
+      en: 'Number of visitors',
+      'zh-CN': '访问人数',
+    },
+    requestsNumber: {
+      en: 'Number of requests',
+      'zh-CN': '请求数',
+    },
+    yesterday: {
+      en: 'Yesterday',
+      'zh-CN': '昨天',
+    },
+    dayBeforeYesterday: {
+      en: 'The day before yesterday',
+      'zh-CN': '前天',
+    },
+    visitorDistribution: {
+      en: 'Distribution of visitors',
+      'zh-CN': '访问者分布',
+    },
+  },
 };

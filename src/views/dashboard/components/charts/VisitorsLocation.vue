@@ -95,7 +95,7 @@ export default {
         },
         title: [
           {
-            text: '访问者分布',
+            text: this.$t('dashboard.visitorDistribution'),
             textStyle: {
               fontWeight: 'normal',
               fontSize: 19,
@@ -132,6 +132,9 @@ export default {
           left: 10,
           bottom: 10,
           itemHeight: 100,
+          textStyle: {
+            color: '#fff',
+          },
           inRange: {
             color: ['#4FC3F7', '#2962FF'],
             symbolSize: [50, 100],
