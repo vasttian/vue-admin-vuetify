@@ -64,14 +64,15 @@ Vue.router.beforeEach((to, from, next) => {
     delete to.query.locale;
     if (supportedLangs.includes(locale)) {
       i18n.locale = locale;
-      localStorage.setItem('VUE-ADMIN-VUETIFY', locale);
+      localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', locale);
     }
   }
 
   next();
 });
-i18n.locale = localStorage.getItem('VUE-ADMIN-VUETIFY') ||
-  supportedLangs.includes(userLocale) ? userLocale : 'zh-CN';
+i18n.locale = localStorage.getItem('VUE-ADMIN-VUETIFY_LANGUAGE') ||
+  (supportedLangs.includes(userLocale) ? userLocale : 'zh-CN');
+Vue.prototype.$locale.use(i18n.locale);
 
 Vue.config.productionTip = false;
 
