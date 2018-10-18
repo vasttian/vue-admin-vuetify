@@ -25,7 +25,6 @@ export default {
     switchLang(lang = 'zh-CN') {
       this.currentLang = lang;
       this.$locale.use(lang);
-      localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', lang);
     },
   },
 };

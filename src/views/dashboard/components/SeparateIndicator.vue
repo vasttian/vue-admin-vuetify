@@ -28,7 +28,7 @@ export default {
 .indicator {
   position: relative;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .indicator:after {

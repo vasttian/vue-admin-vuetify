@@ -19,7 +19,7 @@
             <v-layout align-center justify-center>
               <v-flex class="frame">
                 <h1 v-if="!isMobile">
-                  Login
+                  {{ $t('common.loginN')}}
                 </h1>
                 <v-form>
                   <v-text-field
