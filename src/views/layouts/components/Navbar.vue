@@ -37,6 +37,9 @@
         </v-btn>
         <notification-list></notification-list>
       </v-menu>
+      <v-btn icon large>
+        <screenfull fill="#333539"></screenfull>
+      </v-btn>
       <v-menu
         offset-y
         nudge-bottom="7">
@@ -57,6 +60,11 @@
           dark
           slot="activator">
           <v-icon>more_vert</v-icon>
+        </v-btn>
+        <v-btn
+          icon
+          href="https://github.com/vasttian/vue-admin-vuetify">
+          <svg-icon icon-class="github"/>
         </v-btn>
         <v-list>
           <v-list-tile v-if="$vuetify && $vuetify.breakpoint.xs">
@@ -95,12 +103,14 @@
 import { mapState } from 'vuex';
 import NotificationList from '@/components/widgets/NotificationList.vue';
 import LangBar from '@/components/widgets/LangBar.vue';
-import navbarMenu from './menus/TheIndex.vue';
+import Screenfull from '@/components/widgets/Screenfull.vue';
+import NavbarMenu from './menus/TheIndex.vue';
 
 export default {
   name: 'NavBar',
   components: {
-    navbarMenu,
+    NavbarMenu,
+    Screenfull,
     LangBar,
     NotificationList,
   },

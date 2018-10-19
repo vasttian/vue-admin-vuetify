@@ -12,7 +12,7 @@ import i18n from './i18n';
 import Mock from './mock';
 import './plugins/vuetify';
 import './plugins/echarts';
-import './components/svg-icon/index';
+import './components/svg-icon';
 
 Mock.bootstrap();
 
