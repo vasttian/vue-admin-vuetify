@@ -1,6 +1,7 @@
 // example
 const authApi = 'http://172.16.24.36:17510/';
 const commonApi = 'xxx';
+const svgoConfig = require('./config/svgo-config.json');
 
 module.exports = {
   devServer: {
@@ -52,6 +53,10 @@ module.exports = {
         .loader('svg-sprite-loader')
         .options({
           symbolId: 'icon-[name]',
-        });
+        })
+        .end()
+      .use('svgo-loader')
+        .loader('svgo-loader')
+        .options(svgoConfig)
   }
 };
