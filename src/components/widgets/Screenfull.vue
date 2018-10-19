@@ -2,14 +2,10 @@
   <div class="screenfull">
     <svg
       v-if="!isFullscreen"
-      t="1539930686022"
       class="icon"
       style=""
       viewBox="0 0 1024 1024"
-      version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      p-id="7785"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
       :width="width"
       :height="height"
       @click="handleClick">
@@ -27,14 +23,10 @@
     </svg>
     <svg
       v-else
-      t="1539930708310"
       class="icon"
       style=""
       viewBox="0 0 1024 1024"
-      version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      p-id="8318"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
       :width="width"
       :height="height"
       @click="handleClick">
@@ -69,7 +61,7 @@ export default {
     fill: {
       type: String,
       default: '#0b0b0b',
-    }
+    },
   },
   data() {
     return {
