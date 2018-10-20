@@ -12,7 +12,11 @@
         :disabled="!toggleBtn"
         @click.stop="$emit('toggleSidebar')"></v-toolbar-side-icon>
       <v-toolbar-title v-if="$vuetify && $vuetify.breakpoint.smAndUp">
-        VUE-ADMIN-VUETIFY
+        <router-link
+          :to="{ name : 'Dashboard' }"
+          class="toolbar-title">
+          <span>VUE-ADMIN-VUETIFY</span>
+        </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
