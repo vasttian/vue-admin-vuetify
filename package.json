@@ -1,6 +1,6 @@
 {
   "name": "vue-admin-vuetify",
-  "version": "0.2.0-beta.0",
+  "version": "0.2.0-beta.1",
   "description": "Basic plugin for YM",
   "main": "index.js",
   "private": true,
