@@ -53,21 +53,6 @@ ul, li {
   width: 100%;
 }
 
-.change-lang {
-  display: block;
-  cursor: pointer;
-
-  span {
-    cursor: pointer;
-    padding: 0 2px;
-    color: #c0c4cc;
-
-    &.active-lang {
-      color: #0302f5;
-    }
-  }
-}
-
 .sub-header {
   position: absolute;
   top: 0;
