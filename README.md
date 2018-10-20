@@ -50,4 +50,5 @@ If you run into any issues, you can contact me at [issues](https://github.com/va
 
 ### :copyright: License
 
-[MIT](http://opensource.org/licenses/MIT)
+Under the MIT license. See [LICENSE](http://opensource.org/licenses/MIT) file for more details.
+
