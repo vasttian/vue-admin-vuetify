@@ -65,16 +65,21 @@
           slot="activator">
           <v-icon>more_vert</v-icon>
         </v-btn>
-        <v-btn
-          icon
-          href="https://github.com/vasttian/vue-admin-vuetify">
-          <svg-icon icon-class="github"/>
-        </v-btn>
         <v-list>
           <v-list-tile v-if="$vuetify && $vuetify.breakpoint.xs">
             <v-list-tile-title>
               <lang-bar></lang-bar>
             </v-list-tile-title>
+          </v-list-tile>
+          <v-list-tile @click="toGithub">
+            <v-list-tile-avatar>
+              <svg-icon style="font-size:21px;" icon-class="github"/>
+            </v-list-tile-avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>
+                GitHub
+              </v-list-tile-title>
+            </v-list-tile-content>
           </v-list-tile>
           <v-list-tile>
             <v-list-tile-avatar>
@@ -135,6 +140,9 @@ export default {
     }),
   },
   methods: {
+    toGithub() {
+      window.open('https://github.com/vasttian/vue-admin-vuetify');
+    },
     logout() {
       console.log('logout');
       this.$router.push({ name: 'Login' });
