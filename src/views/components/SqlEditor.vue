@@ -1,7 +1,6 @@
 <template>
   <div>
     <sql-editor
-      ref="sqlEditor"
       v-model="sqlText"
       placeholder=""/>
   </div>
@@ -17,13 +16,9 @@ export default {
   },
   data() {
     return {
-      sqlText: 'select user from users;',
+      sqlText: 'CREATE UNIQUE INDEX index_name \nON table_name (column_name)',
     };
   },
-  methods:{},
-  creatd() {
-
-  },
-}
+};
 </script>
 

@@ -1,11 +1,14 @@
 <template>
-  <div>
+  <div class="sql-editor">
     <textarea ref="textarea"/>
   </div>
 </template>
 
 <script>
 import CodeMirror from 'codemirror';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/rubyblue.css';
+import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/sql/sql';
 
 export default {
@@ -48,7 +51,6 @@ export default {
       },
     });
     this.sqlEditor.setValue(this.value);
-    // console.log('ddddddd', this.sqlEditor);
     this.sqlEditor.on('change', (vm) => {
       this.$emit('input', vm.getValue());
       // console.log('vm.getValue()', vm.getValue());
@@ -57,12 +59,18 @@ export default {
 };
 </script>
 
-<style>
-.CodeMirror {
-  border: 1px solid #eee;
-  height: auto !important;
-  min-height: 45px !important;
-  /*max-height: 500px;*/
-  line-height: 20px;
+<style lang="scss">
+.sql-editor {
+  .CodeMirror {
+    border: 1px solid #eee;
+    height: auto !important;
+    min-height: 200px !important;
+    /*max-height: 500px;*/
+    line-height: 20px;
+  }
+
+  .CodeMirror-scroll{
+    min-height: 200px;
+  }
 }
 </style>
