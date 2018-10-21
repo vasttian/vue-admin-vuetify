@@ -39,7 +39,8 @@ npm run lint
 ### :white_check_mark: TODO
 - [x] add: Dashboard.
 - [x] add: Icons.
-- [ ] add: Editor components.
+- [x] add: Editor components.
+- [ ] add: Jsonlint.
 - [ ] add: Charts components.
 - [ ] add: UI components.
 - [ ] add: Render Functions & Functional Components.
