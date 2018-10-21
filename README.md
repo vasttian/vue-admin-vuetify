@@ -1,5 +1,9 @@
-## vue-admin-vuetify
-`vue-admin-vuetify` is a Front-end component project.
+<!-- ## vue-admin-vuetify -->
+<h2 align="center">vue-admin-vuetify</h2>
+<p>
+  <h4 align="center"><code>vue-admin-vuetify</code> is a Front-end component project.</h4>
+  <h4 align="center">Component demo based on <a href="https://github.com/vuejs/vue">vue</a> and <a href="https://github.com/vuetifyjs/vuetify">vuetify</a></h4>
+</p>
 
 <p align="center">
   <a href="https://github.com/vasttian/vue-admin-vuetify/releases">
@@ -10,28 +14,30 @@
   </a>
 </p>
 
+---
+
 ### :warning: Heads up
 
 Currently this is just a **beta version**.
 
 ### :rocket: Getting Started
-### Project setup
+#### Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+#### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 :tada: Open http://localhost:8090 to see the demo.
 
-### Compiles and minifies for production
+#### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
+#### Lints and fixes files
 ```
 npm run lint
 ```
@@ -45,9 +51,14 @@ npm run lint
 - [ ] add: UI components.
 - [ ] add: Render Functions & Functional Components.
 
+
 ### :exclamation: Issues
 
 If you run into any issues, you can contact me at [issues](https://github.com/vasttian/vue-admin-vuetify/issues)
+
+### :memo: Changelog
+
+Detailed changes for each release are documented in the [release notes](https://github.com/vasttian/vue-admin-vuetify/releases).
 
 ### :copyright: License
 
