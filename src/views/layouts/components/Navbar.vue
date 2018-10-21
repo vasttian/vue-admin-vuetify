@@ -41,7 +41,10 @@
         </v-btn>
         <notification-list></notification-list>
       </v-menu>
-      <v-btn icon large>
+      <v-btn
+        v-if="$vuetify && $vuetify.breakpoint.smAndUp"
+        icon
+        large>
         <screenfull fill="#333539"></screenfull>
       </v-btn>
       <v-menu
