@@ -32,8 +32,10 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-rc.1",
+    "D": "^1.0.0",
     "axios": "^0.18.0",
     "clipboard": "^2.0.1",
+    "codemirror": "^5.40.2",
     "mockjs": "^1.0.1-beta3",
     "moment": "^2.22.2",
     "screenfull": "^3.3.3",
