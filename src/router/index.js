@@ -6,6 +6,7 @@ import LayoutWithoutSidebar from '@/views/layouts/LayoutWithoutSidebar.vue';
 
 import components from './modules/components';
 import widgets from './modules/widgets';
+import uiElements from './modules/ui-elements';
 
 Vue.use(Router);
 
@@ -57,6 +58,7 @@ export default new Router({
         },
         components,
         widgets,
+        uiElements,
       ],
     },
     {

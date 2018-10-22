@@ -5,7 +5,7 @@ const routes = {
     template: '<router-view></router-view>',
   },
   meta: {
-    hasSub: true,
+    hasMulSub: true,
     hidden: false,
     icon: 'developer_board',
   },

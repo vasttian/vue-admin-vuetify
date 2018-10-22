@@ -9,7 +9,7 @@
     v-model="drawer">
     <v-list expand>
       <template v-for="(route, index) in routes">
-        <template v-if="route.meta && route.meta.hasSub">
+        <template v-if="route.meta && route.meta.hasMulSub">
           <v-list-group
             v-if="roleShow(route)"
             :prepend-icon="route.meta && route.meta.icon"
