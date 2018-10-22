@@ -7,7 +7,7 @@
     app
     :mini-variant="miniVariant"
     v-model="drawer">
-    <v-list>
+    <v-list expand>
       <template v-for="(route, index) in routes">
         <template v-if="route.meta && route.meta.hasSub">
           <v-list-group
