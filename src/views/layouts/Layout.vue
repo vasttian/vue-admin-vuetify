@@ -7,6 +7,7 @@
     <sidebar
       ref="sidebar"
       class="sidebar-container"/>
+    <right-settings/>
     <app-main class="main-container"/>
   </v-app>
 </template>
@@ -14,6 +15,7 @@
 <script>
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
+import RightSettings from './components/RightSettings.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
@@ -21,6 +23,7 @@ export default {
   components: {
     Navbar,
     Sidebar,
+    RightSettings,
     AppMain,
   },
   data() {
