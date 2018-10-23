@@ -2,6 +2,7 @@
   <div>
     <div class="right-settings">
       <v-btn
+        v-show="!rightDrawer"
         flat
         icon
         color="#fff"
@@ -14,18 +15,18 @@
       right
       absolute
       temporary>
-      <theme-setting/>
+      <setting-options/>
     </v-navigation-drawer>
   </div>
 </template>
 
 <script>
-import ThemeSetting from './setting-options/ThemeSetting';
+import SettingOptions from './setting-options/TheIndex.vue';
 
 export default {
   name: 'RightSettings',
   components: {
-    ThemeSetting,
+    SettingOptions,
   },
   data() {
     return {
@@ -37,7 +38,7 @@ export default {
       this.rightDrawer = true;
     },
   },
-}
+};
 </script>
 
 
@@ -48,7 +49,7 @@ export default {
     right: 0;
     width: 64px;
     z-index: 1032;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .4);
     border-radius: 8px 0 0 8px;
     text-align: center;
   }
