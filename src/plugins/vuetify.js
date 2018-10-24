@@ -50,6 +50,7 @@ import {
   VTooltip,
   transitions,
 } from 'vuetify';
+import * as directives from 'vuetify/es5/directives';
 import enLang from 'vuetify/es5/locale/en';
 import zhLang from 'vuetify/es5/locale/zh-Hans';
 import i18n from '../i18n';
@@ -107,6 +108,7 @@ Vue.use(Vuetify, {
     VTooltip,
     transitions,
   },
+  directives,
   lang: {
     locales: { enLang, zhLang },
     current: 'enLang',
