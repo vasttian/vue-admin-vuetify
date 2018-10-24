@@ -11,7 +11,7 @@
       <v-toolbar-side-icon
         :disabled="!toggleBtn"
         @click.stop="$emit('toggleSidebar')"></v-toolbar-side-icon>
-      <v-toolbar-title v-if="$vuetify && $vuetify.breakpoint.smAndUp">
+      <v-toolbar-title class="hidden-sm-and-down">
         <router-link
           :to="{ name : 'Dashboard' }"
           class="toolbar-title">
@@ -42,7 +42,7 @@
         <notification-list></notification-list>
       </v-menu>
       <v-btn
-        v-if="$vuetify && $vuetify.breakpoint.smAndUp"
+        class="hidden-xs-only"
         icon
         large>
         <screenfull fill="#333539"></screenfull>
@@ -69,7 +69,7 @@
           <v-icon>more_vert</v-icon>
         </v-btn>
         <v-list>
-          <v-list-tile v-if="$vuetify && $vuetify.breakpoint.xs">
+          <v-list-tile class="hidden-sm-and-up">
             <v-list-tile-title>
               <lang-bar></lang-bar>
             </v-list-tile-title>
