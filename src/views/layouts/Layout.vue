@@ -9,10 +9,12 @@
       class="sidebar-container"/>
     <right-settings/>
     <app-main class="main-container"/>
+    <app-fab/>
   </v-app>
 </template>
 
 <script>
+import AppFab from '@/components/widgets/AppFab.vue';
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
 import RightSettings from './components/RightSettings.vue';
@@ -25,6 +27,7 @@ export default {
     Sidebar,
     RightSettings,
     AppMain,
+    AppFab,
   },
   data() {
     return {

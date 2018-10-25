@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="main-container">
     <v-content>
       <v-container fluid>
         <v-slide-y-transition mode="out-in">
