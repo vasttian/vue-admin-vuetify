@@ -1,7 +1,8 @@
 <template>
   <v-navigation-drawer
+    id="sidebar"
     class="blue-grey lighten-5"
-    width="210"
+    width="225"
     :clipped="$vuetify && $vuetify.breakpoint.mdAndUp"
     fixed
     app
@@ -48,6 +49,8 @@
 
 <script>
 import { mapState } from 'vuex';
+import 'perfect-scrollbar/css/perfect-scrollbar.css';
+import PerfectScrollbar from 'perfect-scrollbar';
 
 export default {
   name: 'Sidebar',
@@ -59,6 +62,7 @@ export default {
       drawer: this.$vuetify && this.$vuetify.breakpoint.mdAndUp,
       miniVariant: false,
       // miniVariant: true,
+      ps: null,
     };
   },
   computed: {
@@ -86,6 +90,15 @@ export default {
     toggleSidebar() {
       this.drawer = !this.drawer;
     },
+  },
+  created() {
+    this.$nextTick(() => {
+      this.ps = new PerfectScrollbar('#sidebar');
+    });
+  },
+  beforeDestroy() {
+    this.ps.destroy();
+    this.ps = null;
   },
 };
 </script>
