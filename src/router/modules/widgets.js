@@ -20,7 +20,7 @@ const routes = {
     {
       path: 'maps',
       name: 'Maps',
-      component: () => import('@/views/widgets/Maps.vue'),
+      component: () => import('@/views/widgets/VMaps.vue'),
       meta: {
       },
     },
