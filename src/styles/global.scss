@@ -24,6 +24,10 @@ body {
   }
 }
 
+header {
+  z-index: 6;
+}
+
 div:focus{
   outline: none;
 }

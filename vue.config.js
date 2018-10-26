@@ -58,5 +58,7 @@ module.exports = {
       .use('svgo-loader')
         .loader('svgo-loader')
         .options(svgoConfig)
+    // config.resolve
+    //   .symlinks(true)
   }
 };
