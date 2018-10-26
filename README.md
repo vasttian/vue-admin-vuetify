@@ -32,6 +32,17 @@ npm run serve
 ```
 :tada: Open http://localhost:8090 to see the demo.
 
+If [hot reload](https://vue-loader.vuejs.org/guide/hot-reload.html#state-preservation-rules) fails,
+modify your `vue.config.js`
+```
+module.exports = {
+  chainWebpack: config => {
+    config.resolve
+      .symlinks(true)
+  }
+}
+```
+
 #### Compiles and minifies for production
 ```
 npm run build
