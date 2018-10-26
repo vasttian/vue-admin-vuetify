@@ -71,11 +71,7 @@ export default {
       user: state => state.auth.me,
     }),
     activeMenu() {
-      if (this.$route.name !== 'Admin') {
-        return 'Index';
-      }
-
-      return this.$route.name;
+      return this.findParentRouteByChildName();
     },
   },
   methods: {
@@ -95,6 +91,39 @@ export default {
     },
     getRouteName(route = {}) {
       return route.name || (route.children && route.children[0].name) || '';
+    },
+    findParentRouteByChildName() {
+      const { routes } = this.$router.options;
+      const childName = this.$route.name;
+      // console.log('routes', routes);
+      // console.log('childName', childName);
+
+      try {
+        for (let i = 0, len = routes.length; i < len; i += 1) {
+          const route = routes[i];
+          if (route.children) {
+            for (let j = 0, len = route.children.length; j < len; j += 1) {
+              const cRoute = route.children[j];
+              if (cRoute.children) {
+                for (let k = 0, len = cRoute.children.length; k < len; k += 1) {
+                  const child = cRoute.children[k];
+                  if (child.name === childName) {
+                    return route.name || childName;
+                  }
+                }
+              } else if (cRoute.name === childName) {
+                return route.name || childName;
+              }
+            }
+          } else if (route.name === childName) {
+            return route.name;
+          }
+        }
+      } catch (err) {
+        console.error('>>>findParentRouteByChildName', err);
+      }
+
+      return childName;
     },
   },
 };
