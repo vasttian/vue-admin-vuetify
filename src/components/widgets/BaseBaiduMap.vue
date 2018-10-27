@@ -38,23 +38,44 @@
       @zoomend="syncCenterAndZoom"
       :ak="appKey">
       <bm-city-list
-        :offset="{ width: 10, height: 40 }"
-        anchor="BMAP_ANCHOR_TOP_LEFT"></bm-city-list>
-      <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-navigation>
+        :offset="{ width: 90, height: 10 }"
+        anchor="BMAP_ANCHOR_TOP_LEFT"/>
+      <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"/>
       <bm-map-type
         :map-types="['BMAP_NORMAL_MAP', 'BMAP_HYBRID_MAP']"
         :offset="{ width: 10, height: 10 }"
-        anchor="BMAP_ANCHOR_TOP_LEFT"></bm-map-type>
+        anchor="BMAP_ANCHOR_TOP_LEFT"/>
       <bm-overview-map
         anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
-        :isOpen="true"></bm-overview-map>
+        :isOpen="true"/>
       <bm-geolocation
         anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
         :showAddressBar="true"
-        :autoLocation="true"></bm-geolocation>
-      <!-- <bm-marker :position="{lng: 116.404, lat: 39.915}" :dragging="true" animation="BMAP_ANIMATION_BOUNCE">
-        <bm-label content="我爱北京天安门" :labelStyle="{color: 'red', fontSize : '24px'}" :offset="{width: -35, height: 30}"/>
-      </bm-marker> -->
+        :autoLocation="true"/>
+      <bm-marker
+        :position="{ lng: 113.952, lat: 22.543 }"
+        :dragging="true"
+        animation="BMAP_ANIMATION_BOUNCE">
+        <bm-label
+          content="Here"
+          :labelStyle="{ color: 'red', fontSize : '20px' }"
+          :offset="{ width: -13, height: 30 }"/>
+      </bm-marker>
+      <!-- <bm-view class="map"/> -->
+      <bm-control :offset="{ width: 10, height: 20 }">
+        <bm-auto-complete
+          v-model="keyword"
+          :sugStyle="{ zIndex: 12 }">
+          <v-text-field
+            height="32"
+            placeholder="Please search"
+          ></v-text-field>
+          <!-- <search-field placeholder="请输入地名关键字"></search-field> -->
+        </bm-auto-complete>
+      </bm-control>
+      <bm-local-search
+        :keyword="keyword"
+        :auto-viewport="true"/>
     </baidu-map>
   </div>
 </template>
@@ -67,6 +88,12 @@ import {
   BmOverviewMap,
   BmGeolocation,
   BmCityList,
+  BmMarker,
+  BmLabel,
+  BmView,
+  BmControl,
+  BmAutoComplete,
+  BmLocalSearch,
 } from 'vue-baidu-map/components';
 
 export default {
@@ -78,6 +105,12 @@ export default {
     BmMapType,
     BmOverviewMap,
     BmGeolocation,
+    BmMarker,
+    BmLabel,
+    BmView,
+    BmControl,
+    BmAutoComplete,
+    BmLocalSearch,
   },
   data() {
     return {
@@ -88,6 +121,7 @@ export default {
       },
       zoom: 15,
       mapType: 'BMAP_SATELLITE_MAP',
+      keyword: '',
     };
   },
   methods: {
