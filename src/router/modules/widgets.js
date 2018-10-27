@@ -13,14 +13,14 @@ const routes = {
     {
       path: 'icons',
       name: 'Icons',
-      component: () => import('@/views/widgets/svg-icon/Icons.vue'),
+      component: () => import('@/views/widgets/svg-icon/VIcons.vue'),
       meta: {
       },
     },
     {
       path: 'maps',
       name: 'Maps',
-      component: () => import('@/views/widgets/Maps.vue'),
+      component: () => import('@/views/widgets/VMaps.vue'),
       meta: {
       },
     },

@@ -27,7 +27,7 @@ import handleClipboard from '@/utils/clipboard';
 import icons from './requireIcons';
 
 export default {
-  name: 'Icons',
+  name: 'VIcons',
   data() {
     return {
       iconsMap: icons,
