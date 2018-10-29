@@ -37,12 +37,12 @@
       @zoomend="syncCenterAndZoom"
       :ak="appKey">
       <bm-city-list
-        :offset="{ width: 90, height: 10 }"
+        :offset="{ width: 90, height: 55 }"
         anchor="BMAP_ANCHOR_TOP_LEFT"/>
       <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"/>
       <bm-map-type
         :map-types="['BMAP_NORMAL_MAP', 'BMAP_HYBRID_MAP']"
-        :offset="{ width: 10, height: 10 }"
+        :offset="{ width: 0, height: 55 }"
         anchor="BMAP_ANCHOR_TOP_LEFT"/>
       <bm-overview-map
         anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
@@ -61,7 +61,7 @@
           :offset="{ width: -13, height: 30 }"/> -->
       </bm-marker>
       <!-- <bm-view class="map"/> -->
-      <bm-control :offset="{ width: 10, height: 40 }">
+      <bm-control>
         <bm-auto-complete
           v-model="keyword"
           :sugStyle="{ zIndex: 12 }">
@@ -145,5 +145,6 @@ export default {
 .bm-view {
   width: 100%;
   height: 500px;
+  margin-top: 25px;
 }
 </style>
