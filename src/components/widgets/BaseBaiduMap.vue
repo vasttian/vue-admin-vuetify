@@ -32,18 +32,17 @@
       :center="center"
       :zoom="zoom"
       :scroll-wheel-zoom="true"
-      @ready="handler"
       @moving="syncCenterAndZoom"
       @moveend="syncCenterAndZoom"
       @zoomend="syncCenterAndZoom"
       :ak="appKey">
       <bm-city-list
-        :offset="{ width: 90, height: 10 }"
+        :offset="{ width: 90, height: 55 }"
         anchor="BMAP_ANCHOR_TOP_LEFT"/>
       <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"/>
       <bm-map-type
         :map-types="['BMAP_NORMAL_MAP', 'BMAP_HYBRID_MAP']"
-        :offset="{ width: 10, height: 10 }"
+        :offset="{ width: 0, height: 55 }"
         anchor="BMAP_ANCHOR_TOP_LEFT"/>
       <bm-overview-map
         anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
@@ -56,21 +55,21 @@
         :position="{ lng: 113.952, lat: 22.543 }"
         :dragging="true"
         animation="BMAP_ANIMATION_BOUNCE">
-        <bm-label
+        <!-- <bm-label
           content="Here"
           :labelStyle="{ color: 'red', fontSize : '20px' }"
-          :offset="{ width: -13, height: 30 }"/>
+          :offset="{ width: -13, height: 30 }"/> -->
       </bm-marker>
       <!-- <bm-view class="map"/> -->
-      <bm-control :offset="{ width: 10, height: 20 }">
+      <bm-control>
         <bm-auto-complete
           v-model="keyword"
           :sugStyle="{ zIndex: 12 }">
           <v-text-field
             height="32"
+            solo
             placeholder="Please search"
           ></v-text-field>
-          <!-- <search-field placeholder="请输入地名关键字"></search-field> -->
         </bm-auto-complete>
       </bm-control>
       <bm-local-search
@@ -125,19 +124,19 @@ export default {
     };
   },
   methods: {
-    syncCenterAndZoom (e) {
+    syncCenterAndZoom(e) {
       const { lng, lat } = e.target.getCenter();
       this.center.lng = lng;
       this.center.lat = lat;
       this.zoom = e.target.getZoom();
     },
-    handler({ BMap, map }) {
-      // console.log(BMap, map);
-      // this.center.lng = 116.404;
-      // this.center.lat = 39.915;
-      // this.center = '深圳';
-      // this.zoom = 13;
-    },
+    // Readyhandler({ BMap, map }) {
+    //   console.log(BMap, map);
+    //   // this.center.lng = 116.404;
+    //   // this.center.lat = 39.915;
+    //   // this.center = '深圳';
+    //   // this.zoom = 13;
+    // },
   },
 };
 </script>
@@ -146,5 +145,6 @@ export default {
 .bm-view {
   width: 100%;
   height: 500px;
+  margin-top: 25px;
 }
 </style>
