@@ -9,6 +9,12 @@ import CodeMirror from 'codemirror';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/theme/rubyblue.css';
+import 'codemirror/addon/lint/lint.css';
+import 'codemirror/addon/lint/lint';
+import 'codemirror/addon/lint/json-lint';
+
+// eslint-disable-next-line
+require('script-loader!jsonlint');
 
 export default {
   name: 'JsonEditor',
@@ -38,7 +44,7 @@ export default {
       mode: 'application/json',
       gutters: ['CodeMirror-lint-markers'],
       theme: 'rubyblue',
-      line: true,
+      lint: true,
     });
     this.jsonEditor.setValue(JSON.stringify(this.value, null, 2));
     this.jsonEditor.on('change', (cm) => {
@@ -59,7 +65,7 @@ export default {
     border: 1px solid #eee;
     height: auto !important;
     min-height: 45px !important;
-    /*max-height: 500px;*/
+    // max-height: 500px;
     line-height: 20px;
   }
 }

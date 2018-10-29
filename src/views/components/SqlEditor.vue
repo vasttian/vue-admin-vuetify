@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <sql-editor
-      v-model="sqlText"
-      placeholder=""/>
-  </div>
+  <sql-editor
+    v-model="sqlText"
+    placeholder=""/>
 </template>
 
 <script>

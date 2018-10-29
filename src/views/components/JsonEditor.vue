@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <json-editor
-      v-model="jsonText"
-      placeholder=""/>
-  </div>
+  <json-editor
+    v-model="jsonText"
+    placeholder=""/>
 </template>
 
 <script>
