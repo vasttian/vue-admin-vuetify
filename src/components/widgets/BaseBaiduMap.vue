@@ -52,7 +52,7 @@
         :showAddressBar="true"
         :autoLocation="true"/>
       <bm-marker
-        :position="{ lng: 113.952, lat: 22.543 }"
+        :position="{ lng: 113.9504, lat: 22.544 }"
         :dragging="true"
         animation="BMAP_ANIMATION_BOUNCE">
         <!-- <bm-label
