@@ -60,8 +60,8 @@ npm run lint
 - [x] add: Dashboard.
 - [x] add: Icons.
 - [x] add: Editor components.
-- [ ] mod: Sidebar.
-- [ ] add: Jsonlint.
+- [x] add: Jsonlint.
+- [x] mod: Sidebar.
 - [ ] add: Charts components.
 - [ ] add: UI components.
 - [ ] add: Render Functions & Functional Components.
