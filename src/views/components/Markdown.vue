@@ -14,7 +14,9 @@
 </template>
 
 <script>
+import 'highlight.js/styles/default.css';
 import marked from 'marked';
+import hljs from 'highlight.js';
 
 const rendererMD = new marked.Renderer();
 
@@ -27,13 +29,19 @@ marked.setOptions({
   sanitize: false,
   smartLists: true,
   smartypants: false,
+  highlight(code, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      return hljs.highlight(lang, code, true).value;
+    }
+
+    return hljs.highlightAuto(code).value;
+  },
 });
 
 export default {
   name: 'Markdown',
   data() {
-    return {
-      input: `
+    const defaultInputText = `
 # Hello
 <br>
 
@@ -73,7 +81,9 @@ Ready to start writing?  Either start changing stuff on the left or
 
 [Marked]: https://github.com/markedjs/marked/
 [Markdown]: http://daringfireball.net/projects/markdown/
-      `,
+`;
+    return {
+      input: defaultInputText,
     };
   },
   computed: {
