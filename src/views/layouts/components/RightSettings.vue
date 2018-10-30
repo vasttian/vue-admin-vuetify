@@ -13,7 +13,8 @@
     <v-navigation-drawer
       v-model="rightDrawer"
       right
-      absolute
+      fixed
+      hide-overlay
       temporary>
       <setting-options/>
     </v-navigation-drawer>
