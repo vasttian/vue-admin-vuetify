@@ -1,16 +1,66 @@
 <template>
-  <div>
-    <v-textarea
-      name="markdown"
-      label="Markdown"
-      autofocus
-      v-model="input"
-      auto-grow
-      hint="markdown text"
-    ></v-textarea>
-    <h4>Preview</h4>
-    <div v-html="compiledMarkdown"></div>
-  </div>
+  <v-layout wrap>
+    <v-flex xs12>
+      <span>Based on:</span>
+      <v-btn
+        flat
+        href="https://github.com/markedjs/marked"
+        target="_blank"
+        color="primary"
+        small>
+        Marked
+      </v-btn>
+      and
+      <v-btn
+        flat
+        href="https://github.com/highlightjs/highlight.js"
+        target="_blank"
+        color="primary"
+        small>
+        Highlightjs
+      </v-btn>
+    </v-flex>
+    <v-divider/>
+    <v-flex d-flex>
+      <v-layout wrap>
+        <v-flex
+          d-flex
+          xs12
+          sm6>
+          <v-textarea
+            name="markdown"
+            label="Markdown"
+            autofocus
+            v-model="input"
+            auto-grow
+            hint="markdown text"
+          ></v-textarea>
+        </v-flex>
+        <v-flex
+          xs12
+          sm6>
+          <v-flex>
+            <v-select
+              :items="items"
+              label="Preview"
+              v-model="type"
+            ></v-select>
+          </v-flex>
+          <v-flex class="preview">
+            <v-textarea
+              v-if="type === 'htmlSource'"
+              :value="compiledMarkdown"
+              auto-grow
+              readonly>
+            </v-textarea>
+            <div
+              v-else
+              v-html="compiledMarkdown"></div>
+          </v-flex>
+        </v-flex>
+      </v-layout>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -44,24 +94,14 @@ export default {
     const defaultInputText = `
 # Hello
 <br>
+\n
+\`\`\`js\nconsole.log('Hello'); \n\`\`\`
+<br>
 
 Marked - Markdown Parser
 ========================
 
 [Marked] lets you convert [Markdown] into HTML.  Markdown is a simple text format whose goal is to be very easy to read and write, even when not converted to HTML.  This demo page will let you type anything you like and see how it gets converted.  Live.  No more waiting around.
-
-How To Use The Demo
--------------------
-
-1. Type in stuff on the left.
-2. See the live updates on the right.
-
-That's it.  Pretty simple.  There's also a drop-down option in the upper right to switch between various views:
-
-- **Preview:**  A live display of the generated HTML as it would render in a browser.
-- **HTML Source:**  The generated HTML before your browser makes it pretty.
-- **Lexer Data:**  What [marked] uses internally, in case you like gory stuff like this.
-- **Quick Reference:**  A brief run-down of how to format things using markdown.
 
 Why Markdown?
 -------------
@@ -84,12 +124,36 @@ Ready to start writing?  Either start changing stuff on the left or
 `;
     return {
       input: defaultInputText,
+      type: 'preview',
+      items: [
+        {
+          text: 'Preview',
+          value: 'preview',
+        },
+        {
+          text: 'HTML Source',
+          value: 'htmlSource',
+        },
+      ],
     };
   },
   computed: {
     compiledMarkdown() {
+      // if (this.type === 'htmlsource') {
+      //   const token = marked.lexer(this.input);
+      //   return marked.parser(token);
+      // }
+
       return marked(this.input);
     },
   },
+  methods: {
+  },
 };
 </script>
+
+<style lang="scss" scoped>
+.preview {
+  margin-top: 8px;
+}
+</style>
