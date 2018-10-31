@@ -8,6 +8,7 @@ import store from './store';
 import API from './api';
 import * as consts from './utils/consts';
 import './utils/compatible-ie';
+// import './utils/vconsole';
 import i18n from './i18n';
 import Mock from './mock';
 import './plugins/vuetify';
