@@ -6,6 +6,9 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/vasttian/vue-admin-vuetify/tags">
+    <img src="https://img.shields.io/github/tag-date/vasttian/vue-admin-vuetify.svg" alt="TAGS">
+  </a>
   <a href="https://github.com/vasttian/vue-admin-vuetify/releases">
     <img src="https://img.shields.io/github/release/vasttian/vue-admin-vuetify/all.svg" alt="RELEASE">
   </a>
@@ -13,7 +16,7 @@
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="LICENSE">
   </a>
 </p>
-
+<!-- [![GitHub tag](https://img.shields.io/github/tag-date/vasttian/vue-admin-vuetify.svg)](https://github.com/vasttian/vue-admin-vuetify/tags) -->
 ---
 
 ### :warning: Heads up
