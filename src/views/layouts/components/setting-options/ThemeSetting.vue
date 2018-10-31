@@ -5,7 +5,7 @@
     </v-subheader>
     <v-flex>
       <chrome-picker
-        class="color-picker"
+        :class="[$style.colorPicker]"
         v-model="color"/>
     </v-flex>
   </div>
@@ -38,8 +38,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.color-picker {
+<style lang="scss" module>
+.colorPicker {
   margin: auto;
 }
 </style>
