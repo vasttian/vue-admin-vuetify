@@ -28,7 +28,8 @@
                     clearable
                     :label="$t('common.username')"
                     @keyup.enter.native="login"
-                    required></v-text-field>
+                    required
+                  ></v-text-field>
                   <v-text-field
                     v-model="form.password"
                     prepend-icon="lock"
@@ -36,7 +37,8 @@
                     clearable
                     type="password"
                     :label="$t('common.password')"
-                    required></v-text-field>
+                    required
+                  ></v-text-field>
                   <v-layout
                     column
                     wrap

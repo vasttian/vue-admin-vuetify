@@ -20,7 +20,7 @@
         Highlightjs
       </v-btn>
     </v-flex>
-    <v-divider/>
+    <v-divider></v-divider>
     <v-flex d-flex>
       <v-layout wrap>
         <v-flex
@@ -51,11 +51,12 @@
               v-if="type === 'htmlSource'"
               :value="compiledMarkdown"
               auto-grow
-              readonly>
-            </v-textarea>
+              readonly
+            ></v-textarea>
             <div
               v-else
-              v-html="compiledMarkdown"></div>
+              v-html="compiledMarkdown"
+            ></div>
           </v-flex>
         </v-flex>
       </v-layout>

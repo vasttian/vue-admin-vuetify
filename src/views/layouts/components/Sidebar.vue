@@ -18,7 +18,9 @@
             value="true"
             :prepend-icon="route.meta && route.meta.icon"
             :key="index">
-            <v-list-tile slot="activator">
+            <v-list-tile
+              slot="activator"
+              ripple>
               <v-list-tile-content>
                 <v-list-tile-title>{{ route.name }}</v-list-tile-title>
               </v-list-tile-content>

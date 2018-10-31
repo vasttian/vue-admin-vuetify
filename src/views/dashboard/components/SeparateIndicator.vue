@@ -4,7 +4,9 @@
     class="indicator">
     <v-icon
       :color="config.color"
-      size="56">{{ config.icon }}</v-icon>
+      size="56">
+      {{ config.icon }}
+    </v-icon>
     <v-card-text class="info-title">
       <span>{{ config.count }}</span>
     </v-card-text>

@@ -1,6 +1,8 @@
 <template>
   <v-card>
-    <v-toolbar color="light-blue lighten-2" dark>
+    <v-toolbar
+      color="light-blue lighten-2"
+      dark>
       <v-toolbar-title>Notification</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
@@ -10,7 +12,9 @@
         <v-icon>check_circle</v-icon>
       </v-btn>
     </v-toolbar>
-    <v-list two-line class="pa-0">
+    <v-list
+      two-line
+      class="pa-0">
       <template v-for="(item, index) in items">
         <v-subheader
           v-if="item.header"
@@ -23,7 +27,9 @@
           ripple
           :key="item.title"
           @click="toggle(index)">
-          <v-list-tile-avatar size="38" :color="item.color">
+          <v-list-tile-avatar
+            size="38"
+            :color="item.color">
             <v-icon dark>{{ item.icon }}</v-icon>
           </v-list-tile-avatar>
           <v-list-tile-content>
@@ -32,7 +38,7 @@
           <v-list-tile-action>
             <v-list-tile-action-text>{{ item.action }}</v-list-tile-action-text>
             <v-icon
-              v-if="selected.indexOf(index) < 0"
+              v-if="!selected.includes(index)"
               color="grey lighten-1">
               star_border
             </v-icon>

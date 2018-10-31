@@ -1,12 +1,15 @@
 <template>
   <div>
     <!-- <h2>Dashboard</h2> -->
-    <v-layout justify-center align-center wrap>
-      <v-flex lg12 sm12 xs12>
-        <dynamic-analysis></dynamic-analysis>
+    <v-layout
+      justify-center
+      align-center
+      wrap>
+      <v-flex xs12>
+        <dynamic-analysis/>
       </v-flex>
-      <v-flex lg12 sm12 xs12>
-        <total-statistics></total-statistics>
+      <v-flex xs12>
+        <total-statistics/>
       </v-flex>
       <v-flex
         lg3
@@ -19,9 +22,12 @@
         </v-card>
       </v-flex>
     </v-layout>
-    <v-layout justify-center align-center wrap>
-      <v-flex lg12 sm12 xs12>
-        <visitors-location></visitors-location>
+    <v-layout
+      justify-center
+      align-center
+      wrap>
+      <v-flex xs12>
+        <visitors-location/>
       </v-flex>
     </v-layout>
   </div>

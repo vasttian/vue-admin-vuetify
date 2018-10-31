@@ -1,5 +1,5 @@
 <template>
-  <base-baidu-map></base-baidu-map>
+  <base-baidu-map/>
 </template>
 
 <script>
