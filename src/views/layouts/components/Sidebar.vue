@@ -81,7 +81,27 @@ export default {
       user: state => state.auth.me,
     }),
     routes() {
-      return this.$router.options.routes[2].children;
+      const routeName = this.$route.name;
+      const { routes } = this.$router.options;
+
+      try {
+        for (let i = 0, len = routes.length; i < len; i += 1) {
+          if (routes[i].children) {
+            for (let j = 0, len = routes[i].children.length; j < len; j += 1) {
+              const child = routes[i].children[j];
+              if (child.name === routeName) {
+                return routes[i].children;
+              }
+            }
+          } else if (routes[i].name === routeName) {
+            return routes[i];
+          }
+        }
+      } catch (err) {
+        console.log('>>>sidebar', err);
+      }
+
+      return routes[2].children;
     },
   },
   methods: {
