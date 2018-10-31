@@ -10,7 +10,8 @@
       :clipped-left="true">
       <v-toolbar-side-icon
         :disabled="!toggleBtn"
-        @click.stop="$emit('toggleSidebar')"></v-toolbar-side-icon>
+        @click.stop="$emit('toggleSidebar')"
+      ></v-toolbar-side-icon>
       <v-toolbar-title class="hidden-sm-and-down">
         <router-link
           :to="{ name : 'Dashboard' }"
@@ -21,7 +22,7 @@
       <v-spacer></v-spacer>
 
       <!-- menu -->
-      <navbar-menu></navbar-menu>
+      <navbar-menu/>
 
       <v-spacer></v-spacer>
       <v-menu
@@ -39,13 +40,13 @@
             <v-icon medium>notifications</v-icon>
           </v-badge>
         </v-btn>
-        <notification-list></notification-list>
+        <notification-list/>
       </v-menu>
       <v-btn
         class="hidden-xs-only"
         icon
         large>
-        <screenfull fill="#333539"></screenfull>
+        <screenfull fill="#333539"/>
       </v-btn>
       <v-menu
         offset-y
@@ -71,7 +72,7 @@
         <v-list>
           <v-list-tile class="hidden-sm-and-up">
             <v-list-tile-title>
-              <lang-bar></lang-bar>
+              <lang-bar/>
             </v-list-tile-title>
           </v-list-tile>
           <v-list-tile @click="toGithub">
@@ -106,7 +107,7 @@
           </v-list-tile>
         </v-list>
       </v-menu>
-      <lang-bar v-if="$vuetify && $vuetify.breakpoint.smAndUp"></lang-bar>
+      <lang-bar v-if="$vuetify && $vuetify.breakpoint.smAndUp"/>
     </v-toolbar>
   </header>
 </template>

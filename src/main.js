@@ -13,6 +13,16 @@ import Mock from './mock';
 import './plugins/vuetify';
 import './plugins/echarts';
 import './components/svg-icon';
+import { parseURL } from './utils/util';
+
+// vconsole
+try {
+  if (Object.values(parseURL(window.location.href).params).includes('vdebug')) {
+    import('./utils/vconsole').then(() => {});
+  }
+} catch (err) {
+  console.error('>>>vconsole', err);
+}
 
 Mock.bootstrap();
 

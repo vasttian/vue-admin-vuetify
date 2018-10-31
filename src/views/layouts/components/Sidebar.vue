@@ -2,44 +2,55 @@
   <v-navigation-drawer
     id="sidebar"
     class="blue-grey lighten-5"
-    width="225"
-    :clipped="$vuetify && $vuetify.breakpoint.mdAndUp"
-    fixed
     app
-    :mini-variant="miniVariant"
-    v-model="drawer">
-    <v-list expand>
+    fixed
+    width="232"
+    v-model="drawer"
+    :clipped="$vuetify && $vuetify.breakpoint.mdAndUp"
+    :mini-variant="miniVariant">
+    <v-list
+      expand
+      dense>
       <template v-for="(route, index) in routes">
         <template v-if="route.meta && route.meta.hasMulSub">
           <v-list-group
             v-if="roleShow(route)"
-            :prepend-icon="route.meta && route.meta.icon"
             value="true"
+            :prepend-icon="route.meta && route.meta.icon"
             :key="index">
             <v-list-tile
-              slot="activator">
-              <v-list-tile-title>{{ route.name }}</v-list-tile-title>
+              slot="activator"
+              ripple>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ route.name }}</v-list-tile-title>
+              </v-list-tile-content>
             </v-list-tile>
             <v-list-tile
+              ripple
               v-for="(cRoute, idx) in route.children"
               :to="{ name: cRoute.name }"
               :key="idx">
               <v-list-tile-action>
                 <v-icon>{{ cRoute.meta && cRoute.meta.icon }}</v-icon>
               </v-list-tile-action>
-              <v-list-tile-title>{{ cRoute.name }}</v-list-tile-title>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ cRoute.name }}</v-list-tile-title>
+              </v-list-tile-content>
             </v-list-tile>
           </v-list-group>
         </template>
         <template v-else>
           <v-list-tile
             v-if="roleShow(route)"
+            ripple
             :to="{ name: route.name }"
             :key="index">
             <v-list-tile-action>
               <v-icon>{{ route.meta && route.meta.icon }}</v-icon>
             </v-list-tile-action>
-            <v-list-tile-title>{{ route.name }}</v-list-tile-title>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ route.name }}</v-list-tile-title>
+            </v-list-tile-content>
           </v-list-tile>
         </template>
       </template>
@@ -93,7 +104,9 @@ export default {
   },
   created() {
     this.$nextTick(() => {
-      this.ps = new PerfectScrollbar('#sidebar');
+      this.ps = new PerfectScrollbar('#sidebar', {
+        suppressScrollX: true,
+      });
     });
   },
   beforeDestroy() {

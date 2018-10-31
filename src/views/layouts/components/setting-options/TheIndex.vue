@@ -3,6 +3,7 @@
     <v-flex>
       <v-card>
         <v-toolbar
+          height="56"
           class="primary"
           dark>
           <v-toolbar-title>Setting Options</v-toolbar-title>
