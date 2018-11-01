@@ -35,12 +35,18 @@
           icon
           flat
           slot="activator">
-          <v-badge color="red" overlap>
-            <span slot="badge">6</span>
+          <v-badge
+            v-if="badgeLen"
+            color="red"
+            overlap>
+            <span slot="badge">{{ badgeLen }}</span>
             <v-icon medium>notifications</v-icon>
           </v-badge>
+          <v-icon
+            v-else
+            medium>notifications</v-icon>
         </v-btn>
-        <notification-list/>
+        <notification-list @unreadLen="(val) => badgeLen = val"/>
       </v-menu>
       <v-btn
         class="hidden-xs-only"
@@ -136,6 +142,7 @@ export default {
   data() {
     return {
       drawerRight: true,
+      badgeLen: 0,
     };
   },
   computed: {
