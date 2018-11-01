@@ -41,8 +41,8 @@ export default {
       const option = {
         backgroundColor: '#37474F',
         grid: {
-          left: '3%',
-          right: '3%',
+          left: 10,
+          right: this.$vuetify && this.$vuetify.breakpoint.xs ? 10 : 25,
           bottom: '3%',
           containLabel: true,
         },

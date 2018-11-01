@@ -36,8 +36,8 @@ export default {
       return {
         backgroundColor: '#424956',
         grid: {
-          left: '3%',
-          right: '3%',
+          left: 10,
+          right: 10,
           bottom: '3%',
           containLabel: true,
         },

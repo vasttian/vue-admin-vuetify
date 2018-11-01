@@ -48,9 +48,9 @@ export default {
     position: fixed;
     top: 150px;
     right: 0;
-    width: 64px;
+    width: 56px;
     z-index: 1032;
-    background: rgba(0, 0, 0, .4);
+    background: rgba(0, 0, 0, .2);
     border-radius: 8px 0 0 8px;
     text-align: center;
   }
