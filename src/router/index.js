@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Login from '@/views/auth/Login.vue';
-import Layout from '@/views/layouts/Layout.vue';
-import LayoutWithoutSidebar from '@/views/layouts/LayoutWithoutSidebar.vue';
+import Login from '@/views/auth/TheLogin.vue';
+import Layout from '@/views/layouts/AppLayout.vue';
+import LayoutWithoutSidebar from '@/views/layouts/AppLayoutWithoutSidebar.vue';
 
 import components from './modules/components';
 import widgets from './modules/widgets';
@@ -51,7 +51,7 @@ export default new Router({
         {
           path: '/dashboard',
           name: 'Dashboard',
-          component: () => import('@/views/dashboard/Index.vue'),
+          component: () => import('@/views/dashboard/TheIndex.vue'),
           meta: {
             icon: 'dashboard',
           },
@@ -69,7 +69,7 @@ export default new Router({
         {
           path: '/admin',
           name: 'Admin',
-          component: () => import('@/views/admin/Homepage.vue'),
+          component: () => import('@/views/admin/VHomepage.vue'),
           meta: {},
         },
       ],

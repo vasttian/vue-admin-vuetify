@@ -27,9 +27,9 @@ const routes = {
       },
     },
     {
-      path: 'markdown',
-      name: 'Markdown',
-      component: () => import('@/views/components/Markdown.vue'),
+      path: 'markdown-editor',
+      name: 'MarkdownEditor',
+      component: () => import('@/views/components/MarkdownEditor.vue'),
       meta: {
         icon: '',
       },

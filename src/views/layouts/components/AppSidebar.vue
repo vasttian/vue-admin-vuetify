@@ -64,7 +64,7 @@ import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import PerfectScrollbar from 'perfect-scrollbar';
 
 export default {
-  name: 'Sidebar',
+  name: 'AppSidebar',
   // props: [
   //   'drawer',
   // ],

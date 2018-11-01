@@ -25,7 +25,7 @@
 import SettingOptions from './setting-options/TheIndex.vue';
 
 export default {
-  name: 'RightSettings',
+  name: 'AppRightSettings',
   components: {
     SettingOptions,
   },

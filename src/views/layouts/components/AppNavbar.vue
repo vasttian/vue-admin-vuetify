@@ -46,7 +46,7 @@
         class="hidden-xs-only"
         icon
         large>
-        <screenfull fill="#333539"/>
+        <app-screenfull fill="#333539"/>
       </v-btn>
       <v-menu
         offset-y
@@ -72,7 +72,7 @@
         <v-list>
           <v-list-tile class="hidden-sm-and-up">
             <v-list-tile-title>
-              <lang-bar/>
+              <base-langbar/>
             </v-list-tile-title>
           </v-list-tile>
           <v-list-tile @click="toGithub">
@@ -107,7 +107,7 @@
           </v-list-tile>
         </v-list>
       </v-menu>
-      <lang-bar v-if="$vuetify && $vuetify.breakpoint.smAndUp"/>
+      <base-langbar v-if="$vuetify && $vuetify.breakpoint.smAndUp"/>
     </v-toolbar>
   </header>
 </template>
@@ -115,16 +115,16 @@
 <script>
 import { mapState } from 'vuex';
 import NotificationList from '@/components/widgets/NotificationList.vue';
-import LangBar from '@/components/widgets/LangBar.vue';
-import Screenfull from '@/components/widgets/Screenfull.vue';
+import BaseLangbar from '@/components/widgets/BaseLangbar.vue';
+import AppScreenfull from '@/components/widgets/AppScreenfull.vue';
 import NavbarMenu from './menus/TheIndex.vue';
 
 export default {
-  name: 'NavBar',
+  name: 'AppNavbar',
   components: {
     NavbarMenu,
-    Screenfull,
-    LangBar,
+    AppScreenfull,
+    BaseLangbar,
     NotificationList,
   },
   props: {

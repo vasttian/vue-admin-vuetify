@@ -11,7 +11,7 @@
 import echarts from 'echarts/lib/echarts';
 
 // Map of China
-import chinaMap from './china.json';
+import chinaMap from './data/china.json';
 
 // registering map data
 echarts.registerMap('china', chinaMap);
