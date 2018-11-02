@@ -32,12 +32,15 @@
             label="Markdown"
             v-model="value"
             auto-grow
+            outline
             hint="markdown text"
           ></v-textarea>
         </v-flex>
+        <v-divider></v-divider>
         <v-flex
           xs12
-          sm6>
+          sm6
+          v-bind="{ ['pl-3']: this.$vuetify.breakpoint.smAndUp }">
           <v-flex>
             <v-select
               :items="items"
@@ -45,11 +48,12 @@
               v-model="type"
             ></v-select>
           </v-flex>
-          <v-flex class="preview">
+          <v-flex>
             <v-textarea
               v-if="type === 'htmlSource'"
               :value="compiledMarkdown"
               auto-grow
+              box
               readonly
             ></v-textarea>
             <div
@@ -121,13 +125,5 @@ export default {
       return marked(this.value);
     },
   },
-  methods: {
-  },
 };
 </script>
-
-<style lang="scss" scoped>
-.preview {
-  margin-top: 8px;
-}
-</style>

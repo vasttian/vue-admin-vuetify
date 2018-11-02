@@ -60,6 +60,7 @@ export default {
           itemGap: 13,
           data: [this.$t('dashboard.yesterday'), this.$t('dashboard.dayBeforeYesterday')],
           right: '3%',
+          top: this.$vuetify.breakpoint.xs ? 25 : 5,
           textStyle: {
             fontSize: 14,
             color: '#ffd285',
@@ -85,6 +86,7 @@ export default {
           {
             type: 'value',
             name: '（K）',
+            nameLocation: this.$vuetify.breakpoint.xs ? 'middle' : 'end',
             axisTick: {
               show: false,
             },

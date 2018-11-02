@@ -19,17 +19,17 @@ const routes = {
       },
     },
     {
-      path: 'sql-editor',
-      name: 'SqlEditor',
-      component: () => import('@/views/components/SqlEditor.vue'),
+      path: 'markdown-editor',
+      name: 'Markdown',
+      component: () => import('@/views/components/MarkdownEditor.vue'),
       meta: {
         icon: '',
       },
     },
     {
-      path: 'markdown-editor',
-      name: 'MarkdownEditor',
-      component: () => import('@/views/components/MarkdownEditor.vue'),
+      path: 'sql-editor',
+      name: 'SqlEditor',
+      component: () => import('@/views/components/SqlEditor.vue'),
       meta: {
         icon: '',
       },
