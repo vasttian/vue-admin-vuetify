@@ -68,7 +68,7 @@ export default {
     line-height: 20px;
   }
 
-  .CodeMirror-scroll{
+  .CodeMirror-scroll {
     min-height: 200px;
   }
 }

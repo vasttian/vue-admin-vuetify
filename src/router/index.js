@@ -83,8 +83,15 @@ export default new Router({
       component: Login,
     },
     {
+      path: '/404',
+      meta: {
+        hidden: true,
+      },
+      component: () => import('@/views/error-pages/App404.vue'),
+    },
+    {
       path: '*',
-      redirect: { name: 'Index' },
+      redirect: '/404',
       meta: {
         hidden: true,
       },
