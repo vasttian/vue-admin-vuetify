@@ -515,5 +515,5 @@ export function fistLetterUpper(str) {
  * 当前时间
  */
 export function currentTimeStr() {
-  return new Date().toLocaleTimeString('chinese', { hour12: false });
+  return new Date().toLocaleTimeString('en-US', { hour12: false });
 }

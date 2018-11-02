@@ -9,7 +9,6 @@
 
 <script>
 import echarts from 'echarts/lib/echarts';
-import { currentTimeStr } from '@/utils/util';
 
 export default {
   name: 'DynamicAnalysis',
@@ -18,6 +17,7 @@ export default {
       chartOption: {},
       num: 10,
       timer: null,
+      timeFormat: 'HH:mm:ss',
       interval: 2000,
     };
   },
@@ -31,8 +31,11 @@ export default {
       let tempTime = new Date();
 
       for (let i = 0; i < this.num; i += 1) {
-        data.unshift(tempTime.toLocaleTimeString('chinese', { hour12: false }));
-        tempTime = new Date(tempTime - this.interval);
+        // console.log('====', this.$moment(tempTime).format('HH:mm:ss'));
+        // data.unshift(tempTime.toLocaleTimeString('en-US', { hour12: false }));
+        // tempTime = new Date(tempTime - this.interval);
+        data.unshift(this.$moment(tempTime).format(this.timeFormat));
+        tempTime = this.$moment(tempTime).subtract(this.interval / 1000, 'seconds');
       }
 
       return data;
@@ -163,7 +166,7 @@ export default {
         seriesData.shift();
         seriesData.push(that.randomNum());
         xAxisData.shift();
-        xAxisData.push(currentTimeStr());
+        xAxisData.push(this.$moment().format(this.timeFormat));
         option.series[0].markLine.data[0].yAxis = seriesData.slice(-1)[0] || 0;
       }, that.interval);
 
