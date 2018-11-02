@@ -13,70 +13,70 @@ const routes = {
     {
       path: 'alerts',
       name: 'Alerts',
-      component: () => import('@/views/ui-components/Alerts.vue'),
+      component: () => import('@/views/ui-components/VAlerts.vue'),
       meta: {
       },
     },
     {
       path: 'avatars',
       name: 'Avatars',
-      component: () => import('@/views/ui-components/Avatars.vue'),
+      component: () => import('@/views/ui-components/VAvatars.vue'),
       meta: {
       },
     },
     {
       path: 'badges',
       name: 'Badges',
-      component: () => import('@/views/ui-components/Badges.vue'),
+      component: () => import('@/views/ui-components/VBadges.vue'),
       meta: {
       },
     },
     {
       path: 'bottom-navigation',
       name: 'BottomNavigation',
-      component: () => import('@/views/ui-components/BottomNavigation.vue'),
+      component: () => import('@/views/ui-components/VBottomNavigation.vue'),
       meta: {
       },
     },
     {
       path: 'bottom-sheets',
       name: 'BottomSheets',
-      component: () => import('@/views/ui-components/BottomSheets.vue'),
+      component: () => import('@/views/ui-components/VBottomSheets.vue'),
       meta: {
       },
     },
     {
       path: 'breadcrumbs',
       name: 'Breadcrumbs',
-      component: () => import('@/views/ui-components/Breadcrumbs.vue'),
+      component: () => import('@/views/ui-components/VBreadcrumbs.vue'),
       meta: {
       },
     },
     {
       path: 'buttons',
       name: 'Buttons',
-      component: () => import('@/views/ui-components/Buttons.vue'),
+      component: () => import('@/views/ui-components/VButtons.vue'),
       meta: {
       },
     },
     {
       path: 'cards',
       name: 'Cards',
-      component: () => import('@/views/ui-components/Cards.vue'),
+      component: () => import('@/views/ui-components/VCards.vue'),
       meta: {
       },
     },
     {
       path: 'carousels',
       name: 'Carousels',
-      component: () => import('@/views/ui-components/Carousels.vue'),
+      component: () => import('@/views/ui-components/VCarousels.vue'),
       meta: {
       },
     },
     {
       path: 'chips',
       name: 'Chips',
-      component: () => import('@/views/ui-components/Chips.vue'),
+      component: () => import('@/views/ui-components/VChips.vue'),
       meta: {
       },
     },

@@ -21,9 +21,9 @@
       </v-flex>
       <v-flex>
         <v-chart
-          :options="chartOption"
           style="width:100%;"
-          auto-resize></v-chart>
+          :options="chartOption"
+          auto-resize/>
       </v-flex>
     </v-layout>
   </div>
@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       isCollapse: true,
-      source: 'https://github.com/vasttian/vue-admin-vuetify/blob/master/src/views/admin/Homepage.vue',
+      source: 'https://github.com/vasttian/vue-admin-vuetify/blob/master/src/views/admin/VHomepage.vue',
       chartOption: {
         backgroundColor: '#394056',
         title: {

@@ -26,7 +26,6 @@ export default {
   },
   watch: {
     value(newVal) {
-      console.log('ddddddd', newVal);
       const editorValue = this.sqlEditor.getValue();
       if (newVal !== editorValue) {
         this.sqlEditor.setValue(newVal);

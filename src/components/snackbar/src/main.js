@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import Main from './Main.vue';
+import VMain from './VMain.vue';
 
-const SnackbarConstructor = Vue.extend(Main);
+const SnackbarConstructor = Vue.extend(VMain);
 
 let instance;
 let seed = 1;

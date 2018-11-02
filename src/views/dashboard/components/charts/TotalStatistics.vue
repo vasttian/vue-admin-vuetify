@@ -36,8 +36,8 @@ export default {
       return {
         backgroundColor: '#424956',
         grid: {
-          left: '3%',
-          right: '3%',
+          left: 10,
+          right: 10,
           bottom: '3%',
           containLabel: true,
         },
@@ -60,6 +60,7 @@ export default {
           itemGap: 13,
           data: [this.$t('dashboard.yesterday'), this.$t('dashboard.dayBeforeYesterday')],
           right: '3%',
+          top: this.$vuetify.breakpoint.xs ? 25 : 5,
           textStyle: {
             fontSize: 14,
             color: '#ffd285',
@@ -85,6 +86,7 @@ export default {
           {
             type: 'value',
             name: '（K）',
+            nameLocation: this.$vuetify.breakpoint.xs ? 'middle' : 'end',
             axisTick: {
               show: false,
             },

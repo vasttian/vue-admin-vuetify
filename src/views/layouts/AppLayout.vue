@@ -1,33 +1,33 @@
 <template>
   <v-app class="app-wrapper">
-    <navbar
+    <app-navbar
       :toggle-btn="true"
       class="nav-container"
       @toggleSidebar="toggleSidebar"/>
-    <sidebar
+    <app-sidebar
       ref="sidebar"
       class="sidebar-container"/>
     <app-main class="main-container"/>
-    <right-settings/>
+    <app-right-settings/>
     <app-fab/>
   </v-app>
 </template>
 
 <script>
 import AppFab from '@/components/widgets/AppFab.vue';
-import Navbar from './components/Navbar.vue';
-import Sidebar from './components/Sidebar.vue';
-import RightSettings from './components/RightSettings.vue';
+import AppNavbar from './components/AppNavbar.vue';
+import AppSidebar from './components/AppSidebar.vue';
 import AppMain from './components/AppMain.vue';
+import AppRightSettings from './components/AppRightSettings.vue';
 
 export default {
-  name: 'Layout',
+  name: 'AppLayout',
   components: {
-    Navbar,
-    Sidebar,
-    RightSettings,
-    AppMain,
     AppFab,
+    AppNavbar,
+    AppSidebar,
+    AppMain,
+    AppRightSettings,
   },
   data() {
     return {

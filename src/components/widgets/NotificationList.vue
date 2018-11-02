@@ -8,8 +8,10 @@
       <v-btn icon>
         <v-icon>search</v-icon>
       </v-btn>
-      <v-btn icon>
-        <v-icon>check_circle</v-icon>
+      <v-btn
+        @click="checkAllItems"
+        icon>
+        <v-icon>{{ actionsLen === selected.length ? 'check_circle' : 'check_circle_outline' }}</v-icon>
       </v-btn>
     </v-toolbar>
     <v-list
@@ -91,15 +93,50 @@ export default {
       ],
     };
   },
+  computed: {
+    actionsLen() {
+      let count = 0;
+      for (let i = 0, len = this.items.length; i < len; i += 1) {
+        if (!this.items[i].header) {
+          count += 1;
+        }
+      }
+
+      return count;
+    },
+  },
   methods: {
     toggle(index) {
       const i = this.selected.indexOf(index);
+
       if (i > -1) {
         this.selected.splice(i, 1);
       } else {
         this.selected.push(index);
       }
+
+      this.emitUnreadActionsLen();
     },
+    checkAllItems() {
+      const flag = this.actionsLen !== this.selected.length;
+
+      this.selected = [];
+      if (flag) {
+        for (let i = 0, len = this.items.length; i < len; i += 1) {
+          if (!this.items[i].header) {
+            this.selected.push(i);
+          }
+        }
+      }
+
+      this.emitUnreadActionsLen();
+    },
+    emitUnreadActionsLen() {
+      this.$emit('unreadLen', this.actionsLen - this.selected.length);
+    },
+  },
+  created() {
+    this.emitUnreadActionsLen();
   },
 };
 </script>

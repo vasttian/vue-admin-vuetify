@@ -14,9 +14,13 @@
       <v-app class="login-con">
         <!-- <v-spacer></v-spacer> -->
         <v-content>
-          <lang-bar></lang-bar>
-          <v-container fluid fill-height>
-            <v-layout align-center justify-center>
+          <base-langbar/>
+          <v-container
+            fluid
+            fill-height>
+            <v-layout
+              align-center
+              justify-center>
               <v-flex class="frame">
                 <h1 v-if="!isMobile">
                   {{ $t('common.loginN')}}
@@ -84,12 +88,12 @@
 
 <script>
 import { isMobile } from '@/utils/util';
-import langBar from '@/components/widgets/LangBar.vue';
+import BaseLangbar from '@/components/widgets/BaseLangbar.vue';
 
 export default {
   name: 'Login',
   components: {
-    langBar,
+    BaseLangbar,
   },
   data() {
     return {

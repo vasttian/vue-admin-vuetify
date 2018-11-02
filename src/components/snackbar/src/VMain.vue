@@ -6,12 +6,12 @@
     <v-snackbar
       v-model="visible"
       :color="color || type"
-      :bottom="y === 'bottom'"
-      :left="x === 'left'"
-      :multi-line="mode === 'multi-line'"
-      :right="x === 'right'"
-      :timeout="timeout"
       :top="y === 'top'"
+      :left="x === 'left'"
+      :bottom="y === 'bottom'"
+      :right="x === 'right'"
+      :multi-line="mode === 'multi-line'"
+      :timeout="timeout"
       :vertical="mode === 'vertical'">
       {{ text }}
       <v-btn

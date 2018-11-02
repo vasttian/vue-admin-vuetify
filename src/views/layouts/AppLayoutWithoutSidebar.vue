@@ -1,18 +1,18 @@
 <template>
   <v-app class="app-wrapper">
-    <navbar class="nav-container"/>
+    <app-navbar class="nav-container"/>
     <app-main class="main-container"/>
   </v-app>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
+import AppNavbar from './components/AppNavbar.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
-  name: 'LayoutWithoutSidebar',
+  name: 'AppLayoutWithoutSidebar',
   components: {
-    Navbar,
+    AppNavbar,
     AppMain,
   },
   data() {

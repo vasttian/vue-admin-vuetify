@@ -30,15 +30,17 @@
           <v-textarea
             name="markdown"
             label="Markdown"
-            autofocus
-            v-model="input"
+            v-model="value"
             auto-grow
+            outline
             hint="markdown text"
           ></v-textarea>
         </v-flex>
+        <v-divider></v-divider>
         <v-flex
           xs12
-          sm6>
+          sm6
+          v-bind="{ ['pl-3']: this.$vuetify.breakpoint.smAndUp }">
           <v-flex>
             <v-select
               :items="items"
@@ -46,11 +48,12 @@
               v-model="type"
             ></v-select>
           </v-flex>
-          <v-flex class="preview">
+          <v-flex>
             <v-textarea
               v-if="type === 'htmlSource'"
               :value="compiledMarkdown"
               auto-grow
+              box
               readonly
             ></v-textarea>
             <div
@@ -90,41 +93,15 @@ marked.setOptions({
 });
 
 export default {
-  name: 'Markdown',
+  name: 'MarkdownEditor',
+  props: {
+    value: {
+      type: String,
+      default: '',
+    },
+  },
   data() {
-    const defaultInputText = `
-# Hello
-<br>
-\n
-\`\`\`js\nconsole.log('Hello'); \n\`\`\`
-<br>
-
-Marked - Markdown Parser
-========================
-
-[Marked] lets you convert [Markdown] into HTML.  Markdown is a simple text format whose goal is to be very easy to read and write, even when not converted to HTML.  This demo page will let you type anything you like and see how it gets converted.  Live.  No more waiting around.
-
-Why Markdown?
--------------
-
-It's easy.  It's not overly bloated, unlike HTML.  Also, as the creator of [markdown] says,
-
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
-
-Ready to start writing?  Either start changing stuff on the left or
-[clear everything](?text=) with a simple click.
-
-[Marked]: https://github.com/markedjs/marked/
-[Markdown]: http://daringfireball.net/projects/markdown/
-`;
     return {
-      input: defaultInputText,
       type: 'preview',
       items: [
         {
@@ -141,20 +118,12 @@ Ready to start writing?  Either start changing stuff on the left or
   computed: {
     compiledMarkdown() {
       // if (this.type === 'htmlsource') {
-      //   const token = marked.lexer(this.input);
+      //   const token = marked.lexer(this.value);
       //   return marked.parser(token);
       // }
 
-      return marked(this.input);
+      return marked(this.value);
     },
-  },
-  methods: {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.preview {
-  margin-top: 8px;
-}
-</style>
