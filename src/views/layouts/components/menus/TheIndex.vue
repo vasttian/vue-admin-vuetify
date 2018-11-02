@@ -1,6 +1,6 @@
 <template>
   <v-toolbar-items>
-    <template v-for="(route, index) in $router.options.routes">
+    <template v-for="(route, index) in routes">
       <template v-if="!route.children">
         <v-btn
           v-if="roleShow(route)"
@@ -60,7 +60,7 @@
 import { mapState } from 'vuex';
 
 export default {
-  name: 'Menus',
+  name: 'TheMenus',
   data() {
     return {
 
@@ -70,6 +70,10 @@ export default {
     ...mapState({
       user: state => state.auth.me,
     }),
+    routes() {
+      const { routes } = this.$router.options;
+      return routes.filter(route => (!route.meta || !route.meta.hidden));
+    },
     activeMenu() {
       return this.findParentRouteByChildName();
     },
