@@ -1,6 +1,8 @@
 import '@babel/polyfill';
 import Vue from 'vue';
 import moment from 'moment';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 import '@/styles/index.scss';
 import App from './App.vue';
 import router from './router';
@@ -14,6 +16,12 @@ import './plugins/vuetify';
 import './plugins/echarts';
 import './components/svg-icon';
 import { parseURL } from './utils/util';
+
+NProgress.configure({
+  template: `<div class="bar" role="bar" style="background:#1DE2C3;"><div class="peg"></div></div>
+    <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>`,
+  showSpinner: false,
+});
 
 // vconsole
 try {
@@ -45,12 +53,15 @@ const supportedLangs = ['zh-CN', 'en'];
 const userLocale = navigator.language || navigator.userLanguage;
 
 Vue.router.beforeEach((to, from, next) => {
+  NProgress.start();
   const { token } = store.getters;
   if (to.path === '/login') {
     store.dispatch('logout');
     next();
+    NProgress.done();
   } else if (!token) {
     next(`/login?redirect=${to.fullPath}`);
+    NProgress.done();
   } else {
     const { me } = store.getters;
     if (!me || !me.name) {
@@ -80,6 +91,10 @@ Vue.router.beforeEach((to, from, next) => {
 
   next();
 });
+Vue.router.afterEach(() => {
+  NProgress.done();
+});
+
 i18n.locale = localStorage.getItem('VUE-ADMIN-VUETIFY_LANGUAGE') ||
   (supportedLangs.includes(userLocale) ? userLocale : 'zh-CN');
 Vue.prototype.$locale.use(i18n.locale);

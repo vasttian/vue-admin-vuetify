@@ -45,9 +45,9 @@
       <template v-else>
         <v-btn
           v-if="roleShow(route.children[0])"
+          flat
           :key="index"
           :input-value="activeMenu === getRouteName(route)"
-          flat
           :to="{ name: getRouteName(route) }">
           {{ getRouteName(route) }}
         </v-btn>
