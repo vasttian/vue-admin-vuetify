@@ -40,7 +40,7 @@
         <v-flex
           xs12
           sm6
-          v-bind="{ ['pl-3']: this.$vuetify.breakpoint.smAndUp }">
+          :class="{ ['pl-3']: this.$vuetify.breakpoint.smAndUp }">
           <v-flex>
             <v-select
               :items="items"
