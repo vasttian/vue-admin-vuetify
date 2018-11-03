@@ -58,6 +58,7 @@
             ></v-textarea>
             <div
               v-else
+              style="background: #edeeee;"
               v-html="compiledMarkdown"
             ></div>
           </v-flex>

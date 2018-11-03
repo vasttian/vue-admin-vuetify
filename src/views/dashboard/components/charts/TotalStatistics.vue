@@ -37,7 +37,7 @@ export default {
         backgroundColor: '#424956',
         grid: {
           left: 10,
-          right: 10,
+          right: 18,
           bottom: '3%',
           containLabel: true,
         },
@@ -85,7 +85,7 @@ export default {
         yAxis: [
           {
             type: 'value',
-            name: '（K）',
+            name: '(K)',
             nameLocation: this.$vuetify.breakpoint.xs ? 'middle' : 'end',
             axisTick: {
               show: false,

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="overflow-x: hidden;">
     <!-- <h2>Dashboard</h2> -->
     <v-layout
       justify-center
