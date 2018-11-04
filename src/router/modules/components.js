@@ -34,6 +34,13 @@ const routes = {
         icon: '',
       },
     },
+    {
+      path: 'maps',
+      name: 'Maps',
+      component: () => import('@/views/components/VMaps.vue'),
+      meta: {
+      },
+    },
   ],
 };
 
