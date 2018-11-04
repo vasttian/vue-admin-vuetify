@@ -43,6 +43,7 @@
           :class="{ ['pl-3']: this.$vuetify.breakpoint.smAndUp }">
           <v-flex>
             <v-select
+              attach
               :items="items"
               label="Preview"
               v-model="type"
