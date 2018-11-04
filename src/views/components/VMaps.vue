@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import BaseBaiduMap from '@/components/widgets/BaseBaiduMap.vue';
+import BaseBaiduMap from '@/components/BaseBaiduMap.vue';
 
 export default {
   name: 'VMaps',

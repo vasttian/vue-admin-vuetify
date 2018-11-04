@@ -17,13 +17,6 @@ const routes = {
       meta: {
       },
     },
-    {
-      path: 'maps',
-      name: 'Maps',
-      component: () => import('@/views/widgets/VMaps.vue'),
-      meta: {
-      },
-    },
   ],
 };
 
