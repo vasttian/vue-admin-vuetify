@@ -120,9 +120,9 @@
 
 <script>
 import { mapState } from 'vuex';
-import NotificationList from '@/components/widgets/NotificationList.vue';
-import BaseLangbar from '@/components/widgets/BaseLangbar.vue';
 import AppScreenfull from '@/components/widgets/AppScreenfull.vue';
+import BaseLangbar from '@/components/widgets/BaseLangbar.vue';
+import NotificationList from '@/components/widgets/NotificationList.vue';
 import NavbarMenu from './menus/TheIndex.vue';
 
 export default {
