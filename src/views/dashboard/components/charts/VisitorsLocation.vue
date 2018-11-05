@@ -185,7 +185,7 @@ export default {
             mapType: 'china',
             left: 40,
             width: '40%',
-            roam: true,
+            roam: 'scale',
             mapValueCalculation: 'sum',
             showLegendSymbol: false,
             emphasis: {

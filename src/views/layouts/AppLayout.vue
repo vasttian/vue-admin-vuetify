@@ -7,7 +7,9 @@
     <app-sidebar
       ref="sidebar"
       class="sidebar-container"/>
-    <app-main class="main-container"/>
+    <div id="main-container" class="main-container">
+      <app-main/>
+    </div>
     <app-right-settings/>
     <app-fab/>
   </v-app>
