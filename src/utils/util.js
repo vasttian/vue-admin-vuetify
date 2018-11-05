@@ -104,9 +104,9 @@ export function sortby(array, sortKey, reverse, sortMethod) {
   const order = (reverse && reverse < 0) ? -1 : 1;
 
   // sort on a copy to avoid mutating original array
-  return array.slice().sort(sortMethod ? function(a, b) {
+  return array.slice().sort(sortMethod ? function (a, b) {
     return sortMethod(a, b) ? order : -order;
-  } : function(a, b) {
+  } : function (a, b) {
     if (sortKey !== '$key') {
       if (isObject(a) && '$value' in a) a = a.$value;
       if (isObject(b) && '$value' in b) b = b.$value;
@@ -175,7 +175,7 @@ export function isEmptyObject(e) {
 export function deepCompare() {
   var i, l, leftChain, rightChain;
 
-  function compare2Objects (x, y) {
+  function compare2Objects(x, y) {
     var p;
 
     // remember that NaN === NaN returns false
@@ -195,11 +195,11 @@ export function deepCompare() {
     // Comparing dates is a common scenario. Another built-ins?
     // We can even handle functions passed across iframes
     if ((typeof x === 'function' && typeof y === 'function') ||
-       (x instanceof Date && y instanceof Date) ||
-       (x instanceof RegExp && y instanceof RegExp) ||
-       (x instanceof String && y instanceof String) ||
-       (x instanceof Number && y instanceof Number)) {
-        return x.toString() === y.toString();
+      (x instanceof Date && y instanceof Date) ||
+      (x instanceof RegExp && y instanceof RegExp) ||
+      (x instanceof String && y instanceof String) ||
+      (x instanceof Number && y instanceof Number)) {
+      return x.toString() === y.toString();
     }
 
     // At last checking prototypes as good as we can
@@ -246,7 +246,7 @@ export function deepCompare() {
         case 'function':
           leftChain.push(x);
           rightChain.push(y);
-          if (!compare2Objects (x[p], y[p])) {
+          if (!compare2Objects(x[p], y[p])) {
             return false;
           }
 
@@ -391,14 +391,14 @@ export function parseURL(ourl) {
     path: a.pathname.replace(/^([^\/])/, '/$1'),
     relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1],
     segments: a.pathname.replace(/^\//, '').split('/'),
-    params: (function() {
+    params: (function () {
       const ret = {};
-      const seg = a.search.replace(/^\?/, '').split('&').filter(function(v, i) {
-          if (v !== '' && v.indexOf('=')) {
-            return true;
-          }
+      const seg = a.search.replace(/^\?/, '').split('&').filter(function (v, i) {
+        if (v !== '' && v.indexOf('=')) {
+          return true;
+        }
       });
-      seg.forEach(function(element, index) {
+      seg.forEach(function (element, index) {
         const idx = element.indexOf('=');
         const key = element.substring(0, idx);
         const val = element.substring(idx + 1);
@@ -427,7 +427,7 @@ export function isMobile() {
   return !!navigator.userAgent.match(/mobile/i);
 }
 
-export function getDomain () {
+export function getDomain() {
   let s = window.location.pathname.split('/');
 
   // 第一个非空值作为domain
@@ -458,7 +458,9 @@ export function b64toBlob(b64Data, contentType, sliceSize) {
     byteArrays.push(byteArray);
   }
 
-  const blob = new Blob(byteArrays, { type: contentType });
+  const blob = new Blob(byteArrays, {
+    type: contentType
+  });
   return blob;
 }
 
@@ -488,7 +490,7 @@ export function addCommas(val) {
   return flag ? `${aIntNum.join('.')}%` : aIntNum.join('.');
 }
 
-export function sortObject (obj, order = 'asc') {
+export function sortObject(obj, order = 'asc') {
   const keys = Object.keys(obj)
   const sortedKeys = order === 'asc' ? keys.sort() : keys.reverse()
   return sortedKeys.reduce((val, key) => {
@@ -505,8 +507,8 @@ export function sortObject (obj, order = 'asc') {
 }
 
 /**
-* 字符串的首字母大写
-*/
+ * 字符串的首字母大写
+ */
 export function fistLetterUpper(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
@@ -515,5 +517,91 @@ export function fistLetterUpper(str) {
  * 当前时间
  */
 export function currentTimeStr() {
-  return new Date().toLocaleTimeString('en-US', { hour12: false });
+  return new Date().toLocaleTimeString('en-US', {
+    hour12: false
+  });
+}
+
+/**
+ * smooth scroll to
+ * Smoothly scroll element to the given target (element.scrollTop) for the given duration
+ * Returns a promise that's fulfilled when done, or rejected if interrupted
+ * @param {DOMel} element
+ * @param {String} target
+ * @param {Number} duration
+ */
+export function smoothScrollTo(element, target, duration) {
+  target = Math.round(target);
+  duration = Math.round(duration);
+  if (duration < 0) {
+    return Promise.reject("bad duration");
+  }
+
+  if (duration === 0) {
+    element.scrollTop = target;
+    return Promise.resolve();
+  }
+
+  const start_time = Date.now();
+  const end_time = start_time + duration;
+
+  const start_top = element.scrollTop;
+  const distance = target - start_top;
+
+  // based on http://en.wikipedia.org/wiki/Smoothstep
+  const smooth_step = function (start, end, point) {
+    if (point <= start) {
+      return 0;
+    }
+
+    if (point >= end) {
+      return 1;
+    }
+
+    const x = (point - start) / (end - start); // interpolation
+    return x * x * (3 - 2 * x);
+  }
+
+  return new Promise(function (resolve, reject) {
+    // This is to keep track of where the element's scrollTop is
+    // supposed to be, based on what we're doing
+    let previous_top = element.scrollTop;
+
+    // This is like a think function from a game loop
+    const scroll_frame = function () {
+      if (element.scrollTop != previous_top) {
+        reject("interrupted");
+        return;
+      }
+
+      // set the scrollTop for this frame
+      const now = Date.now();
+      const point = smooth_step(start_time, end_time, now);
+      const frameTop = Math.round(start_top + (distance * point));
+      element.scrollTop = frameTop;
+
+      // check if we're done!
+      if (now >= end_time) {
+        resolve();
+        return;
+      }
+
+      // If we were supposed to scroll but didn't, then we
+      // probably hit the limit, so consider it done; not
+      // interrupted.
+      if (element.scrollTop === previous_top &&
+        element.scrollTop !== frameTop) {
+        resolve();
+        return;
+      }
+
+      previous_top = element.scrollTop;
+
+      // schedule next frame for execution
+      setTimeout(scroll_frame, 0);
+    }
+
+    // bootstrap the animation process
+    setTimeout(scroll_frame, 0);
+  });
 }
