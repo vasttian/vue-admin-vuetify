@@ -65,7 +65,7 @@
           offset-y
           bottom
           left
-          nudge-bottom="13">
+          nudge-bottom="14">
           <v-toolbar-title
             v-if="$vuetify && $vuetify.breakpoint.smAndUp"
             slot="activator">

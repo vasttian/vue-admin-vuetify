@@ -59,6 +59,7 @@
             ></v-textarea>
             <div
               v-else
+              class="pa-2"
               style="background: #edeeee;"
               v-html="compiledMarkdown"
             ></div>
