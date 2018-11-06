@@ -83,6 +83,7 @@
                           <v-icon
                             v-else
                             :color="item.color"
+                            size="42"
                             v-text="item.icon"
                           ></v-icon>
                         </v-avatar>
@@ -116,7 +117,7 @@ export default {
       items: [
         {
           avatar: 'http://67.218.155.2:8082/vasttian.png',
-          name: 'Avatar',
+          name: 'Vasttian',
           text: `The \`v-avatar\` component is used to control the size and border radius of responsive images,
             typically used to show profile pictures.`,
         },
