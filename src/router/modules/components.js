@@ -41,6 +41,20 @@ const routes = {
       meta: {
       },
     },
+    {
+      path: 'list-drag',
+      name: 'ListDrag',
+      component: () => import('@/views/components/ListDrag.vue'),
+      meta: {
+      },
+    },
+    {
+      path: 'tinymce-editor',
+      name: 'TinymceEditor',
+      component: () => import('@/views/components/TinymceEditor.vue'),
+      meta: {
+      },
+    },
   ],
 };
 
