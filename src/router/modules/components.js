@@ -48,6 +48,13 @@ const routes = {
       meta: {
       },
     },
+    {
+      path: 'tinymce-editor',
+      name: 'TinymceEditor',
+      component: () => import('@/views/components/TinymceEditor.vue'),
+      meta: {
+      },
+    },
   ],
 };
 
