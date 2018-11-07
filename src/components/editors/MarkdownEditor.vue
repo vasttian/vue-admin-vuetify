@@ -52,6 +52,7 @@
           <v-flex>
             <v-textarea
               v-if="type === 'htmlSource'"
+              pa-2
               :value="compiledMarkdown"
               auto-grow
               box

@@ -7,6 +7,7 @@ import LayoutWithoutSidebar from '@/views/layouts/AppLayoutWithoutSidebar.vue';
 import components from './modules/components';
 import widgets from './modules/widgets';
 import uiComponents from './modules/ui-components';
+import tables from './modules/tables';
 
 Vue.use(Router);
 
@@ -59,6 +60,7 @@ export default new Router({
         components,
         widgets,
         uiComponents,
+        tables,
       ],
     },
     {
