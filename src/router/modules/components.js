@@ -41,6 +41,13 @@ const routes = {
       meta: {
       },
     },
+    {
+      path: 'list-drag',
+      name: 'ListDrag',
+      component: () => import('@/views/components/ListDrag.vue'),
+      meta: {
+      },
+    },
   ],
 };
 
