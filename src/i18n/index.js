@@ -30,5 +30,6 @@ const messages = {
 
 export default new VueI18n({
   locale: 'zh-CN',
+  fallbackLocale: 'zh-CN',
   messages,
 });

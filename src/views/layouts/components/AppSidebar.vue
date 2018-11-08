@@ -22,7 +22,7 @@
               slot="activator"
               ripple>
               <v-list-tile-content>
-                <v-list-tile-title>{{ route.name }}</v-list-tile-title>
+                <v-list-tile-title>{{ generateTitle(route.name) }}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile
@@ -34,7 +34,7 @@
                 <v-icon>{{ cRoute.meta && cRoute.meta.icon }}</v-icon>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>{{ cRoute.name }}</v-list-tile-title>
+                <v-list-tile-title>{{ generateTitle(cRoute.name, route) }}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list-group>
@@ -49,7 +49,7 @@
               <v-icon>{{ route.meta && route.meta.icon }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>{{ route.name }}</v-list-tile-title>
+              <v-list-tile-title>{{ generateTitle(route.name) }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </template>
@@ -62,6 +62,7 @@
 import { mapState } from 'vuex';
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { fistLowerUpper } from '@/utils/util';
 
 export default {
   name: 'AppSidebar',
@@ -120,6 +121,13 @@ export default {
     },
     toggleSidebar() {
       this.drawer = !this.drawer;
+    },
+    generateTitle(title, route) {
+      if (route && route.name === 'UIComponents') {
+        return title;
+      }
+
+      return title ? this.$t(`sidebar.${fistLowerUpper(title)}`) : '';
     },
   },
   created() {
