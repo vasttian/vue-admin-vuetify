@@ -18,9 +18,9 @@ const routes = {
       },
     },
     {
-      path: 'table-sort',
-      name: 'TableSort',
-      component: () => import('@/views/tables/TableSort.vue'),
+      path: 'table-drag-sort',
+      name: 'TableDragSort',
+      component: () => import('@/views/tables/TableDragSort.vue'),
       meta: {
       },
     },
