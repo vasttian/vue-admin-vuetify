@@ -190,17 +190,25 @@ export default {
       en: 'components',
       'zh-CN': '组件',
     },
-    jsonEditor: {
-      en: 'Json Editor',
-      'zh-CN': 'JSON 编辑器',
-    },
     markdown: {
       en: 'Markdown',
       'zh-CN': 'Markdown',
     },
+    jsonEditor: {
+      en: 'Json Editor',
+      'zh-CN': 'JSON 编辑器',
+    },
     sqlEditor: {
       en: 'Sql Editor',
       'zh-CN': 'SQL 编辑器',
+    },
+    tinymceEditor: {
+      en: 'Tinymce Editor',
+      'zh-CN': '富文本编辑器',
+    },
+    pdfReader: {
+      en: 'PDF Reader',
+      'zh-CN': 'PDF 阅读器',
     },
     listDrag: {
       en: 'List Drag',
@@ -209,10 +217,6 @@ export default {
     maps: {
       en: 'Maps',
       'zh-CN': '地图',
-    },
-    tinymceEditor: {
-      en: 'Tinymce Editor',
-      'zh-CN': '富文本编辑器',
     },
     widgets: {
       en: 'Widgets',

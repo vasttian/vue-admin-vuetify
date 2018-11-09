@@ -11,17 +11,17 @@ const routes = {
   },
   children: [
     {
-      path: 'json-editor',
-      name: 'JsonEditor',
-      component: () => import('@/views/components/JsonEditor.vue'),
+      path: 'markdown-editor',
+      name: 'Markdown',
+      component: () => import('@/views/components/MarkdownEditor.vue'),
       meta: {
         icon: '',
       },
     },
     {
-      path: 'markdown-editor',
-      name: 'Markdown',
-      component: () => import('@/views/components/MarkdownEditor.vue'),
+      path: 'json-editor',
+      name: 'JsonEditor',
+      component: () => import('@/views/components/JsonEditor.vue'),
       meta: {
         icon: '',
       },
@@ -35,6 +35,20 @@ const routes = {
       },
     },
     {
+      path: 'tinymce-editor',
+      name: 'TinymceEditor',
+      component: () => import('@/views/components/TinymceEditor.vue'),
+      meta: {
+      },
+    },
+    {
+      path: 'pdf-reader',
+      name: 'PdfReader',
+      component: () => import('@/views/components/PdfReader.vue'),
+      meta: {
+      },
+    },
+    {
       path: 'maps',
       name: 'Maps',
       component: () => import('@/views/components/VMaps.vue'),
@@ -45,13 +59,6 @@ const routes = {
       path: 'list-drag',
       name: 'ListDrag',
       component: () => import('@/views/components/ListDrag.vue'),
-      meta: {
-      },
-    },
-    {
-      path: 'tinymce-editor',
-      name: 'TinymceEditor',
-      component: () => import('@/views/components/TinymceEditor.vue'),
       meta: {
       },
     },
