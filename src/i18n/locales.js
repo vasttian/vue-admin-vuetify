@@ -181,4 +181,62 @@ export default {
       'zh-CN': '访问者分布',
     },
   },
+  sidebar: {
+    dashboard: {
+      en: 'Dashboard',
+      'zh-CN': '仪表盘',
+    },
+    components: {
+      en: 'components',
+      'zh-CN': '组件',
+    },
+    jsonEditor: {
+      en: 'Json Editor',
+      'zh-CN': 'JSON 编辑器',
+    },
+    markdown: {
+      en: 'Markdown',
+      'zh-CN': 'Markdown',
+    },
+    sqlEditor: {
+      en: 'Sql Editor',
+      'zh-CN': 'SQL 编辑器',
+    },
+    listDrag: {
+      en: 'List Drag',
+      'zh-CN': '列表拖拽',
+    },
+    maps: {
+      en: 'Maps',
+      'zh-CN': '地图',
+    },
+    tinymceEditor: {
+      en: 'Tinymce Editor',
+      'zh-CN': '富文本编辑器',
+    },
+    widgets: {
+      en: 'Widgets',
+      'zh-CN': '小工具',
+    },
+    icons: {
+      en: 'Icons',
+      'zh-CN': '图标',
+    },
+    uIComponents: {
+      en: 'UI Components',
+      'zh-CN': 'UI 组件',
+    },
+    tables: {
+      en: 'Tables',
+      'zh-CN': '表格',
+    },
+    tableInlineEdit: {
+      en: 'Inline Editing',
+      'zh-CN': '行内编辑',
+    },
+    tableDragSort: {
+      en: 'Drag Sort',
+      'zh-CN': '表格拖动排序',
+    },
+  },
 };

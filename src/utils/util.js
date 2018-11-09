@@ -514,6 +514,13 @@ export function fistLetterUpper(str) {
 }
 
 /**
+ * 字符串的首字母小写
+ */
+export function fistLowerUpper(str) {
+  return str.charAt(0).toLowerCase() + str.slice(1);
+}
+
+/**
  * 当前时间
  */
 export function currentTimeStr() {
