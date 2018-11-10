@@ -184,7 +184,7 @@ export default {
   sidebar: {
     dashboard: {
       en: 'Dashboard',
-      'zh-CN': '仪表盘',
+      'zh-CN': '首页',
     },
     components: {
       en: 'components',
