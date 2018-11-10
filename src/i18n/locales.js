@@ -211,7 +211,7 @@ export default {
       'zh-CN': 'PDF 阅读器',
     },
     listDrag: {
-      en: 'List Drag',
+      en: 'Draggable List',
       'zh-CN': '列表拖拽',
     },
     maps: {
