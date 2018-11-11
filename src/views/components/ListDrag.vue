@@ -1,6 +1,7 @@
 <template>
   <v-container grid-list-lg pa-0>
     <v-layout wrap>
+      <!-- Base -->
       <v-flex xs12 sm6>
         <v-basic-card title="Drag List - Base">
           <template slot="card-content">
@@ -23,6 +24,29 @@
                   </v-layout>
                 </div>
               </transition-group>
+            </draggable>
+          </template>
+        </v-basic-card>
+      </v-flex>
+
+      <!-- images -->
+      <v-flex xs12 sm6>
+        <v-basic-card title="Drag List - Images">
+          <template slot="card-content">
+            <draggable
+              v-model="images"
+              class="grid">
+              <v-flex
+                pa-0
+                sm6
+                lg4
+                v-for="(item,index) in images"
+                :key="item.src"
+                class="item">
+                <img
+                  :src="item.src"
+                  :alt="`image ${index + 1}`">
+              </v-flex>
             </draggable>
           </template>
         </v-basic-card>
@@ -61,6 +85,35 @@ export default {
           name: 'Eudora',
         },
       ],
+      images: [
+        {
+          src: 'http://67.218.155.2:8082/image1.jpg',
+        },
+        {
+          src: 'http://67.218.155.2:8082/image2.jpg',
+        },
+        {
+          src: 'http://67.218.155.2:8082/image3.jpg',
+        },
+        {
+          src: 'http://67.218.155.2:8082/image4.jpg',
+        },
+        {
+          src: 'http://67.218.155.2:8082/image5.jpg',
+        },
+        {
+          src: 'http://67.218.155.2:8082/image6.jpg',
+        },
+        {
+          src: 'http://67.218.155.2:8082/image18.jpg',
+        },
+        {
+          src: 'http://67.218.155.2:8082/image19.jpg',
+        },
+        {
+          src: 'http://67.218.155.2:8082/image20.jpg',
+        },
+      ],
     };
   },
   methods: {
@@ -86,5 +139,22 @@ export default {
 .list-drag-enter,
 .list-drag-leave-active {
   opacity: 0;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .item {
+    text-align: center;
+
+    img {
+      height: 150px;
+      width: 150px;
+      cursor: move;
+      cursor: -webkit-grabbing;
+    }
+  }
 }
 </style>
