@@ -40,6 +40,7 @@
                 pa-0
                 sm6
                 lg4
+                xl3
                 v-for="(item,index) in images"
                 :key="item.src"
                 class="item">

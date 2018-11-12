@@ -3,7 +3,7 @@
     <v-layout wrap>
       <v-flex xs12>
         <v-basic-card
-          title="VAvatars - Base"
+          title="Avatars - Base"
           toolbar-height="56">
           <template slot="card-content">
             <v-layout
@@ -34,7 +34,7 @@
 
       <v-flex xs12>
         <v-basic-card
-          title="VAvatars - Custom"
+          title="Avatars - Custom"
           toolbar-height="56">
           <template slot="card-content">
             <v-layout justify-space-between>
@@ -59,7 +59,7 @@
 
       <v-flex xs12>
         <v-basic-card
-          title="VAvatars - Popout"
+          title="Avatars - Popout"
           toolbar-height="56">
           <template slot="card-content">
             <v-layout justify-space-between>
