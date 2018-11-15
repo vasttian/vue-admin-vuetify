@@ -61,8 +61,8 @@
       </v-flex>
 
       <!-- group -->
-      <v-flex md6>
-        <v-basic-card title="Drag List - Group">
+      <v-flex xs6 md3>
+        <v-basic-card title="Drag List - Group1">
           <template slot="card-content">
             <draggable
               :options="groupDragOptions"
@@ -86,7 +86,7 @@
           </template>
         </v-basic-card>
       </v-flex>
-      <v-flex md6>
+      <v-flex xs6 md3>
         <v-basic-card title="Drag List - Group2">
           <template slot="card-content">
             <draggable
@@ -111,12 +111,36 @@
           </template>
         </v-basic-card>
       </v-flex>
+
+      <!-- data -->
+      <v-flex xs12 md6>
+        <v-basic-card title="Drag List - Data">
+          <template slot="card-content">
+            <v-layout wrap>
+              <v-flex d-flex xs6>
+                <h4>List1</h4>
+                <pre>{{ list1String }}</pre>
+              </v-flex>
+              <v-flex d-flex xs6>
+                <h4>List2</h4>
+                <pre>{{ list2String }}</pre>
+              </v-flex>
+            </v-layout>
+          </template>
+        </v-basic-card>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
 import draggable from 'vuedraggable';
+import {
+  items,
+  images,
+  list1,
+  list2,
+} from './data/dnd-list';
 
 export default {
   name: 'ListDarg',
@@ -125,101 +149,10 @@ export default {
   },
   data() {
     return {
-      items: [
-        {
-          name: 'Adela',
-        },
-        {
-          name: 'Anna',
-        },
-        {
-          name: 'Bonnie',
-        },
-        {
-          name: 'Clementine',
-        },
-        {
-          name: 'Doris',
-        },
-        {
-          name: 'Emma',
-        },
-        {
-          name: 'Grace',
-        },
-        {
-          name: 'Sarah',
-        },
-      ],
-      images: [
-        {
-          src: 'http://67.218.155.2:8082/image1.jpg',
-        },
-        {
-          src: 'http://67.218.155.2:8082/image2.jpg',
-        },
-        {
-          src: 'http://67.218.155.2:8082/image3.jpg',
-        },
-        {
-          src: 'http://67.218.155.2:8082/image4.jpg',
-        },
-        {
-          src: 'http://67.218.155.2:8082/image5.jpg',
-        },
-        {
-          src: 'http://67.218.155.2:8082/image6.jpg',
-        },
-        {
-          src: 'http://67.218.155.2:8082/image18.jpg',
-        },
-        {
-          src: 'http://67.218.155.2:8082/image19.jpg',
-        },
-        {
-          src: 'http://67.218.155.2:8082/image20.jpg',
-        },
-      ],
-      list1: [
-        {
-          name: 'Jamie',
-        },
-        {
-          name: 'Jane',
-        },
-        {
-          name: 'Janice',
-        },
-        {
-          name: 'Jean',
-        },
-        {
-          name: 'Jenny',
-        },
-        {
-          name: 'Jessie',
-        },
-      ],
-      list2: [
-        {
-          name: 'Karen',
-        },
-        {
-          name: 'Katherine',
-        },
-        {
-          name: 'Kelly',
-        },
-        {
-          name: 'Kimberley',
-        },
-        {
-          name: 'Kitty',
-        },
-        {
-          name: 'Kristin',
-        },
-      ],
+      items,
+      images,
+      list1,
+      list2,
       disable: false,
     };
   },
@@ -236,17 +169,16 @@ export default {
         group: 'groupDemo',
       };
     },
+    list1String() {
+      return JSON.stringify(this.list1, null, 2);
+    },
+    list2String() {
+      return JSON.stringify(this.list2, null, 2);
+    },
   },
   methods: {
     removeItem(index) {
       this.items.splice(index, 1);
-    },
-    onMove({ relatedContext, draggedContext }) {
-      const relatedElement = relatedContext.element;
-      const draggedElement = draggedContext.element;
-      return (
-        (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
-      );
     },
   },
 };
