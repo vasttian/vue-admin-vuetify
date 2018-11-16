@@ -9,9 +9,9 @@
           <v-toolbar-title>Setting Options</v-toolbar-title>
         </v-toolbar>
         <v-container grid-list-md>
-          <v-list>
-            <theme-setting/>
-          </v-list>
+          <theme-setting/>
+          <v-divider class="mt-4"></v-divider>
+          <navigation-drawer/>
         </v-container>
       </v-card>
     </v-flex>
@@ -19,11 +19,13 @@
 </template>
 <script>
 import ThemeSetting from './ThemeSetting.vue';
+import NavigationDrawer from './NavigationDrawer.vue';
 
 export default {
   name: 'SettingOptions',
   components: {
     ThemeSetting,
+    NavigationDrawer,
   },
   data() {
     return {};
