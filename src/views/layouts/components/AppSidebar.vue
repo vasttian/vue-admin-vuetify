@@ -6,7 +6,7 @@
     fixed
     width="232"
     v-model="drawer"
-    :clipped="$vuetify && $vuetify.breakpoint.mdAndUp"
+    :clipped="clipped"
     :mini-variant="miniVariant">
     <v-list
       expand
@@ -75,7 +75,15 @@ export default {
       miniVariant: false,
       // miniVariant: true,
       ps: null,
+      clipped: false,
     };
+  },
+  watch: {
+    // eslint-disable-next-line
+    '$vuetify.breakpoint'(newVal) {
+      console.log('=---------', newVal);
+      this.clipped = newVal.mdAndUp;
+    },
   },
   computed: {
     ...mapState({
@@ -136,6 +144,7 @@ export default {
         suppressScrollX: true,
       });
     });
+    this.clipped = this.$vuetify && this.$vuetify.breakpoint.mdAndUp;
   },
   beforeDestroy() {
     this.ps.destroy();

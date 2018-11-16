@@ -11,7 +11,8 @@
         <v-container grid-list-md>
           <theme-setting/>
           <v-divider class="mt-4"></v-divider>
-          <navigation-drawer/>
+          <navigation-drawer
+            @toggleRightSettings="(val) => $emit('toggleRightSettings', val)"/>
         </v-container>
       </v-card>
     </v-flex>

@@ -37,7 +37,9 @@
           title="Avatars - Custom"
           toolbar-height="56">
           <template slot="card-content">
-            <v-layout justify-space-between>
+            <v-layout
+              justify-space-between
+              align-center>
               <v-avatar
                 color="blue">
                 <v-icon dark>account_circle</v-icon>

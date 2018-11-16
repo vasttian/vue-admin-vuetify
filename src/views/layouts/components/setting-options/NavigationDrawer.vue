@@ -29,7 +29,9 @@ export default {
   },
   methods: {
     changeTemporary(val) {
-      console.log('---val', val);
+      console.log('----dd', val);
+      this.$emit('toggleRightSettings', this.temporary);
+      this.temporary = !this.temporary;
     },
   },
 };

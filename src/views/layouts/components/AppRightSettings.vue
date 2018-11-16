@@ -16,7 +16,7 @@
       fixed
       hide-overlay
       temporary>
-      <setting-options/>
+      <setting-options @toggleRightSettings="(val) => $emit('toggleRightSettings', val)"/>
     </v-navigation-drawer>
   </div>
 </template>
