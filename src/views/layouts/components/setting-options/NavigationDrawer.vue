@@ -10,9 +10,9 @@
       ></v-switch> -->
       <v-switch
         color="primary"
+        v-model="temporary"
         :label="`Temporary: ${temporary.toString()}`"
         @change="changeTemporary"
-        v-model="temporary"
       ></v-switch>
     </v-flex>
   </div>
@@ -28,10 +28,8 @@ export default {
     };
   },
   methods: {
-    changeTemporary(val) {
-      console.log('----dd', val);
+    changeTemporary() {
       this.$emit('toggleRightSettings', this.temporary);
-      this.temporary = !this.temporary;
     },
   },
 };

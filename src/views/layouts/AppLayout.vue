@@ -12,7 +12,7 @@
     </div>
     <app-right-settings
       ref="rightSettings"
-      @toggleRightSettings="toggleRightSettings"/>
+      @toggleRightSettings="toggleSidebar"/>
     <app-fab/>
   </v-app>
 </template>
@@ -43,9 +43,6 @@ export default {
       if (this.$refs.sidebar) {
         this.$refs.sidebar.toggleSidebar();
       }
-    },
-    toggleRightSettings(val) {
-      console.log('dddddddd', val);
     },
   },
 };
