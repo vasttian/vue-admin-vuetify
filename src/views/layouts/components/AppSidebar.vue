@@ -82,6 +82,7 @@ export default {
     // eslint-disable-next-line
     '$vuetify.breakpoint'(newVal) {
       console.log('=---------', newVal);
+      this.$emit('changeClipped', newVal);
       this.clipped = newVal.mdAndUp;
     },
   },

@@ -16,7 +16,9 @@
       fixed
       hide-overlay
       temporary>
-      <setting-options @toggleRightSettings="(val) => $emit('toggleRightSettings', val)"/>
+      <setting-options
+        ref="settingOptions"
+        @toggleRightSettings="(val) => $emit('toggleRightSettings', val)"/>
     </v-navigation-drawer>
   </div>
 </template>
@@ -37,6 +39,9 @@ export default {
   methods: {
     openRightSettings() {
       this.rightDrawer = true;
+    },
+    changeClipped(val) {
+      this.$refs.settingOptions.changeClipped(val);
     },
   },
 };

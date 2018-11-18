@@ -6,7 +6,8 @@
       @toggleSidebar="toggleSidebar"/>
     <app-sidebar
       ref="sidebar"
-      class="sidebar-container"/>
+      class="sidebar-container"
+      @changeClipped="(val) => $refs && $refs.rightSettings.settingOptions(val)"/>
     <div id="main-container" class="main-container">
       <app-main/>
     </div>
