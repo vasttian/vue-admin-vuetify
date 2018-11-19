@@ -6,7 +6,8 @@
     fixed
     width="232"
     v-model="drawer"
-    :clipped="clipped"
+    clipped="clipped"
+    :temporary="temporary"
     :mini-variant="miniVariant">
     <v-list
       expand
@@ -76,14 +77,14 @@ export default {
       // miniVariant: true,
       ps: null,
       clipped: false,
+      temporary: false,
     };
   },
   watch: {
     // eslint-disable-next-line
     '$vuetify.breakpoint'(newVal) {
-      console.log('=---------', newVal);
-      this.$emit('changeClipped', newVal);
-      this.clipped = newVal.mdAndUp;
+      this.$emit('changeTemporary', newVal.mdAndUp);
+      this.temporary = newVal.mdAndUp;
     },
   },
   computed: {
@@ -130,6 +131,9 @@ export default {
     },
     toggleSidebar() {
       this.drawer = !this.drawer;
+    },
+    toggleTemporary(val) {
+      this.temporary = val;
     },
     generateTitle(title, route) {
       if (route && route.name === 'UIComponents') {
