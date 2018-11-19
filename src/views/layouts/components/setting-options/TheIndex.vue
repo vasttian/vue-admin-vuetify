@@ -12,7 +12,8 @@
           <theme-setting/>
           <v-divider class="mt-4"></v-divider>
           <navigation-drawer
-            @toggleRightSettings="(val) => $emit('toggleRightSettings', val)"/>
+            ref="navigationDrawer"
+            @toggleTemporary="(val) => $emit('toggleTemporary', val)"/>
         </v-container>
       </v-card>
     </v-flex>
@@ -30,6 +31,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    changeTemporary(val) {
+      this.$refs.navigationDrawer.temporary = val;
+    },
   },
 };
 </script>

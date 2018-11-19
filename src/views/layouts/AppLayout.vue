@@ -7,13 +7,13 @@
     <app-sidebar
       ref="sidebar"
       class="sidebar-container"
-      @changeClipped="(val) => $refs && $refs.rightSettings.settingOptions(val)"/>
+      @changeTemporary="(val) => $refs && $refs.rightSettings.changeTemporary(val)"/>
     <div id="main-container" class="main-container">
       <app-main/>
     </div>
     <app-right-settings
       ref="rightSettings"
-      @toggleRightSettings="toggleSidebar"/>
+      @toggleTemporary="toggleTemporary"/>
     <app-fab/>
   </v-app>
 </template>
@@ -43,6 +43,11 @@ export default {
     toggleSidebar() {
       if (this.$refs.sidebar) {
         this.$refs.sidebar.toggleSidebar();
+      }
+    },
+    toggleTemporary(val) {
+      if (this.$refs.sidebar) {
+        this.$refs.sidebar.toggleTemporary(val);
       }
     },
   },

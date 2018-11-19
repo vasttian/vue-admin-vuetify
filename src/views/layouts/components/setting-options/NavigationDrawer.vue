@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     changeTemporary() {
-      this.$emit('toggleRightSettings', this.temporary);
+      this.$emit('toggleTemporary', this.temporary);
     },
   },
 };

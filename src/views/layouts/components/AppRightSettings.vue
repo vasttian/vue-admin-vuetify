@@ -18,7 +18,7 @@
       temporary>
       <setting-options
         ref="settingOptions"
-        @toggleRightSettings="(val) => $emit('toggleRightSettings', val)"/>
+        @toggleTemporary="(val) => $emit('toggleTemporary', val)"/>
     </v-navigation-drawer>
   </div>
 </template>
@@ -40,8 +40,8 @@ export default {
     openRightSettings() {
       this.rightDrawer = true;
     },
-    changeClipped(val) {
-      this.$refs.settingOptions.changeClipped(val);
+    changeTemporary(val) {
+      this.$refs.settingOptions.changeTemporary(val);
     },
   },
 };
