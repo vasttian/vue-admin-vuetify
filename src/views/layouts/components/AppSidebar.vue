@@ -76,15 +76,15 @@ export default {
       miniVariant: false,
       // miniVariant: true,
       ps: null,
-      clipped: false,
+      clipped: true,
       temporary: false,
     };
   },
   watch: {
     // eslint-disable-next-line
     '$vuetify.breakpoint'(newVal) {
-      this.$emit('changeTemporary', newVal.mdAndUp);
-      this.temporary = newVal.mdAndUp;
+      this.$emit('changeTemporary', newVal.smAndDown);
+      this.temporary = newVal.smAndDown;
     },
   },
   computed: {
@@ -149,7 +149,7 @@ export default {
         suppressScrollX: true,
       });
     });
-    this.clipped = this.$vuetify && this.$vuetify.breakpoint.mdAndUp;
+    this.temporary = this.$vuetify && this.$vuetify.breakpoint.smAndDown;
   },
   beforeDestroy() {
     this.ps.destroy();
