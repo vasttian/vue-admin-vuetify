@@ -80,6 +80,20 @@ const routes = {
       meta: {
       },
     },
+    {
+      path: 'data-iterator',
+      name: 'DataIterator',
+      component: () => import('@/views/ui-components/VDataIterator.vue'),
+      meta: {
+      },
+    },
+    {
+      path: 'data-tables',
+      name: 'DataTables',
+      component: () => import('@/views/ui-components/VDataTables.vue'),
+      meta: {
+      },
+    },
   ],
 };
 
