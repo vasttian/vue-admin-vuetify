@@ -8,6 +8,7 @@
     v-model="drawer"
     clipped="clipped"
     :temporary="temporary"
+    mobile-break-point="400"
     :mini-variant="miniVariant">
     <v-list
       expand
@@ -150,6 +151,9 @@ export default {
       });
     });
     this.temporary = this.$vuetify && this.$vuetify.breakpoint.smAndDown;
+    this.$nextTick(() => {
+      this.$emit('changeTemporary', this.temporary);
+    });
   },
   beforeDestroy() {
     this.ps.destroy();
