@@ -242,5 +242,17 @@ export default {
       en: 'Drag Sort',
       'zh-CN': '表格拖动排序',
     },
+    charts: {
+      en: 'Charts',
+      'zh-CN': '图表',
+    },
+    lineCharts: {
+      en: 'Line',
+      'zh-CN': '折线图',
+    },
+    barCharts: {
+      en: 'Bar',
+      'zh-CN': '柱状图',
+    },
   },
 };

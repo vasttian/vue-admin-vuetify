@@ -8,6 +8,7 @@ import components from './modules/components';
 import widgets from './modules/widgets';
 import uiComponents from './modules/ui-components';
 import tables from './modules/tables';
+import charts from './modules/charts';
 
 Vue.use(Router);
 
@@ -61,6 +62,7 @@ export default new Router({
         widgets,
         uiComponents,
         tables,
+        charts,
       ],
     },
     {
