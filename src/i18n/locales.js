@@ -240,7 +240,7 @@ export default {
     },
     tableDragSort: {
       en: 'Drag Sort',
-      'zh-CN': '表格拖动排序',
+      'zh-CN': '拖动排序',
     },
     charts: {
       en: 'Charts',

@@ -117,11 +117,11 @@
         <v-basic-card title="Drag List - Data">
           <template slot="card-content">
             <v-layout wrap>
-              <v-flex d-flex xs6>
+              <v-flex xs6>
                 <h4>List1</h4>
                 <pre>{{ list1String }}</pre>
               </v-flex>
-              <v-flex d-flex xs6>
+              <v-flex xs6>
                 <h4>List2</h4>
                 <pre>{{ list2String }}</pre>
               </v-flex>

@@ -7,7 +7,7 @@ const routes = {
   meta: {
     hasMulSub: true,
     hidden: false,
-    icon: 'grid_on',
+    icon: 'bar_chart',
   },
   children: [
     {
