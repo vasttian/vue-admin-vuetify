@@ -16,6 +16,9 @@ const urls = {
   createUsers: '/users',
   updateUsers: '/users/<id>',
   deleteUsers: '/users/<id>',
+
+  // tables
+  readTablesList: '/tables/list',
 };
 
 Object.keys(urls).map((url) => {
@@ -35,4 +38,7 @@ export default new function API() {
   this.createUsers = params => request.post(urls.createUsers, params);
   this.updateUsers = (id, params) => request.put(urls.updateUsers.replace('<id>', id), params);
   this.deleteUsers = id => request.delete(urls.deleteUsers.replace('<id>', id));
+
+  // table
+  this.readTablesList = () => request.get(urls.readTablesList, {});
 }();

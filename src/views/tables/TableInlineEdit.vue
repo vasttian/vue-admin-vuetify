@@ -33,6 +33,39 @@
           </template>
         </v-basic-card>
       </v-flex>
+
+      <v-flex xs12>
+        <v-basic-card
+          title="Inline Edit - e.g.2"
+          toolbar-height="56">
+          <template slot="card-content">
+            <v-data-table
+              :headers="headers"
+              :items="list2"
+              hide-actions
+              class="elevation-1">
+              <template
+                slot="items"
+                slot-scope="props">
+                <td>{{ props.item.name }}</td>
+                <td>{{ props.item.age }}</td>
+                <td>{{ props.item.address }}</td>
+                <td class="justify-center">
+                  <v-icon
+                    small
+                    class="mr-2"
+                    @click="eg2EditItem(props.item)">
+                    edit
+                  </v-icon>
+                  <v-icon small disabled>
+                    delete
+                  </v-icon>
+                </td>
+              </template>
+            </v-data-table>
+          </template>
+        </v-basic-card>
+      </v-flex>
     </v-layout>
 
     <v-dialog
@@ -146,6 +179,7 @@ export default {
           address: 'Chengdu, China',
         },
       ],
+      list2: [],
     };
   },
   methods: {
@@ -165,6 +199,21 @@ export default {
       Object.assign(this.list[this.editedIndex], this.editedItem);
       this.close();
     },
+    getListData() {
+      this.$api.readTablesList()
+        .then((val) => {
+          this.list2 = val.data.data;
+        })
+        .catch((res) => {
+          console.error('getListData', res);
+        });
+    },
+    eg2EditItem(item) {
+      console.log('eg2EditItem', item);
+    },
+  },
+  created() {
+    this.getListData();
   },
 };
 </script>
