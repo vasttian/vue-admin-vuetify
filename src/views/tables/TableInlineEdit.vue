@@ -49,12 +49,28 @@
                 slot-scope="props">
                 <td>{{ props.item.name }}</td>
                 <td>{{ props.item.age }}</td>
-                <td>{{ props.item.address }}</td>
+                <!-- <td>{{ props.item.address }}</td> -->
+                <td>
+                  <template v-if="props.item.edit">
+                    <v-text-field
+                      v-model="props.item.address"
+                      autofocus
+                      clearable
+                    ></v-text-field>
+                  </template>
+                  <span v-else>{{ props.item.address }}</span>
+                </td>
                 <td class="justify-center">
-                  <v-icon
+                  <!-- <v-icon
                     small
                     class="mr-2"
                     @click="eg2EditItem(props.item)">
+                    edit
+                  </v-icon> -->
+                  <v-icon
+                    small
+                    class="mr-2"
+                    @click="props.item.edit = !props.item.edit">
                     edit
                   </v-icon>
                   <v-icon small disabled>
@@ -202,7 +218,11 @@ export default {
     getListData() {
       this.$api.readTablesList()
         .then((val) => {
-          this.list2 = val.data.data;
+          const list = val.data.data || [];
+          this.list2 = list.map((item) => {
+            this.$set(item, 'edit', false);
+            return item;
+          });
         })
         .catch((res) => {
           console.error('getListData', res);

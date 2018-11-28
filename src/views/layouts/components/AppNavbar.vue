@@ -167,10 +167,6 @@ export default {
     logout() {
       console.log('logout');
       this.$router.push({ name: 'Login' });
-      this.$message({
-        type: 'info',
-        text: 'Ahem: Please add logout function',
-      });
     },
   },
   created() {
