@@ -38,8 +38,9 @@
                     v-model="form.password"
                     prepend-icon="lock"
                     @keyup.enter.native="login"
-                    clearable
-                    type="password"
+                    :append-icon="showPwd ? 'visibility_off' : 'visibility'"
+                    :type="showPwd ? 'text' : 'password'"
+                    @click:append="showPwd = !showPwd"
                     :label="$t('common.password')"
                     required
                   ></v-text-field>
@@ -98,6 +99,7 @@ export default {
   data() {
     return {
       currentYear: (new Date()).getFullYear(),
+      showPwd: false,
       form: {
         username: 'admin',
         password: 'admin123',
