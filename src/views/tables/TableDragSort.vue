@@ -9,6 +9,7 @@
             <v-data-table
               :headers="headers"
               :items="list"
+              item-key="name"
               hide-actions
               class="elevation-1">
               <template
