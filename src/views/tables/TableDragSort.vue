@@ -124,7 +124,7 @@ export default {
 </script>
 
 <style scoped>
-.drag-handler{
+.drag-handler {
   cursor: pointer;
   width: 23px;
   height: 23px;

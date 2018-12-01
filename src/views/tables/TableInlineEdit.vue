@@ -19,14 +19,11 @@
                 <td>{{ props.item.address }}</td>
                 <td class="justify-center">
                   <v-icon
-                    small
                     class="mr-2"
                     @click="editItem(props.item)">
                     edit
                   </v-icon>
-                  <v-icon small disabled>
-                    delete
-                  </v-icon>
+                  <v-icon disabled>delete</v-icon>
                 </td>
               </template>
             </v-data-table>
@@ -49,33 +46,41 @@
                 slot-scope="props">
                 <td>{{ props.item.name }}</td>
                 <td>{{ props.item.age }}</td>
-                <!-- <td>{{ props.item.address }}</td> -->
                 <td>
                   <template v-if="props.item.edit">
                     <v-text-field
                       v-model="props.item.address"
                       autofocus
-                      clearable
-                    ></v-text-field>
+                      append-icon="replay"
+                      @click:append="eg2ResetItem(props.item)">
+                      <v-tooltip
+                        slot="append"
+                        bottom>
+                        <v-icon
+                          slot="activator"
+                          @click="eg2ResetItem(props.item)">
+                          replay
+                        </v-icon>
+                        Reset
+                      </v-tooltip>
+                    </v-text-field>
                   </template>
                   <span v-else>{{ props.item.address }}</span>
                 </td>
                 <td class="justify-center">
-                  <!-- <v-icon
-                    small
+                  <v-icon
+                    v-if="!props.item.edit"
                     class="mr-2"
                     @click="eg2EditItem(props.item)">
                     edit
-                  </v-icon> -->
+                  </v-icon>
                   <v-icon
-                    small
+                    v-else
                     class="mr-2"
-                    @click="props.item.edit = !props.item.edit">
-                    edit
+                    @click="eg2SaveItem(props.item)">
+                    save
                   </v-icon>
-                  <v-icon small disabled>
-                    delete
-                  </v-icon>
+                  <v-icon disabled>delete</v-icon>
                 </td>
               </template>
             </v-data-table>
@@ -138,6 +143,8 @@
 </template>
 
 <script>
+import { deepCopy } from '@/utils/util';
+
 export default {
   name: 'TableInlineEdit',
   data() {
@@ -196,6 +203,7 @@ export default {
         },
       ],
       list2: [],
+      cachedItem: {},
     };
   },
   methods: {
@@ -228,8 +236,19 @@ export default {
           console.error('getListData', res);
         });
     },
+    /* eslint-disable no-param-reassign */
     eg2EditItem(item) {
-      console.log('eg2EditItem', item);
+      item.edit = !item.edit;
+      this.cachedItem = deepCopy(item);
+    },
+    eg2SaveItem(item) {
+      item.edit = false;
+      this.cachedItem = {};
+    },
+    eg2ResetItem(item) {
+      item.edit = false;
+      item.address = this.cachedItem.address;
+      this.cachedItem = {};
     },
   },
   created() {
