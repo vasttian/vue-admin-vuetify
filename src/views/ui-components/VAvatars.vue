@@ -61,6 +61,47 @@
 
       <v-flex xs12>
         <v-basic-card
+          title="Avatars - Resizable"
+          toolbar-height="56">
+          <template slot="card-content">
+            <v-layout row wrap>
+              <v-flex xs12 sm6 md4>
+                <v-slider
+                  v-model="slider"
+                  :min="8"
+                  :max="256"
+                  label="Size:"
+                  thumb-label
+                ></v-slider>
+                <v-switch
+                  v-model="tile"
+                  label="Tile"
+                ></v-switch>
+              </v-flex>
+              <v-flex
+                xs12
+                sm6
+                md8
+                layout
+                align-center
+                justify-center
+                text-xs-center>
+                <v-avatar
+                  :tile="tile"
+                  :size="avatarSize"
+                  color="grey lighten-4">
+                  <img
+                    src="http://67.218.155.2:8082/vasttian.png"
+                    alt="avatar">
+                </v-avatar>
+              </v-flex>
+            </v-layout>
+          </template>
+        </v-basic-card>
+      </v-flex>
+
+      <v-flex xs12>
+        <v-basic-card
           title="Avatars - Popout"
           toolbar-height="56">
           <template slot="card-content">
@@ -131,7 +172,14 @@ export default {
             A tile variation is available for displaying an avatar without border radius.`,
         },
       ],
+      slider: 128,
+      tile: false,
     };
+  },
+  computed: {
+    avatarSize() {
+      return `${this.slider}px`;
+    },
   },
 };
 </script>
