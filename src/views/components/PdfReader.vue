@@ -1,5 +1,5 @@
 <template>
-  <pdf-reader/>
+  <pdf-reader :style="{ height: domHeight + 'px' }"/>
 </template>
 
 <script>
@@ -11,7 +11,18 @@ export default {
     PdfReader,
   },
   data() {
-    return {};
+    return {
+      domHeight: 600,
+    };
+  },
+  mounted() {
+    try {
+      const { clientHeight } = document.getElementById('main-container');
+      this.domHeight = clientHeight - 145;
+    } catch (err) {
+      this.domHeight = 600;
+      console.log('pdf err', err);
+    }
   },
 };
 </script>

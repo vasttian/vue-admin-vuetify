@@ -181,6 +181,12 @@ export default {
       'zh-CN': '访问者分布',
     },
   },
+  components: {
+    notSupportPDF: {
+      en: 'Your browser does not support PDF reading',
+      'zh-CN': '您的浏览器不支持 PDF 阅读',
+    },
+  },
   sidebar: {
     dashboard: {
       en: 'Dashboard',

@@ -112,6 +112,7 @@
 
 <script>
 export default {
+  name: 'VBadges',
   data() {
     return {
       show: true,

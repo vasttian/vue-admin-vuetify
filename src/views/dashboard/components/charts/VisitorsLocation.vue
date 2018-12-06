@@ -186,6 +186,7 @@ export default {
             left: 40,
             width: '40%',
             roam: 'scale',
+            zoom: 0.7,
             mapValueCalculation: 'sum',
             showLegendSymbol: false,
             emphasis: {
