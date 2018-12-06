@@ -1,5 +1,5 @@
 <template>
-  <div style="width:100%; height:100%;">
+  <div class="iframe-wrapper">
     <iframe
       :src="url"
       width="100%"
@@ -23,10 +23,11 @@ export default {
 
 <style lang="scss" scoped>
 .iframe-wrapper {
+  width:100%;
+  height:100%;
+
   iframe {
     display: block;
-    width: 100%;
-    height: 100%;
     position: relative;
   }
 }
