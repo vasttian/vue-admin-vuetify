@@ -203,6 +203,7 @@ export default {
         },
       ],
       list2: [],
+      preItem: {},
       cachedItem: {},
     };
   },
@@ -238,17 +239,26 @@ export default {
     },
     /* eslint-disable no-param-reassign */
     eg2EditItem(item) {
+      if (this.preItem.edit) {
+        this.eg2ResetItem(this.preItem);
+      }
+
+      this.preItem = item;
       item.edit = !item.edit;
       this.cachedItem = deepCopy(item);
     },
     eg2SaveItem(item) {
       item.edit = false;
-      this.cachedItem = {};
+      this.refreshItem();
     },
     eg2ResetItem(item) {
       item.edit = false;
       item.address = this.cachedItem.address;
+      this.refreshItem();
+    },
+    refreshItem() {
       this.cachedItem = {};
+      this.preItem = {};
     },
   },
   created() {
