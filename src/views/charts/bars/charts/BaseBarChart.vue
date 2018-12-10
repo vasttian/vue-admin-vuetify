@@ -3,7 +3,7 @@
     <v-layout wrap>
       <v-flex xs12>
         <v-basic-card
-          title="Line Charts - Base"
+          title="Bar Charts - Base"
           toolbar-height="56">
           <template slot="card-content">
           </template>
@@ -12,3 +12,12 @@
     </v-layout>
   </v-container>
 </template>
+
+<script>
+export default {
+  name: 'BaseBarChart',
+  data() {
+    return {};
+  },
+};
+</script>

@@ -1,5 +1,5 @@
 // example
-const authApi = 'http://172.16.24.36:17510/';
+const authApi = 'xxx';
 const commonApi = 'xxx';
 const svgoConfig = require('./config/svgo-config.json');
 

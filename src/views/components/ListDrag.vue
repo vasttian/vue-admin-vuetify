@@ -190,7 +190,7 @@ export default {
   cursor: -webkit-grabbing;
   margin-top: 10px;
   border: solid 1px;
-  transition: all 1s;
+  transition: all 0.5s;
 
   .content {
     height: 60px;
