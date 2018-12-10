@@ -22,6 +22,12 @@ export default {
         legend: {
           show: true,
         },
+        tooltip: {
+          trigger: 'item',
+          axisPointer: {
+            type: 'line',
+          },
+        },
         toolbox: {
           show: true,
           feature: {

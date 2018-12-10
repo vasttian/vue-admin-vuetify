@@ -158,7 +158,7 @@ export default {
                 ],
               ],
               itemStyle: {
-                color: '#FF8A80',
+                color: '#FFAB91',
               },
             },
           },
