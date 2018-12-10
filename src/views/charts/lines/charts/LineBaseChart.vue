@@ -23,13 +23,14 @@ export default {
           show: true,
         },
         tooltip: {
-          trigger: 'item',
+          trigger: 'axis',
           axisPointer: {
             type: 'line',
           },
         },
         toolbox: {
           show: true,
+          right: 20,
           feature: {
             saveAsImage: {},
           },

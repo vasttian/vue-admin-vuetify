@@ -16,6 +16,7 @@ export default {
   methods: {
     buildChartOption() {
       const option = {
+        backgroundColor: '#f3f3f3',
         title: {
           text: 'Line - Sections',
         },
@@ -30,6 +31,7 @@ export default {
         },
         toolbox: {
           show: true,
+          right: 20,
           feature: {
             saveAsImage: {},
           },
@@ -158,7 +160,7 @@ export default {
                 ],
               ],
               itemStyle: {
-                color: '#FFAB91',
+                color: '#FF8A65',
               },
             },
           },
