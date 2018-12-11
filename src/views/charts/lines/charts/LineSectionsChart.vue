@@ -16,7 +16,7 @@ export default {
   methods: {
     buildChartOption() {
       const option = {
-        backgroundColor: '#f3f3f3',
+        backgroundColor: '#F3F3F3',
         title: {
           text: 'Line - Sections',
         },
