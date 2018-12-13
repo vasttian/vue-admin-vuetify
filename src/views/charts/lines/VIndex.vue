@@ -21,10 +21,19 @@
       </v-flex>
       <v-flex xs12>
         <v-basic-card
-          title="Line Charts - Sections"
+          title="Line Charts - Area"
           toolbar-height="56">
           <template slot="card-content">
             <line-area-chart/>
+          </template>
+        </v-basic-card>
+      </v-flex>
+      <v-flex xs12>
+        <v-basic-card
+          title="Line Charts - Rect Area"
+          toolbar-height="56">
+          <template slot="card-content">
+            <line-rect-area-chart/>
           </template>
         </v-basic-card>
       </v-flex>
@@ -45,6 +54,7 @@
 import LineBaseChart from './charts/LineBaseChart.vue';
 import LineSectionsChart from './charts/LineSectionsChart.vue';
 import LineAreaChart from './charts/LineAreaChart.vue';
+import LineRectAreaChart from './charts/LineRectAreaChart.vue';
 import LineBigDataChart from './charts/LineBigDataChart.vue';
 
 export default {
@@ -53,6 +63,7 @@ export default {
     LineBaseChart,
     LineSectionsChart,
     LineAreaChart,
+    LineRectAreaChart,
     LineBigDataChart,
   },
 };

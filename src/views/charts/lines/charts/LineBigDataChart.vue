@@ -32,6 +32,11 @@ export default {
         title: {
           text: 'Line - Big Data',
         },
+        grid: {
+          right: 10,
+          left: 20,
+          containLabel: true,
+        },
         tooltip: {
           trigger: 'axis',
           position(pt) {
