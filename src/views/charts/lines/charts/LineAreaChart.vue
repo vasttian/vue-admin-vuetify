@@ -10,7 +10,7 @@
 import echarts from 'echarts/lib/echarts';
 
 export default {
-  name: 'BaseLine',
+  name: 'AreaLine',
   data() {
     return {
       chartOption: {},

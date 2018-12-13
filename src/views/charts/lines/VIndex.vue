@@ -28,6 +28,15 @@
           </template>
         </v-basic-card>
       </v-flex>
+      <v-flex xs12>
+        <v-basic-card
+          title="Line Charts - Big Data"
+          toolbar-height="56">
+          <template slot="card-content">
+            <line-big-data-chart/>
+          </template>
+        </v-basic-card>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -36,6 +45,7 @@
 import LineBaseChart from './charts/LineBaseChart.vue';
 import LineSectionsChart from './charts/LineSectionsChart.vue';
 import LineAreaChart from './charts/LineAreaChart.vue';
+import LineBigDataChart from './charts/LineBigDataChart.vue';
 
 export default {
   name: 'VLineIndex',
@@ -43,6 +53,7 @@ export default {
     LineBaseChart,
     LineSectionsChart,
     LineAreaChart,
+    LineBigDataChart,
   },
 };
 </script>
