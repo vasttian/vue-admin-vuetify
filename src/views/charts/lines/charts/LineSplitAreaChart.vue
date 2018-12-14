@@ -17,12 +17,13 @@ export default {
   methods: {
     buildChartOption() {
       let base = +new Date(2018, 12, 15);
+      let dividingLine = null;
       const oneDay = 24 * 3600 * 1000;
       const legendData = ['A', 'B'];
       const seriesData1 = [];
       const seriesData2 = [];
       const xAxisData = [];
-      let dividingLine = null;
+
       for (let i = 0; i < 20; i += 1) {
         const now = new Date(base += oneDay);
         const date = [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/');
@@ -49,10 +50,17 @@ export default {
         grid: {
           show: false,
           top: '30%',
-          left: 0,
-          right: '10',
+          right: 5,
           bottom: '2%',
+          left: 0,
           containLabel: true,
+        },
+        toolbox: {
+          show: true,
+          right: 20,
+          feature: {
+            saveAsImage: {},
+          },
         },
         tooltip: {
           trigger: 'axis',
@@ -81,8 +89,8 @@ export default {
         legend: {
           show: true,
           // selectedMode: false,
-          top: 30,
-          left: 'right',
+          top: 6,
+          right: 50,
           data: legendData,
           textStyle: {
             color: '#365583',

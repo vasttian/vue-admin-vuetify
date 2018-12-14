@@ -55,6 +55,13 @@ export default {
           bottom: '2%',
           containLabel: true,
         },
+        toolbox: {
+          show: true,
+          right: 20,
+          feature: {
+            saveAsImage: {},
+          },
+        },
         legend: {
           orient: 'vertical',
           right: 5,
