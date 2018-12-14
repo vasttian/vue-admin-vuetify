@@ -28,7 +28,7 @@
           </template>
         </v-basic-card>
       </v-flex>
-      <v-flex xs12>
+      <v-flex xs12 lg6>
         <v-basic-card
           title="Line Charts - Rect Area"
           toolbar-height="56">
