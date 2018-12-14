@@ -56,8 +56,8 @@ export default {
           containLabel: true,
         },
         legend: {
-          right: 5,
           orient: 'vertical',
+          right: 5,
           top: 'center',
           data: legendData,
         },

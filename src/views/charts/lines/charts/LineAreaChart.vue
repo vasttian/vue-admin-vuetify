@@ -83,7 +83,7 @@ export default {
           icon: 'rect',
           itemGap: 15,
           itemWidth: 16,
-          itemHeight: 6,
+          itemHeight: 10,
           data: ['A', 'B', 'C'],
           textStyle: {
             fontSize: 14,
