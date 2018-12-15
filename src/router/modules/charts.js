@@ -24,6 +24,13 @@ const routes = {
       meta: {
       },
     },
+    {
+      path: 'else',
+      name: 'ElseCharts',
+      component: () => import('@/views/charts/else/VIndex.vue'),
+      meta: {
+      },
+    },
   ],
 };
 

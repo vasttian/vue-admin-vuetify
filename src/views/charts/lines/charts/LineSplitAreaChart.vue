@@ -44,8 +44,7 @@ export default {
       // console.log('xAxisData',xAxisData);
       const option = {
         title: {
-          text: '',
-          show: false,
+          text: 'Line - Split Area',
         },
         grid: {
           show: false,
