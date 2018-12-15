@@ -34,12 +34,12 @@ export default {
         return;
       }
 
-      const top = window.pageYOffset ||
-        window.scrollY ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop ||
-        document.querySelector('#main-container').scrollTop ||
-        0;
+      const top = window.pageYOffset
+        || window.scrollY
+        || document.documentElement.scrollTop
+        || document.body.scrollTop
+        || document.querySelector('#main-container').scrollTop
+        || 0;
       // console.log('---top-------', top);
       this.fab = top > 100;
     },
