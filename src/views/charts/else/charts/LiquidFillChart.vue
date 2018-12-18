@@ -23,7 +23,7 @@ export default {
         series: [
           {
             type: 'liquidFill',
-            data: [0.6, 0.5, 0.4, 0.3],
+            data: [0.7, 0.6, 0.5, 0.4],
             direction: 'right',
             radius: '40%',
             center: ['20%', '50%'],

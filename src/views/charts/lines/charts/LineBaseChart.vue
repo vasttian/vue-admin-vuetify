@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'BaseLine',
+  name: 'BaseLineChart',
   data() {
     return {
       chartOption: {},
