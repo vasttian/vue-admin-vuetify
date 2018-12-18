@@ -260,5 +260,9 @@ export default {
       en: 'Bar',
       'zh-CN': '柱状图',
     },
+    elseCharts: {
+      en: 'Else',
+      'zh-CN': '其他',
+    },
   },
 };

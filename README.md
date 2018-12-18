@@ -20,6 +20,13 @@
 
 ---
 
+### :page_with_curl: Index
+* [:warning: Heads up](#warning-heads-up)
+* [:rocket: Getting Started](#rocket-getting-started)
+* [:white_check_mark: Roadmap](#white_check_mark-roadmap)
+* [:exclamation: Issues](#exclamation-issues)
+* [:copyright: License](#copyright-license)
+
 ### :warning: Heads up
 
 Currently this is just a **beta version**.
@@ -60,14 +67,14 @@ npm run build
 npm run lint
 ```
 
-### :white_check_mark: TODO
+### :white_check_mark: Roadmap
 - [x] add: Dashboard.
 - [x] add: Icons.
 - [x] add: Editor components.
 - [x] add: Jsonlint.
 - [x] mod: Sidebar.
-- [x] add: Charts components.
-- [x] add: UI components.
+- [ ] add: Charts components.
+- [ ] add: UI components.
 - [ ] add: Render Functions & Functional Components.
 - [ ] add: Demo site.
 

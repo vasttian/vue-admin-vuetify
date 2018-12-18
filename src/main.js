@@ -98,8 +98,8 @@ Vue.router.afterEach(() => {
   NProgress.done();
 });
 
-i18n.locale = localStorage.getItem('VUE-ADMIN-VUETIFY_LANGUAGE') ||
-  (supportedLangs.includes(userLocale) ? userLocale : 'zh-CN');
+i18n.locale = localStorage.getItem('VUE-ADMIN-VUETIFY_LANGUAGE')
+  || (supportedLangs.includes(userLocale) ? userLocale : 'zh-CN');
 Vue.prototype.$locale.use(i18n.locale);
 
 Vue.config.productionTip = false;

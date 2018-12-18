@@ -11,6 +11,7 @@ module.exports = {
     "no-console": 0,
     "no-debugger": "off",
     "no-shadow": 0,
+    "operator-linebreak": [2, "before"],
     "max-len": [
       "error",
       {

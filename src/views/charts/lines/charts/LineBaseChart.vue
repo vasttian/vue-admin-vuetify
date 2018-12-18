@@ -22,8 +22,15 @@ export default {
         legend: {
           show: true,
         },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'line',
+          },
+        },
         toolbox: {
           show: true,
+          right: 20,
           feature: {
             saveAsImage: {},
           },

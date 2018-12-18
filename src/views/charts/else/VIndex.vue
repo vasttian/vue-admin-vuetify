@@ -1,12 +1,12 @@
 <template>
   <v-container grid-list-lg pa-0>
     <v-layout wrap>
-      <v-flex xs12 lg6>
+      <v-flex xs12 xl6>
         <v-basic-card
-          title="Line Charts - Base"
+          title="Liquid Fill"
           toolbar-height="56">
           <template slot="card-content">
-            <base-bar-chart/>
+            <liquid-fill-chart/>
           </template>
         </v-basic-card>
       </v-flex>
@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import BaseBarChart from './charts/BaseBarChart.vue';
+import LiquidFillChart from './charts/LiquidFillChart.vue';
 
 export default {
-  name: 'VBarIndex',
-  componets: {
-    BaseBarChart,
+  name: 'VElseIndex',
+  components: {
+    LiquidFillChart,
   },
 };
 </script>
