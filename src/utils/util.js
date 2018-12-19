@@ -530,6 +530,32 @@ export function currentTimeStr() {
 }
 
 /**
+ * 判断是否是 IE 浏览器
+ * @return {Boolean} [description]
+ */
+export function isIE() {
+  return !!window.ActiveXObject || 'ActiveXObject' in window;
+}
+
+/**
+ * 阻止浏览器的冒泡行为
+ * @param {*} e
+ */
+export function stopBubble(e) {
+  e = e || window.event;
+  e.stopPropagation ? e.stopPropagation() : (e.cancelBubble = true);
+}
+
+/**
+ * 阻止浏览器的默认行为
+ * @param {*} e
+ */
+export function stopDefault( e ) {
+  e = e || window.event;
+  e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+}
+
+/**
  * smooth scroll to
  * Smoothly scroll element to the given target (element.scrollTop) for the given duration
  * Returns a promise that's fulfilled when done, or rejected if interrupted
