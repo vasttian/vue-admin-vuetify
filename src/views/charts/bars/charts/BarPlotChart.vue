@@ -44,17 +44,20 @@ export default {
 
       const option = {
         color: ['#3398DB'],
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow',
-          },
-        },
         grid: {
           left: '3%',
           right: '3%',
           bottom: '3%',
           containLabel: true,
+        },
+        title: {
+          text: 'Bar - Plot',
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
+          },
         },
         xAxis: [
           {

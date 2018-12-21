@@ -3,7 +3,7 @@
     <v-layout wrap>
       <v-flex xs12 lg6>
         <v-basic-card
-          title="Line Charts - Base"
+          title="Bar Charts - Base"
           toolbar-height="56">
           <template slot="card-content">
             <bar-base-chart/>
@@ -12,7 +12,7 @@
       </v-flex>
       <v-flex xs12 lg6>
         <v-basic-card
-          title="Line Charts - Plot"
+          title="Bar Charts - Plot"
           toolbar-height="56">
           <template slot="card-content">
             <bar-plot-chart/>
