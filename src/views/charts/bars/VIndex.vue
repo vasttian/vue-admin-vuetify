@@ -12,6 +12,15 @@
       </v-flex>
       <v-flex xs12 lg6>
         <v-basic-card
+          title="Bar Waterfall - Plot"
+          toolbar-height="56">
+          <template slot="card-content">
+            <bar-waterfall-chart/>
+          </template>
+        </v-basic-card>
+      </v-flex>
+      <v-flex xs12 lg6>
+        <v-basic-card
           title="Bar Charts - Plot"
           toolbar-height="56">
           <template slot="card-content">
@@ -26,12 +35,14 @@
 <script>
 import BarBaseChart from './charts/BarBaseChart.vue';
 import BarPlotChart from './charts/BarPlotChart.vue';
+import BarWaterfallChart from './charts/BarWaterfallChart.vue';
 
 export default {
   name: 'VBarIndex',
   components: {
     BarBaseChart,
     BarPlotChart,
+    BarWaterfallChart,
   },
 };
 </script>
