@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'SectionsLine',
+  name: 'SectionsLineChart',
   data() {
     return {
       chartOption: {},

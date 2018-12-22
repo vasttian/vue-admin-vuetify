@@ -9,7 +9,7 @@
 import echarts from 'echarts/lib/echarts';
 
 export default {
-  name: 'BigDataLine',
+  name: 'BigDataLineChart',
   data() {
     return {
       chartOption: {},

@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'SplitAreaLine',
+  name: 'SplitAreaLineChart',
   data() {
     return {
       chartOption: {},
