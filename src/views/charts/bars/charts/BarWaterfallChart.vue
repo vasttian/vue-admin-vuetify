@@ -16,9 +16,9 @@ export default {
   },
   methods: {
     buildChartOption() {
-      const series1Data = [0, 1200, 1245, 1230, 1676, 976, 1709, 1998, 1856, 1740, 1292];
-      const series2Data = [1200, 345, 393, '-', '-', 135, 178, 286, '-', '-', '-'];
-      const series3Data = ['-', '-', '-', 190, 170, '-', '-', '-', 235, 560, 220];
+      const series1Data = [400, 700, 1245, 1230, 1376, 976, 1609, 1998, 1856, 1740, 1292];
+      const series2Data = [600, 345, 393, '-', '-', 290, 578, 286, '-', '-', '-'];
+      const series3Data = ['-', '-', '-', 290, 170, '-', '-', '-', 235, 560, 220];
       const xAxisData = [];
       for (let i = 1; i <= 11; i += 1) {
         xAxisData.push(`11月${i}日`);
@@ -34,12 +34,13 @@ export default {
             type: 'shadow',
           },
           formatter(params) {
-            const tar = params[1].value != '-' ? params[1] : params[0];
-            return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+            // console.log('params---:', params);
+            const tar = params[1].value !== '-' ? params[1] : params[2];
+            return `${tar.name}<br/>${tar.seriesName}:${tar.value}`;
           },
         },
         legend: {
-          data: ['A', 'B'],
+          data: ['Alpha', 'Beta'],
         },
         grid: {
           left: '3%',
@@ -59,9 +60,9 @@ export default {
         },
         series: [
           {
-            name: '辅助',
+            name: 'Assist',
             type: 'bar',
-            stack: '总量',
+            stack: 'sum',
             itemStyle: {
               normal: {
                 barBorderColor: 'rgba(0, 0, 0, 0)',
@@ -75,9 +76,9 @@ export default {
             data: series1Data,
           },
           {
-            name: 'A',
+            name: 'Alpha',
             type: 'bar',
-            stack: '总量',
+            stack: 'sum',
             label: {
               normal: {
                 show: true,
@@ -87,9 +88,9 @@ export default {
             data: series2Data,
           },
           {
-            name: 'B',
+            name: 'Beta',
             type: 'bar',
-            stack: '总量',
+            stack: 'sum',
             label: {
               normal: {
                 show: true,
