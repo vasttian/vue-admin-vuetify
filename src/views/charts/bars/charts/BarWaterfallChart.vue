@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'BaseBarChart',
+  name: 'WaterfallBarChart',
   data() {
     return {
       chartOption: {},
