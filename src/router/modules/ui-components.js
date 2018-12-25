@@ -94,6 +94,13 @@ const routes = {
       meta: {
       },
     },
+    {
+      path: 'sparkline',
+      name: 'Sparkline',
+      component: () => import('@/views/ui-components/VSparkline.vue'),
+      meta: {
+      },
+    },
   ],
 };
 
