@@ -1,19 +1,27 @@
 <template>
-  <v-container grid-list-lg pa-0>
+  <v-container
+    grid-list-lg
+    pa-0
+  >
     <v-layout wrap>
       <!-- Base -->
-      <v-flex sm12 md6>
+      <v-flex
+        sm12
+        md6
+      >
         <v-basic-card title="BottomNavigation - Usage">
           <template slot="card-content">
             <v-card
               class="overflow-hidden"
               height="300px"
-              flat>
+              flat
+            >
               <v-card-text class="text-xs-center">
                 <v-btn
                   flat
                   color="primary"
-                  @click="showNav = !showNav">
+                  @click="showNav = !showNav"
+                >
                   Toggle Nav
                 </v-btn>
               </v-card-text>
@@ -24,25 +32,29 @@
                 absolute
                 :active.sync="bottomNav"
                 :value="showNav"
-                color="transparent">
+                color="transparent"
+              >
                 <v-btn
                   color="teal"
                   flat
-                  value="recent">
+                  value="recent"
+                >
                   <span>Recent</span>
                   <v-icon>history</v-icon>
                 </v-btn>
                 <v-btn
                   color="teal"
                   flat
-                  value="favorites">
+                  value="favorites"
+                >
                   <span>Favorites</span>
                   <v-icon>favorite</v-icon>
                 </v-btn>
                 <v-btn
                   color="teal"
                   flat
-                  value="nearby">
+                  value="nearby"
+                >
                   <span>Nearby</span>
                   <v-icon>place</v-icon>
                 </v-btn>
@@ -52,23 +64,29 @@
         </v-basic-card>
       </v-flex>
 
-      <v-flex sm12 md6>
+      <v-flex
+        sm12
+        md6
+      >
         <v-basic-card title="BottomNavigation - Color & shift">
           <template slot="card-content">
             <v-card
               class="overflow-hidden"
               height="300px"
-              flat>
+              flat
+            >
               <div
                 class="headline text-xs-center"
-                :style="{ color: color }">
+                :style="{ color: color }"
+              >
                 Active: {{ tab }}
               </div>
               <v-bottom-nav
                 absolute
                 :active.sync="tab"
                 :color="color"
-                :value="true">
+                :value="true"
+              >
                 <v-btn dark>
                   <span>Video</span>
                   <v-icon>ondemand_video</v-icon>
@@ -107,11 +125,16 @@ export default {
   computed: {
     color() {
       switch (this.tab) {
-        case 0: return 'indigo';
-        case 1: return 'teal';
-        case 2: return 'blue';
-        case 3: return 'brown';
-        default: return 'purple';
+        case 0:
+          return 'indigo';
+        case 1:
+          return 'teal';
+        case 2:
+          return 'blue';
+        case 3:
+          return 'brown';
+        default:
+          return 'purple';
       }
     },
   },

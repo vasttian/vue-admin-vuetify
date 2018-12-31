@@ -5,15 +5,17 @@
         <v-toolbar
           height="56"
           class="primary"
-          dark>
+          dark
+        >
           <v-toolbar-title>Setting Options</v-toolbar-title>
         </v-toolbar>
         <v-container grid-list-md>
-          <theme-setting/>
+          <theme-setting />
           <v-divider class="mt-4"></v-divider>
           <navigation-drawer
             ref="navigationDrawer"
-            @toggleTemporary="(val) => $emit('toggleTemporary', val)"/>
+            @toggleTemporary="(val) => $emit('toggleTemporary', val)"
+          />
         </v-container>
       </v-card>
     </v-flex>

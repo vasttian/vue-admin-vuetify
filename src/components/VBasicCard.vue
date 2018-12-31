@@ -6,7 +6,8 @@
       dense
       color="transparent"
       :height="toolbarHeight"
-      card>
+      card
+    >
       <v-toolbar-title>
         <v-subheader class="pl-0">
           {{ title }}

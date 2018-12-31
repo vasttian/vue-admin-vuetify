@@ -13,7 +13,8 @@
             large
             :href="source"
             target="_blank"
-            slot="activator">
+            slot="activator"
+          >
             <v-icon large>code</v-icon>
           </v-btn>
           <span>Source</span>
@@ -23,7 +24,8 @@
         <v-chart
           style="width:100%;"
           :options="chartOption"
-          auto-resize/>
+          auto-resize
+        />
       </v-flex>
     </v-layout>
   </div>
@@ -38,7 +40,8 @@ export default {
   data() {
     return {
       isCollapse: true,
-      source: 'https://github.com/vasttian/vue-admin-vuetify/blob/master/src/views/admin/VHomepage.vue',
+      source:
+        'https://github.com/vasttian/vue-admin-vuetify/blob/master/src/views/admin/VHomepage.vue',
       chartOption: {
         backgroundColor: '#394056',
         title: {
@@ -297,8 +300,7 @@ export default {
       },
     };
   },
-  methods: {
-  },
+  methods: {},
 };
 </script>
 

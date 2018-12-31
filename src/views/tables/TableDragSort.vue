@@ -1,25 +1,34 @@
 <template>
-  <v-container grid-list-lg pa-0>
+  <v-container
+    grid-list-lg
+    pa-0
+  >
     <v-layout wrap>
       <v-flex xs12>
         <v-basic-card
           title="Drag Sort - Base"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
             <v-data-table
               :headers="headers"
               :items="list"
               item-key="name"
               hide-actions
-              class="elevation-1">
+              class="elevation-1"
+            >
               <template
                 slot="items"
-                slot-scope="props">
+                slot-scope="props"
+              >
                 <td>{{ props.item.name }}</td>
                 <td>{{ props.item.age }}</td>
                 <td>{{ props.item.address }}</td>
                 <td>
-                  <svg-icon class="drag-handler" icon-class="drag"/>
+                  <svg-icon
+                    class="drag-handler"
+                    icon-class="drag"
+                  />
                 </td>
               </template>
             </v-data-table>

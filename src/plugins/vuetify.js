@@ -52,7 +52,10 @@ import {
   VTooltip,
   transitions,
 } from 'vuetify';
+import 'vuetify/src/stylus/app.styl';
 import * as directives from 'vuetify/es5/directives';
+import 'roboto-fontface/css/roboto/roboto-fontface.css';
+import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import enLang from 'vuetify/es5/locale/en';
 import zhLang from 'vuetify/es5/locale/zh-Hans';
 import i18n from '../i18n';

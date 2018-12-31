@@ -550,7 +550,7 @@ export function stopBubble(e) {
  * 阻止浏览器的默认行为
  * @param {*} e
  */
-export function stopDefault( e ) {
+export function stopDefault(e) {
   e = e || window.event;
   e.preventDefault ? e.preventDefault() : (e.returnValue = false);
 }

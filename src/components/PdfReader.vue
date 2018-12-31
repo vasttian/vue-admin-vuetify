@@ -4,7 +4,8 @@
       :src="url"
       width="100%"
       height="100%"
-      scrolling="no">
+      scrolling="no"
+    >
       {{ $t('components.notSupportPDF') }}
     </iframe>
   </div>
@@ -23,8 +24,8 @@ export default {
 
 <style lang="scss" scoped>
 .iframe-wrapper {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 
   iframe {
     display: block;

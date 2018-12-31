@@ -1,7 +1,7 @@
 <template>
   <v-fab-transition>
     <v-btn
-      v-scroll:#main-container="onScroll"
+      v-scroll="onScroll"
       v-show="fab"
       fab
       dark
@@ -9,7 +9,8 @@
       bottom
       right
       color="red"
-      @click="toTop">
+      @click="toTop"
+    >
       <v-icon>keyboard_arrow_up</v-icon>
     </v-btn>
   </v-fab-transition>

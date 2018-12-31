@@ -1,12 +1,18 @@
 <template>
   <div class="panel-wrapper">
     <span class="logo">
-      <img src="../../assets/logo.png" alt="">
+      <img
+        src="../../assets/logo.png"
+        alt=""
+      >
     </span>
 
     <div class="slogan-wrapper">
       <div class="slogan">
-        <img src="../../assets/login-bg2.svg" alt="">
+        <img
+          src="../../assets/login-bg2.svg"
+          alt=""
+        >
       </div>
     </div>
 
@@ -14,13 +20,15 @@
       <v-app class="login-con">
         <!-- <v-spacer></v-spacer> -->
         <v-content>
-          <base-langbar/>
+          <base-langbar />
           <v-container
             fluid
-            fill-height>
+            fill-height
+          >
             <v-layout
               align-center
-              justify-center>
+              justify-center
+            >
               <v-flex class="frame">
                 <h1 v-if="!isMobile">
                   {{ $t('common.loginN')}}
@@ -48,20 +56,23 @@
                     column
                     wrap
                     justify-end
-                    align-end>
+                    align-end
+                  >
                     <v-flex>
                       <v-btn
                         flat
                         small
                         color="primary"
-                        @click="redirectForgotPassword">
+                        @click="redirectForgotPassword"
+                      >
                         {{ $t('common.forgetPassword') }}
                       </v-btn>
                     </v-flex>
                     <v-flex>
                       <v-btn
                         :loading="loginLoading"
-                        @click="login">
+                        @click="login"
+                      >
                         <span slot="loader">Loading...</span>
                         {{ $t('common.login') }}
                       </v-btn>
@@ -75,7 +86,8 @@
 
         <v-footer
           color="#fbfbfb"
-          height="auto">
+          height="auto"
+        >
           <v-layout>
             <v-flex text-xs-center>
               <!-- {{ $t('common.copyrightMessage', { currentYear }) }} -->
@@ -98,7 +110,7 @@ export default {
   },
   data() {
     return {
-      currentYear: (new Date()).getFullYear(),
+      currentYear: new Date().getFullYear(),
       showPwd: false,
       form: {
         username: 'admin',
@@ -119,7 +131,8 @@ export default {
       }
 
       this.loginLoading = true;
-      this.$store.dispatch('login', this.form)
+      this.$store
+        .dispatch('login', this.form)
         .then(() => {
           try {
             this.$router.push({ name: 'Index' });
@@ -146,11 +159,10 @@ export default {
       });
     },
   },
-  created() {
-  },
+  created() {},
 };
 </script>
 
 <style lang="scss">
-  @import "../../styles/_login.scss";
+@import '../../styles/_login.scss';
 </style>

@@ -2,7 +2,8 @@
   <!-- Currently `mouseenter` and `mouseleave` is invalid -->
   <div
     @mouseenter="clearTimer"
-    @mouseleave="startTimer">
+    @mouseleave="startTimer"
+  >
     <v-snackbar
       v-model="visible"
       :color="color || type"
@@ -12,12 +13,14 @@
       :right="x === 'right'"
       :multi-line="mode === 'multi-line'"
       :timeout="timeout"
-      :vertical="mode === 'vertical'">
+      :vertical="mode === 'vertical'"
+    >
       {{ text }}
       <v-btn
         dark
         flat
-        @click="close">
+        @click="close"
+      >
         Close
       </v-btn>
     </v-snackbar>

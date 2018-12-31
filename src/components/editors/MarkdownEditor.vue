@@ -7,7 +7,8 @@
         href="https://github.com/markedjs/marked"
         target="_blank"
         color="primary"
-        small>
+        small
+      >
         Marked
       </v-btn>
       and
@@ -16,7 +17,8 @@
         href="https://github.com/highlightjs/highlight.js"
         target="_blank"
         color="primary"
-        small>
+        small
+      >
         Highlightjs
       </v-btn>
     </v-flex>
@@ -26,7 +28,8 @@
         <v-flex
           d-flex
           xs12
-          sm6>
+          sm6
+        >
           <v-textarea
             name="markdown"
             label="Markdown"
@@ -40,7 +43,8 @@
         <v-flex
           xs12
           sm6
-          :class="{ ['pl-3']: this.$vuetify.breakpoint.smAndUp }">
+          :class="{ ['pl-3']: this.$vuetify.breakpoint.smAndUp }"
+        >
           <v-flex>
             <v-select
               attach

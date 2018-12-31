@@ -39,13 +39,7 @@ export default {
         },
       ];
       const option = {
-        color: [
-          '#84FFFF',
-          '#69F0AE',
-          '#F4511E',
-          '#EEFF41',
-          '#FF6F00',
-        ],
+        color: ['#84FFFF', '#69F0AE', '#F4511E', '#EEFF41', '#FF6F00'],
         title: {
           text: 'Line - Rect Area',
         },

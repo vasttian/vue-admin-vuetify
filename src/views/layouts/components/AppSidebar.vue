@@ -149,11 +149,9 @@ export default {
       this.ps = new PerfectScrollbar('#sidebar', {
         suppressScrollX: true,
       });
-    });
-    this.temporary = this.$vuetify && this.$vuetify.breakpoint.smAndDown;
-    this.$nextTick(() => {
       this.$emit('changeTemporary', this.temporary);
     });
+    this.temporary = this.$vuetify && this.$vuetify.breakpoint.smAndDown;
   },
   beforeDestroy() {
     this.ps.destroy();

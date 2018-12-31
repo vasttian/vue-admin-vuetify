@@ -2,22 +2,34 @@
   <div>
     <v-form>
       <v-container>
-        <v-layout row wrap>
-          <v-flex xs12 sm4>
+        <v-layout
+          row
+          wrap
+        >
+          <v-flex
+            xs12
+            sm4
+          >
             <v-text-field
               label="Longitude"
               v-model.number="center.lng"
               prepend-icon="place"
             ></v-text-field>
           </v-flex>
-          <v-flex xs12 sm4>
+          <v-flex
+            xs12
+            sm4
+          >
             <v-text-field
               label="Latitude"
               v-model.number="center.lat"
               prepend-icon="place"
             ></v-text-field>
           </v-flex>
-          <v-flex xs12 sm4>
+          <v-flex
+            xs12
+            sm4
+          >
             <v-text-field
               label="Zoom"
               v-model.number="zoom"
@@ -35,26 +47,32 @@
       @moving="syncCenterAndZoom"
       @moveend="syncCenterAndZoom"
       @zoomend="syncCenterAndZoom"
-      :ak="appKey">
+      :ak="appKey"
+    >
       <bm-city-list
         :offset="{ width: 90, height: 55 }"
-        anchor="BMAP_ANCHOR_TOP_LEFT"/>
-      <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"/>
+        anchor="BMAP_ANCHOR_TOP_LEFT"
+      />
+      <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT" />
       <bm-map-type
         :map-types="['BMAP_NORMAL_MAP', 'BMAP_HYBRID_MAP']"
         :offset="{ width: 0, height: 55 }"
-        anchor="BMAP_ANCHOR_TOP_LEFT"/>
+        anchor="BMAP_ANCHOR_TOP_LEFT"
+      />
       <bm-overview-map
         anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
-        :isOpen="true"/>
+        :isOpen="true"
+      />
       <bm-geolocation
         anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
         :showAddressBar="true"
-        :autoLocation="true"/>
+        :autoLocation="true"
+      />
       <bm-marker
         :position="{ lng: 113.9504, lat: 22.544 }"
         :dragging="true"
-        animation="BMAP_ANIMATION_BOUNCE">
+        animation="BMAP_ANIMATION_BOUNCE"
+      >
         <!-- <bm-label
           content="Here"
           :labelStyle="{ color: 'red', fontSize : '20px' }"
@@ -64,7 +82,8 @@
       <bm-control>
         <bm-auto-complete
           v-model="keyword"
-          :sugStyle="{ zIndex: 12 }">
+          :sugStyle="{ zIndex: 12 }"
+        >
           <v-text-field
             height="32"
             solo
@@ -74,7 +93,8 @@
       </bm-control>
       <bm-local-search
         :keyword="keyword"
-        :auto-viewport="true"/>
+        :auto-viewport="true"
+      />
     </baidu-map>
   </div>
 </template>

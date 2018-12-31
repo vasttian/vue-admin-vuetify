@@ -2,12 +2,14 @@
   <div class="change-lang">
     <span
       @click="switchLang('zh-CN')"
-      :class="{ 'active-lang': currentLang === 'zh-CN' }">
+      :class="{ 'active-lang': currentLang === 'zh-CN' }"
+    >
       中文
     </span> /
     <span
       @click="switchLang('en')"
-      :class="{ 'active-lang': currentLang === 'en' }">
+      :class="{ 'active-lang': currentLang === 'en' }"
+    >
       En
     </span>
   </div>

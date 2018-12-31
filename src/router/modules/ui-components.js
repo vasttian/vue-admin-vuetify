@@ -14,92 +14,79 @@ const routes = {
       path: 'alerts',
       name: 'Alerts',
       component: () => import('@/views/ui-components/VAlerts.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'avatars',
       name: 'Avatars',
       component: () => import('@/views/ui-components/VAvatars.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'badges',
       name: 'Badges',
       component: () => import('@/views/ui-components/VBadges.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'bottom-navigation',
       name: 'BottomNavigation',
       component: () => import('@/views/ui-components/VBottomNavigation.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'bottom-sheets',
       name: 'BottomSheets',
       component: () => import('@/views/ui-components/VBottomSheets.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'breadcrumbs',
       name: 'Breadcrumbs',
       component: () => import('@/views/ui-components/VBreadcrumbs.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'buttons',
       name: 'Buttons',
       component: () => import('@/views/ui-components/VButtons.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'cards',
       name: 'Cards',
       component: () => import('@/views/ui-components/VCards.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'carousels',
       name: 'Carousels',
       component: () => import('@/views/ui-components/VCarousels.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'chips',
       name: 'Chips',
       component: () => import('@/views/ui-components/VChips.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'data-iterator',
       name: 'DataIterator',
       component: () => import('@/views/ui-components/VDataIterator.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'data-tables',
       name: 'DataTables',
       component: () => import('@/views/ui-components/VDataTables.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'sparkline',
       name: 'Sparkline',
       component: () => import('@/views/ui-components/VSparkline.vue'),
-      meta: {
-      },
+      meta: {},
     },
   ],
 };

@@ -1,39 +1,58 @@
 <template>
-  <v-container grid-list-lg pa-0>
+  <v-container
+    grid-list-lg
+    pa-0
+  >
     <v-layout wrap>
-      <v-flex xs12 lg6>
+      <v-flex
+        xs12
+        lg6
+      >
         <v-basic-card
           title="Bar Charts - Base"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
-            <bar-base-chart/>
+            <bar-base-chart />
           </template>
         </v-basic-card>
       </v-flex>
-      <v-flex xs12 lg6>
+      <v-flex
+        xs12
+        lg6
+      >
         <v-basic-card
           title="Bar Charts - Waterfall"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
-            <bar-waterfall-chart/>
+            <bar-waterfall-chart />
           </template>
         </v-basic-card>
       </v-flex>
-      <v-flex xs12 lg6>
+      <v-flex
+        xs12
+        lg6
+      >
         <v-basic-card
           title="Bar Charts - Shadow"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
-            <bar-shadow-chart/>
+            <bar-shadow-chart />
           </template>
         </v-basic-card>
       </v-flex>
-      <v-flex xs12 lg6>
+      <v-flex
+        xs12
+        lg6
+      >
         <v-basic-card
           title="Bar Charts - Plot"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
-            <bar-plot-chart/>
+            <bar-plot-chart />
           </template>
         </v-basic-card>
       </v-flex>

@@ -1,5 +1,5 @@
 <template>
-  <tinymce-editor/>
+  <tinymce-editor />
 </template>
 
 <script>

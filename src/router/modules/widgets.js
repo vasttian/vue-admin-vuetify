@@ -14,8 +14,7 @@ const routes = {
       path: 'icons',
       name: 'Icons',
       component: () => import('@/views/widgets/svg-icon/VIcons.vue'),
-      meta: {
-      },
+      meta: {},
     },
   ],
 };

@@ -6,7 +6,8 @@
     <v-flex>
       <chrome-picker
         :class="[$style.colorPicker]"
-        v-model="color"/>
+        v-model="color"
+      />
     </v-flex>
   </div>
 </template>

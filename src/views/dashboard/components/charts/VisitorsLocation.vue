@@ -3,7 +3,8 @@
     <v-chart
       style="width:100%;"
       :options="chartOption"
-      auto-resize/>
+      auto-resize
+    />
   </v-card>
 </template>
 
@@ -74,7 +75,7 @@ export default {
       const contrastData = [];
       const yAxisData = [];
 
-      data.sort((a, b) => (b.value - a.value));
+      data.sort((a, b) => b.value - a.value);
       maximumCnt = data[0].value;
       for (let i = 0; i < top; i += 1) {
         topData.push({

@@ -2,7 +2,8 @@
   <v-chart
     style='width:100%;'
     :options='chartOption'
-    auto-resize/>
+    auto-resize
+  />
 </template>
 
 <script>

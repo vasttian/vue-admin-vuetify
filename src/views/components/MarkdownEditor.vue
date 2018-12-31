@@ -1,7 +1,8 @@
 <template>
   <markdown-editor
     v-model="markdownText"
-    placeholder=""/>
+    placeholder=""
+  />
 </template>
 
 <script>
