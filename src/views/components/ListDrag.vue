@@ -1,31 +1,40 @@
 <template>
-  <v-container grid-list-lg pa-0>
+  <v-container
+    grid-list-lg
+    pa-0
+  >
     <v-layout wrap>
       <!-- Base -->
-      <v-flex xs12 sm6>
+      <v-flex
+        xs12
+        sm6
+      >
         <v-basic-card title="Drag List - Base">
           <template slot="card-content">
             <v-btn
               @click="disable = !disable"
-              color="light-blue accent-2">
+              color="light-blue accent-2"
+            >
               {{ disable ? 'Disable' : 'Enable' }}
             </v-btn>
             <draggable
               :options="baseDragOptions"
-              v-model="items">
+              v-model="items"
+            >
               <transition-group name="list-drag">
                 <div
                   v-for="(item, index) in items"
                   :key="item.name"
-                  class="list-drag-item">
+                  class="list-drag-item"
+                >
                   <v-layout
                     fill-height
                     align-center
                     justify-space-between
-                    class="content">
+                    class="content"
+                  >
                     <span>{{ item.name }}</span>
-                    <v-icon
-                      @click="removeItem(index)">
+                    <v-icon @click="removeItem(index)">
                       delete
                     </v-icon>
                   </v-layout>
@@ -37,12 +46,16 @@
       </v-flex>
 
       <!-- images -->
-      <v-flex xs12 sm6>
+      <v-flex
+        xs12
+        sm6
+      >
         <v-basic-card title="Drag List - Images">
           <template slot="card-content">
             <draggable
               v-model="images"
-              class="grid">
+              class="grid"
+            >
               <v-flex
                 pa-0
                 sm6
@@ -50,10 +63,12 @@
                 xl3
                 v-for="(item,index) in images"
                 :key="item.src"
-                class="item">
+                class="item"
+              >
                 <img
                   :src="item.src"
-                  :alt="`image ${index + 1}`">
+                  :alt="`image ${index + 1}`"
+                >
               </v-flex>
             </draggable>
           </template>
@@ -61,23 +76,29 @@
       </v-flex>
 
       <!-- group -->
-      <v-flex xs6 md3>
+      <v-flex
+        xs6
+        md3
+      >
         <v-basic-card title="Drag List - Group1">
           <template slot="card-content">
             <draggable
               :options="groupDragOptions"
               v-model="list1"
-              element="ul">
+              element="ul"
+            >
               <transition-group name="list-drag-group1">
                 <div
                   v-for="item in list1"
                   :key="item.name"
-                  class="list-drag-item">
+                  class="list-drag-item"
+                >
                   <v-layout
                     fill-height
                     align-center
                     justify-space-between
-                    class="content">
+                    class="content"
+                  >
                     <span>{{ item.name }}</span>
                   </v-layout>
                 </div>
@@ -86,23 +107,29 @@
           </template>
         </v-basic-card>
       </v-flex>
-      <v-flex xs6 md3>
+      <v-flex
+        xs6
+        md3
+      >
         <v-basic-card title="Drag List - Group2">
           <template slot="card-content">
             <draggable
               :options="groupDragOptions"
               v-model="list2"
-              element="ul">
+              element="ul"
+            >
               <transition-group name="list-drag-group1">
                 <div
                   v-for="item in list2"
                   :key="item.name"
-                  class="list-drag-item">
+                  class="list-drag-item"
+                >
                   <v-layout
                     fill-height
                     align-center
                     justify-space-between
-                    class="content">
+                    class="content"
+                  >
                     <span>{{ item.name }}</span>
                   </v-layout>
                 </div>
@@ -113,7 +140,10 @@
       </v-flex>
 
       <!-- data -->
-      <v-flex xs12 md6>
+      <v-flex
+        xs12
+        md6
+      >
         <v-basic-card title="Drag List - Data">
           <template slot="card-content">
             <v-layout wrap>
@@ -135,12 +165,7 @@
 
 <script>
 import draggable from 'vuedraggable';
-import {
-  items,
-  images,
-  list1,
-  list2,
-} from './data/dnd-list';
+import { items, images, list1, list2 } from './data/dnd-list';
 
 export default {
   name: 'ListDarg',

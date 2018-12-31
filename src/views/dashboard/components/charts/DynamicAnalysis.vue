@@ -3,7 +3,8 @@
     <v-chart
       style="width:100%;"
       :options="chartOption"
-      auto-resize/>
+      auto-resize
+    />
   </v-card>
 </template>
 
@@ -35,7 +36,10 @@ export default {
         // data.unshift(tempTime.toLocaleTimeString('en-US', { hour12: false }));
         // tempTime = new Date(tempTime - this.interval);
         data.unshift(this.$moment(tempTime).format(this.timeFormat));
-        tempTime = this.$moment(tempTime).subtract(this.interval / 1000, 'seconds');
+        tempTime = this.$moment(tempTime).subtract(
+          this.interval / 1000,
+          'seconds',
+        );
       }
 
       return data;

@@ -3,18 +3,24 @@
     <app-navbar
       :toggle-btn="true"
       class="nav-container"
-      @toggleSidebar="toggleSidebar"/>
+      @toggleSidebar="toggleSidebar"
+    />
     <app-sidebar
       ref="sidebar"
       class="sidebar-container"
-      @changeTemporary="(val) => $refs && $refs.rightSettings.changeTemporary(val)"/>
-    <div id="main-container" class="main-container">
-      <app-main/>
+      @changeTemporary="(val) => $refs && $refs.rightSettings.changeTemporary(val)"
+    />
+    <div
+      id="main-container"
+      class="main-container"
+    >
+      <app-main />
     </div>
     <app-right-settings
       ref="rightSettings"
-      @toggleTemporary="toggleTemporary"/>
-    <app-fab/>
+      @toggleTemporary="toggleTemporary"
+    />
+    <app-fab />
   </v-app>
 </template>
 
@@ -35,9 +41,7 @@ export default {
     AppRightSettings,
   },
   data() {
-    return {
-
-    };
+    return {};
   },
   methods: {
     toggleSidebar() {

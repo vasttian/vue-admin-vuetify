@@ -2,7 +2,8 @@
   <v-card>
     <v-toolbar
       color="light-blue lighten-2"
-      dark>
+      dark
+    >
       <v-toolbar-title>Notification</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
@@ -10,17 +11,20 @@
       </v-btn>
       <v-btn
         @click="checkAllItems"
-        icon>
+        icon
+      >
         <v-icon>{{ actionsLen === selected.length ? 'check_circle' : 'check_circle_outline' }}</v-icon>
       </v-btn>
     </v-toolbar>
     <v-list
       two-line
-      class="pa-0">
+      class="pa-0"
+    >
       <template v-for="(item, index) in items">
         <v-subheader
           v-if="item.header"
-          :key="item.header">
+          :key="item.header"
+        >
           {{ item.header }}
         </v-subheader>
         <v-list-tile
@@ -28,10 +32,12 @@
           avatar
           ripple
           :key="item.title"
-          @click="toggle(index)">
+          @click="toggle(index)"
+        >
           <v-list-tile-avatar
             size="38"
-            :color="item.color">
+            :color="item.color"
+          >
             <v-icon dark>{{ item.icon }}</v-icon>
           </v-list-tile-avatar>
           <v-list-tile-content>
@@ -41,19 +47,22 @@
             <v-list-tile-action-text>{{ item.action }}</v-list-tile-action-text>
             <v-icon
               v-if="!selected.includes(index)"
-              color="grey lighten-1">
+              color="grey lighten-1"
+            >
               star_border
             </v-icon>
             <v-icon
               v-else
-              color="yellow darken-2">
+              color="yellow darken-2"
+            >
               star
             </v-icon>
           </v-list-tile-action>
         </v-list-tile>
         <v-divider
           v-if="index + 1 < items.length"
-          :key="index"></v-divider>
+          :key="index"
+        ></v-divider>
       </template>
     </v-list>
   </v-card>

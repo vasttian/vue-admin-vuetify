@@ -1,12 +1,16 @@
 <template>
   <v-app>
     <v-content>
-      <v-container fluid fill-height>
+      <v-container
+        fluid
+        fill-height
+      >
         <v-layout align-center>
           <v-flex text-xs-center>
             <div
               class="display-3"
-              :class="[$style.errorHint]">
+              :class="[$style.errorHint]"
+            >
               Whoops, 404
             </div>
             <p :class="[$style.errorText]">The page you were looking for does not exist</p>
@@ -14,7 +18,8 @@
               round
               dark
               color="primary"
-              :to="to">
+              :to="to"
+            >
               Back to home
             </v-btn>
           </v-flex>
@@ -37,7 +42,7 @@ export default {
 
 <style lang="scss" module>
 .errorHint {
-  color: #42A5F5;
+  color: #42a5f5;
   margin-bottom: 10px;
 }
 

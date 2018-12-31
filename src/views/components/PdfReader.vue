@@ -1,5 +1,5 @@
 <template>
-  <pdf-reader :style="{ height: domHeight + 'px' }"/>
+  <pdf-reader :style="{ height: domHeight + 'px' }" />
 </template>
 
 <script>

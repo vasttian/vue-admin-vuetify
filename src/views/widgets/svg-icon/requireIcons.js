@@ -7,4 +7,3 @@ const icons = all.map(s => s.match(re)[1]);
 icons.sort();
 // console.log('icons--', icons);
 export default icons;
-

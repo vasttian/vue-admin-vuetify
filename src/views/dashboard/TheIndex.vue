@@ -4,19 +4,21 @@
     <v-layout
       justify-center
       align-center
-      wrap>
+      wrap
+    >
       <v-flex xs12>
-        <dynamic-analysis/>
+        <dynamic-analysis />
       </v-flex>
       <v-flex xs12>
-        <total-statistics/>
+        <total-statistics />
       </v-flex>
       <v-flex
         lg3
         sm6
         xs12
         v-for="(config, index) in indicatorConfig"
-        :key="index">
+        :key="index"
+      >
         <v-card>
           <separate-indicator :config="config"></separate-indicator>
         </v-card>
@@ -25,9 +27,10 @@
     <v-layout
       justify-center
       align-center
-      wrap>
+      wrap
+    >
       <v-flex xs12>
-        <visitors-location/>
+        <visitors-location />
       </v-flex>
     </v-layout>
   </div>
@@ -80,11 +83,7 @@ export default {
       ],
     };
   },
-  methods: {
-
-  },
-  created() {
-
-  },
+  methods: {},
+  created() {},
 };
 </script>

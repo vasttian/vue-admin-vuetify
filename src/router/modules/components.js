@@ -38,29 +38,25 @@ const routes = {
       path: 'tinymce-editor',
       name: 'TinymceEditor',
       component: () => import('@/views/components/TinymceEditor.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'pdf-reader',
       name: 'PdfReader',
       component: () => import('@/views/components/PdfReader.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'maps',
       name: 'Maps',
       component: () => import('@/views/components/VMaps.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'list-drag',
       name: 'ListDrag',
       component: () => import('@/views/components/ListDrag.vue'),
-      meta: {
-      },
+      meta: {},
     },
   ],
 };

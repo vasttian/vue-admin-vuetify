@@ -2,19 +2,28 @@
   <v-layout row>
     <v-card>
       <v-subheader>Icons</v-subheader>
-      <v-container fluid grid-list-xl>
-        <v-layout row wrap>
+      <v-container
+        fluid
+        grid-list-xl
+      >
+        <v-layout
+          row
+          wrap
+        >
           <v-flex
             v-for="(item, index) in iconsMap"
             @click="handleClipboard('.icon-item', generateCode(item))"
-            :key="index">
+            :key="index"
+          >
             <v-tooltip
               z-index="1003"
-              top>
+              top
+            >
               <div
                 slot="activator"
-                class="icon-item">
-                <svg-icon :icon-class="item"/>
+                class="icon-item"
+              >
+                <svg-icon :icon-class="item" />
                 <span>{{ item }}</span>
               </div>
               <span>{{ generateCode(item) }}</span>

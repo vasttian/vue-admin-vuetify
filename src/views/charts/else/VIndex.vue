@@ -1,12 +1,19 @@
 <template>
-  <v-container grid-list-lg pa-0>
+  <v-container
+    grid-list-lg
+    pa-0
+  >
     <v-layout wrap>
-      <v-flex xs12 xl6>
+      <v-flex
+        xs12
+        xl6
+      >
         <v-basic-card
           title="Liquid Fill"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
-            <liquid-fill-chart/>
+            <liquid-fill-chart />
           </template>
         </v-basic-card>
       </v-flex>

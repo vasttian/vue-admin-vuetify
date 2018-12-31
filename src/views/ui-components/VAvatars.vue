@@ -1,22 +1,28 @@
 <template>
-  <v-container grid-list-lg pa-0>
+  <v-container
+    grid-list-lg
+    pa-0
+  >
     <v-layout wrap>
       <v-flex xs12>
         <v-basic-card
           title="Avatars - Base"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
             <v-layout
               justify-space-between
               pt-2
-              pb-2>
+              pb-2
+            >
               <v-avatar color="indigo">
                 <v-icon dark>account_circle</v-icon>
               </v-avatar>
               <v-avatar>
                 <img
                   src="http://67.218.155.2:8082/vasttian.png"
-                  alt="Vasttian">
+                  alt="Vasttian"
+                >
               </v-avatar>
               <v-badge overlap>
                 <span slot="badge">3</span>
@@ -35,23 +41,26 @@
       <v-flex xs12>
         <v-basic-card
           title="Avatars - Custom"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
             <v-layout
               justify-space-between
-              align-center>
-              <v-avatar
-                color="blue">
+              align-center
+            >
+              <v-avatar color="blue">
                 <v-icon dark>account_circle</v-icon>
               </v-avatar>
               <v-avatar
                 tile
-                color="indigo">
+                color="indigo"
+              >
                 <v-icon dark>account_circle</v-icon>
               </v-avatar>
               <v-avatar
                 size="70"
-                color="indigo">
+                color="indigo"
+              >
                 <v-icon dark>account_circle</v-icon>
               </v-avatar>
             </v-layout>
@@ -62,10 +71,18 @@
       <v-flex xs12>
         <v-basic-card
           title="Avatars - Resizable"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
-            <v-layout row wrap>
-              <v-flex xs12 sm6 md4>
+            <v-layout
+              row
+              wrap
+            >
+              <v-flex
+                xs12
+                sm6
+                md4
+              >
                 <v-slider
                   v-model="slider"
                   :min="8"
@@ -85,14 +102,17 @@
                 layout
                 align-center
                 justify-center
-                text-xs-center>
+                text-xs-center
+              >
                 <v-avatar
                   :tile="tile"
                   :size="avatarSize"
-                  color="grey lighten-4">
+                  color="grey lighten-4"
+                >
                   <img
                     src="http://67.218.155.2:8082/vasttian.png"
-                    alt="avatar">
+                    alt="avatar"
+                  >
                 </v-avatar>
               </v-flex>
             </v-layout>
@@ -103,26 +123,31 @@
       <v-flex xs12>
         <v-basic-card
           title="Avatars - Popout"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
             <v-layout justify-space-between>
               <v-flex xs12>
                 <v-expansion-panel popout>
                   <v-expansion-panel-content
                     v-for="(item, i) in items"
-                    :key="i">
+                    :key="i"
+                  >
                     <v-layout
                       slot="header"
                       align-center
-                      spacer>
+                      spacer
+                    >
                       <v-flex xs6>
                         <v-avatar
                           slot="activator"
-                          size="36px">
+                          size="36px"
+                        >
                           <img
                             v-if="item.avatar"
                             :src="item.avatar"
-                            alt="Avatar">
+                            alt="Avatar"
+                          >
                           <v-icon
                             v-else
                             :color="item.color"

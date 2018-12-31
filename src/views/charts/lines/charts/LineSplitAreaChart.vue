@@ -25,8 +25,12 @@ export default {
       const xAxisData = [];
 
       for (let i = 0; i < 20; i += 1) {
-        const now = new Date(base += oneDay);
-        const date = [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/');
+        const now = new Date((base += oneDay));
+        const date = [
+          now.getFullYear(),
+          now.getMonth() + 1,
+          now.getDate(),
+        ].join('/');
         const serie = Math.abs(Math.round(Math.random() * 30));
         xAxisData.push(date);
         if (i < 10) {

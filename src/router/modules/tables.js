@@ -14,15 +14,13 @@ const routes = {
       path: 'table-inline-edit',
       name: 'TableInlineEdit',
       component: () => import('@/views/tables/TableInlineEdit.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'table-drag-sort',
       name: 'TableDragSort',
       component: () => import('@/views/tables/TableDragSort.vue'),
-      meta: {
-      },
+      meta: {},
     },
   ],
 };

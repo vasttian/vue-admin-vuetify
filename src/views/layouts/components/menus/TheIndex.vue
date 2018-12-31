@@ -7,7 +7,8 @@
           :key="index"
           :input-value="activeMenu === route.name"
           flat
-          :to="{ name: route.name }">
+          :to="{ name: route.name }"
+        >
           {{ route.name }}
         </v-btn>
       </template>
@@ -18,10 +19,12 @@
           bottom
           origin="bottom center"
           offset-y
-          transition="scale-transition">
+          transition="scale-transition"
+        >
           <v-btn
             slot="activator"
-            flat>
+            flat
+          >
             {{ route.name }}
             <v-icon dark>arrow_drop_down</v-icon>
           </v-btn>
@@ -29,7 +32,8 @@
             <v-list-tile
               v-for="(cRoute, idx) in route.children"
               :to="{ name: cRoute.name }"
-              :key="idx">
+              :key="idx"
+            >
               <v-list-tile-action v-if="cRoute.meta && cRoute.meta.icon">
                 <v-icon>{{ cRoute.meta.icon }}</v-icon>
               </v-list-tile-action>
@@ -48,7 +52,8 @@
           flat
           :key="index"
           :input-value="activeMenu === getRouteName(route)"
-          :to="{ name: getRouteName(route) }">
+          :to="{ name: getRouteName(route) }"
+        >
           {{ getRouteName(route) }}
         </v-btn>
       </template>
@@ -62,9 +67,7 @@ import { mapState } from 'vuex';
 export default {
   name: 'TheMenus',
   data() {
-    return {
-
-    };
+    return {};
   },
   computed: {
     ...mapState({
@@ -72,7 +75,7 @@ export default {
     }),
     routes() {
       const { routes } = this.$router.options;
-      return routes.filter(route => (!route.meta || !route.meta.hidden));
+      return routes.filter(route => !route.meta || !route.meta.hidden);
     },
     activeMenu() {
       return this.findParentRouteByChildName();
@@ -91,7 +94,9 @@ export default {
       }
 
       const { auth } = route.meta;
-      return auth ? (!auth.length && !this.user.role) || auth.includes(this.user.role) : !auth;
+      return auth
+        ? (!auth.length && !this.user.role) || auth.includes(this.user.role)
+        : !auth;
     },
     getRouteName(route = {}) {
       return route.name || (route.children && route.children[0].name) || '';

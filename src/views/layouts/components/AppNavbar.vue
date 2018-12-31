@@ -8,7 +8,8 @@
       fixed
       dense
       height="56"
-      :clipped-left="true">
+      :clipped-left="true"
+    >
       <v-toolbar-side-icon
         :disabled="!toggleBtn"
         @click.stop="$emit('toggleSidebar')"
@@ -16,14 +17,15 @@
       <v-toolbar-title class="hidden-sm-and-down">
         <router-link
           :to="{ name : 'Dashboard' }"
-          class="toolbar-title">
+          class="toolbar-title"
+        >
           <span>VUE-ADMIN-VUETIFY</span>
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
       <!-- menu -->
-      <navbar-menu/>
+      <navbar-menu />
 
       <v-spacer></v-spacer>
 
@@ -36,43 +38,51 @@
           nudge-bottom="13"
           origin="center center"
           :close-on-content-click="false"
-          transition="scale-transition">
+          transition="scale-transition"
+        >
           <v-btn
             icon
             flat
-            slot="activator">
+            slot="activator"
+          >
             <v-badge
               v-if="badgeLen"
               color="red"
-              overlap>
+              overlap
+            >
               <span slot="badge">{{ badgeLen }}</span>
               <v-icon medium>notifications</v-icon>
             </v-badge>
             <v-icon
               v-else
-              medium>notifications</v-icon>
+              medium
+            >notifications</v-icon>
           </v-btn>
-          <notification-list @unreadLen="(val) => badgeLen = val"/>
+          <notification-list @unreadLen="(val) => badgeLen = val" />
         </v-menu>
         <v-btn
           class="hidden-xs-only"
           icon
-          large>
-          <app-screenfull fill="#333539"/>
+          large
+        >
+          <app-screenfull fill="#333539" />
         </v-btn>
         <v-menu
           attach
           offset-y
           bottom
           left
-          nudge-bottom="14">
+          nudge-bottom="14"
+        >
           <v-toolbar-title
             v-if="$vuetify && $vuetify.breakpoint.smAndUp"
-            slot="activator">
+            slot="activator"
+          >
             <v-avatar size="40">
               <img
                 :src="user.avatar"
-                alt="">
+                alt=""
+              >
             </v-avatar>
             <span style="margin-left: 10px;">{{ user.name }}</span>
             <v-icon>arrow_drop_down</v-icon>
@@ -81,18 +91,22 @@
             v-else
             icon
             dark
-            slot="activator">
+            slot="activator"
+          >
             <v-icon>more_vert</v-icon>
           </v-btn>
           <v-list>
             <v-list-tile class="hidden-sm-and-up">
               <v-list-tile-title>
-                <base-langbar/>
+                <base-langbar />
               </v-list-tile-title>
             </v-list-tile>
             <v-list-tile @click="toGithub">
               <v-list-tile-avatar>
-                <svg-icon style="font-size:21px;" icon-class="github"/>
+                <svg-icon
+                  style="font-size:21px;"
+                  icon-class="github"
+                />
               </v-list-tile-avatar>
               <v-list-tile-content>
                 <v-list-tile-title>
@@ -122,7 +136,7 @@
             </v-list-tile>
           </v-list>
         </v-menu>
-        <base-langbar v-if="$vuetify && $vuetify.breakpoint.smAndUp"/>
+        <base-langbar v-if="$vuetify && $vuetify.breakpoint.smAndUp" />
       </v-toolbar-items>
     </v-toolbar>
   </header>
@@ -169,7 +183,6 @@ export default {
       this.$router.push({ name: 'Login' });
     },
   },
-  created() {
-  },
+  created() {},
 };
 </script>

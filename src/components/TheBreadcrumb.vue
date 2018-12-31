@@ -3,7 +3,8 @@
     <v-breadcrumbs
       :items="items"
       divider="/"
-      :class="layoutClass">
+      :class="layoutClass"
+    >
     </v-breadcrumbs>
   </div>
 </template>
@@ -11,12 +12,9 @@
 <script>
 export default {
   name: 'TheBreadcrumb',
-  props: [
-    'layoutClass',
-  ],
+  props: ['layoutClass'],
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
     items() {

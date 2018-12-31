@@ -1,6 +1,6 @@
 <template>
   <div class="json-editor">
-    <textarea ref="textarea"/>
+    <textarea ref="textarea" />
   </div>
 </template>
 
@@ -69,7 +69,7 @@ export default {
     line-height: 20px;
   }
 
-  .CodeMirror-scroll{
+  .CodeMirror-scroll {
     min-height: 200px;
   }
 }

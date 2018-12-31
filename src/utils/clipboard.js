@@ -40,6 +40,4 @@ function handleClipboard(target, text) {
   });
 }
 
-
 export default handleClipboard;
-

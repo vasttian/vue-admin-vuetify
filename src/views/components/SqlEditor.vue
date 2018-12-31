@@ -1,7 +1,8 @@
 <template>
   <sql-editor
     v-model="sqlText"
-    placeholder=""/>
+    placeholder=""
+  />
 </template>
 
 <script>

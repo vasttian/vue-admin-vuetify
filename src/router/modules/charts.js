@@ -14,22 +14,19 @@ const routes = {
       path: 'line',
       name: 'LineCharts',
       component: () => import('@/views/charts/lines/VIndex.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'bar',
       name: 'BarCharts',
       component: () => import('@/views/charts/bars/VIndex.vue'),
-      meta: {
-      },
+      meta: {},
     },
     {
       path: 'else',
       name: 'ElseCharts',
       component: () => import('@/views/charts/else/VIndex.vue'),
-      meta: {
-      },
+      meta: {},
     },
   ],
 };

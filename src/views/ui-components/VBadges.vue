@@ -1,8 +1,14 @@
 <template>
-  <v-container grid-list-lg pa-0>
+  <v-container
+    grid-list-lg
+    pa-0
+  >
     <v-layout wrap>
       <!-- Base -->
-      <v-flex xs12 sm6>
+      <v-flex
+        xs12
+        sm6
+      >
         <v-basic-card title="Badges - Usage">
           <template slot="card-content">
             <v-flex class="text-xs-center">
@@ -10,7 +16,8 @@
                 <span slot="badge">6</span>
                 <v-icon
                   large
-                  color="grey lighten-1">
+                  color="grey lighten-1"
+                >
                   shopping_cart
                 </v-icon>
               </v-badge>
@@ -19,7 +26,8 @@
                 <span slot="badge">!</span>
                 <v-icon
                   large
-                  color="grey">
+                  color="grey"
+                >
                   mail
                 </v-icon>
               </v-badge>
@@ -27,11 +35,13 @@
 
             <v-flex
               class="text-xs-center"
-              style="margin-top: 40px;">
+              style="margin-top: 40px;"
+            >
               <v-badge
                 color="purple"
                 left
-                overlap>
+                overlap
+              >
                 <v-icon
                   slot="badge"
                   dark
@@ -39,14 +49,16 @@
                 >done</v-icon>
                 <v-icon
                   color="grey lighten-1"
-                  large>
+                  large
+                >
                   account_circle
                 </v-icon>
               </v-badge>
 
               <v-badge
                 overlap
-                color="orange">
+                color="orange"
+              >
                 <v-icon
                   slot="badge"
                   dark
@@ -54,7 +66,8 @@
                 >notifications</v-icon>
                 <v-icon
                   large
-                  color="grey darken-1">
+                  color="grey darken-1"
+                >
                   account_box
                 </v-icon>
               </v-badge>
@@ -64,30 +77,37 @@
       </v-flex>
 
       <!-- Base -->
-      <v-flex xs12 sm6>
+      <v-flex
+        xs12
+        sm6
+      >
         <v-basic-card title="Badges - Visibility">
           <template slot="card-content">
             <v-layout
               justify-space-between
               class="text-xs-center"
               row
-              wrap>
+              wrap
+            >
               <v-flex xs12>
                 <v-btn
                   color="indigo"
                   class="white--text"
-                  @click="show = !show">
+                  @click="show = !show"
+                >
                   Toggle
                 </v-btn>
               </v-flex>
 
               <v-flex
                 xs12
-                style="margin-top: 48px;">
+                style="margin-top: 48px;"
+              >
                 <v-badge
                   v-model="show"
                   color="cyan"
-                  left>
+                  left
+                >
                   <span slot="badge">6</span>
                   <v-icon
                     large
@@ -97,9 +117,13 @@
 
                 <v-badge
                   v-model="show"
-                  color="purple">
+                  color="purple"
+                >
                   <span slot="badge">6</span>
-                  <v-icon large color="grey">mail</v-icon>
+                  <v-icon
+                    large
+                    color="grey"
+                  >mail</v-icon>
                 </v-badge>
               </v-flex>
             </v-layout>

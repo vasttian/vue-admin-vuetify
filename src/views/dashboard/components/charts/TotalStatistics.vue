@@ -3,7 +3,8 @@
     <v-chart
       style="width:100%;"
       :options="chartOption"
-      auto-resize/>
+      auto-resize
+    />
   </v-card>
 </template>
 
@@ -17,8 +18,7 @@ export default {
       chartOption: {},
     };
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     buildChartOption() {
       const xAxisData = [
@@ -59,7 +59,10 @@ export default {
           itemWidth: 16,
           itemHeight: 10,
           itemGap: 13,
-          data: [this.$t('dashboard.yesterday'), this.$t('dashboard.dayBeforeYesterday')],
+          data: [
+            this.$t('dashboard.yesterday'),
+            this.$t('dashboard.dayBeforeYesterday'),
+          ],
           right: '3%',
           top: this.$vuetify.breakpoint.xs ? 25 : 5,
           textStyle: {

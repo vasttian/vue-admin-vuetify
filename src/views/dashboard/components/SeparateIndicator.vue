@@ -1,10 +1,12 @@
 <template>
   <v-card
     color="grey lighten-3"
-    class="indicator">
+    class="indicator"
+  >
     <v-icon
       :color="config.color"
-      size="56">
+      size="56"
+    >
       {{ config.icon }}
     </v-icon>
     <v-card-text class="info-title">
@@ -20,9 +22,7 @@
 
 <script>
 export default {
-  props: [
-    'config',
-  ],
+  props: ['config'],
 };
 </script>
 
@@ -39,7 +39,7 @@ export default {
   top: 20px;
   width: 1px;
   height: calc(100% - 40px);
-  content: "";
+  content: '';
   background: #ddd;
 }
 
@@ -51,7 +51,7 @@ export default {
   .stats-title {
     font-size: 20px;
     font-weight: 600;
-    color: #42A5F5;
+    color: #42a5f5;
   }
 }
 </style>

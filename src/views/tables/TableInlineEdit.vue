@@ -1,26 +1,33 @@
 <template>
-  <v-container grid-list-lg pa-0>
+  <v-container
+    grid-list-lg
+    pa-0
+  >
     <v-layout wrap>
       <v-flex xs12>
         <v-basic-card
           title="Inline Edit - e.g.1"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
             <v-data-table
               :headers="headers"
               :items="list"
               hide-actions
-              class="elevation-1">
+              class="elevation-1"
+            >
               <template
                 slot="items"
-                slot-scope="props">
+                slot-scope="props"
+              >
                 <td>{{ props.item.name }}</td>
                 <td>{{ props.item.age }}</td>
                 <td>{{ props.item.address }}</td>
                 <td class="justify-center">
                   <v-icon
                     class="mr-2"
-                    @click="editItem(props.item)">
+                    @click="editItem(props.item)"
+                  >
                     edit
                   </v-icon>
                   <v-icon disabled>delete</v-icon>
@@ -34,16 +41,19 @@
       <v-flex xs12>
         <v-basic-card
           title="Inline Edit - e.g.2"
-          toolbar-height="56">
+          toolbar-height="56"
+        >
           <template slot="card-content">
             <v-data-table
               :headers="headers"
               :items="list2"
               hide-actions
-              class="elevation-1">
+              class="elevation-1"
+            >
               <template
                 slot="items"
-                slot-scope="props">
+                slot-scope="props"
+              >
                 <td>{{ props.item.name }}</td>
                 <td>{{ props.item.age }}</td>
                 <td>
@@ -52,13 +62,16 @@
                       v-model="props.item.address"
                       autofocus
                       append-icon="replay"
-                      @click:append="eg2ResetItem(props.item)">
+                      @click:append="eg2ResetItem(props.item)"
+                    >
                       <v-tooltip
                         slot="append"
-                        bottom>
+                        bottom
+                      >
                         <v-icon
                           slot="activator"
-                          @click="eg2ResetItem(props.item)">
+                          @click="eg2ResetItem(props.item)"
+                        >
                           replay
                         </v-icon>
                         Reset
@@ -71,13 +84,15 @@
                   <v-icon
                     v-if="!props.item.edit"
                     class="mr-2"
-                    @click="eg2EditItem(props.item)">
+                    @click="eg2EditItem(props.item)"
+                  >
                     edit
                   </v-icon>
                   <v-icon
                     v-else
                     class="mr-2"
-                    @click="eg2SaveItem(props.item)">
+                    @click="eg2SaveItem(props.item)"
+                  >
                     save
                   </v-icon>
                   <v-icon disabled>delete</v-icon>
@@ -91,7 +106,8 @@
 
     <v-dialog
       v-model="dialog"
-      max-width="500px">
+      max-width="500px"
+    >
       <v-card>
         <v-card-title>
           <span class="headline">Edit Item</span>
@@ -100,19 +116,31 @@
         <v-card-text>
           <v-container grid-list-md>
             <v-layout wrap>
-              <v-flex xs12 sm6 md4>
+              <v-flex
+                xs12
+                sm6
+                md4
+              >
                 <v-text-field
                   v-model="editedItem.name"
                   label="Name"
                 ></v-text-field>
               </v-flex>
-              <v-flex xs12 sm6 md4>
+              <v-flex
+                xs12
+                sm6
+                md4
+              >
                 <v-text-field
                   v-model="editedItem.age"
                   label="Age"
                 ></v-text-field>
               </v-flex>
-              <v-flex xs12 sm6 md4>
+              <v-flex
+                xs12
+                sm6
+                md4
+              >
                 <v-text-field
                   v-model="editedItem.address"
                   label="Address"
@@ -127,13 +155,15 @@
           <v-btn
             color="blue darken-1"
             flat
-            @click="close">
+            @click="close"
+          >
             Cancel
           </v-btn>
           <v-btn
             color="blue darken-1"
             flat
-            @click="save">
+            @click="save"
+          >
             Save
           </v-btn>
         </v-card-actions>
@@ -225,7 +255,8 @@ export default {
       this.close();
     },
     getListData() {
-      this.$api.readTablesList()
+      this.$api
+        .readTablesList()
         .then((val) => {
           const list = val.data.data || [];
           this.list2 = list.map((item) => {

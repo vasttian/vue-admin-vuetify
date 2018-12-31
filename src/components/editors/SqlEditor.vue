@@ -1,6 +1,6 @@
 <template>
   <div class="sql-editor">
-    <textarea ref="textarea"/>
+    <textarea ref="textarea" />
   </div>
 </template>
 
