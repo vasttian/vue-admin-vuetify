@@ -6,14 +6,14 @@ const users = {
     name: 'visitor',
     email: 'visitor@gmail.com',
     role: 'general',
-    avatar: 'http://67.218.155.2:8082/cloud.jpg',
+    avatar: 'http://67.218.155.2:8082/grassland.jpg',
     token: 'mock-token-general',
   },
   admin: {
     name: 'vasttian',
     email: 'tianyiming26@gmail.com',
     role: 'admin',
-    avatar: 'http://67.218.155.2:8082/vasttian.png',
+    avatar: 'http://67.218.155.2:8082/cloud.jpg',
     token: 'mock-token-admin',
   },
 };
