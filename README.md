@@ -23,7 +23,9 @@
 ### :page_with_curl: Index
 
 * [:warning: Heads up](#warning-heads-up)
+* [:art: Live Demo](#art-live-demo)
 * [:rocket: Getting Started](#rocket-getting-started)
+* [:camera: Screenshots](#camera-screenshots)
 * [:white_check_mark: Roadmap](#white_check_mark-roadmap)
 * [:exclamation: Issues](#exclamation-issues)
 * [:copyright: License](#copyright-license)
@@ -94,10 +96,10 @@ npm run lint
 - [x] add: Editor components.
 - [x] add: Jsonlint.
 - [x] mod: Sidebar.
-- [ ] add: Charts components.
+- [x] add: Charts components.
 - [ ] add: UI components.
 - [ ] add: Render Functions & Functional Components.
-- [ ] add: Demo site.
+- [x] add: Demo site.
 
 ### :exclamation: Issues
 
