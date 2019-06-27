@@ -12,4 +12,3 @@ export function failJsonify(reason, data = {}) {
     reason,
   };
 }
-

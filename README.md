@@ -21,8 +21,11 @@
 ---
 
 ### :page_with_curl: Index
+
 * [:warning: Heads up](#warning-heads-up)
+* [:art: Live Demo](#art-live-demo)
 * [:rocket: Getting Started](#rocket-getting-started)
+* [:camera: Screenshots](#camera-screenshots)
 * [:white_check_mark: Roadmap](#white_check_mark-roadmap)
 * [:exclamation: Issues](#exclamation-issues)
 * [:copyright: License](#copyright-license)
@@ -31,21 +34,30 @@
 
 Currently this is just a **beta version**.
 
+### :art: Live Demo
+
+[http://67.218.155.2:8020](http://67.218.155.2:8020)
+
 ### :rocket: Getting Started
+
 #### Project setup
-```
+
+```bash
 npm install
 ```
 
 #### Compiles and hot-reloads for development
-```
+
+```bash
 npm run serve
 ```
+
 :tada: Open http://localhost:8090 to see the demo.
 
 If [hot reload](https://vue-loader.vuejs.org/guide/hot-reload.html#state-preservation-rules) fails,
 modify your `vue.config.js`
-```
+
+```javascript
 module.exports = {
   chainWebpack: config => {
     config.resolve
@@ -53,31 +65,41 @@ module.exports = {
   }
 }
 ```
+
 or replace `cnpm` with `npm`
 
 `npm config set registry https://registry.npm.taobao.org`
 
 #### Compiles and minifies for production
-```
+
+```bash
 npm run build
 ```
 
 #### Lints and fixes files
-```
+
+```bash
 npm run lint
 ```
 
+### :camera: Screenshots
+
+|  |  |
+|---|---|
+|![vue-admin-vuetify.png](screenshots/vue-admin-vuetify.png)|![charts-line.png](screenshots/charts-line.png)|
+|![components-maps](screenshots/components-maps.png)||
+
 ### :white_check_mark: Roadmap
+
 - [x] add: Dashboard.
 - [x] add: Icons.
 - [x] add: Editor components.
 - [x] add: Jsonlint.
 - [x] mod: Sidebar.
-- [ ] add: Charts components.
+- [x] add: Charts components.
 - [ ] add: UI components.
 - [ ] add: Render Functions & Functional Components.
-- [ ] add: Demo site.
-
+- [x] add: Demo site.
 
 ### :exclamation: Issues
 
@@ -90,4 +112,3 @@ Detailed changes for each release are documented in the [release notes](https://
 ### :copyright: License
 
 Under the MIT license. See [LICENSE](http://opensource.org/licenses/MIT) file for more details.
-

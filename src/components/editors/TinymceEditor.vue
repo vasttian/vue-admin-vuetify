@@ -10,21 +10,21 @@
 
 <script>
 import tinymce from 'tinymce/tinymce';
-import 'tinymce/themes/modern/theme';
+import VueTinymce from '@tinymce/tinymce-vue';
+import 'tinymce/themes/silver/theme';
 import 'tinymce/plugins/link';
 import 'tinymce/plugins/code';
 import 'tinymce/plugins/table';
 import 'tinymce/plugins/lists';
 import 'tinymce/plugins/image';
 import 'tinymce/plugins/media';
-import 'tinymce/plugins/contextmenu';
+// import 'tinymce/plugins/contextmenu';
 import 'tinymce/plugins/wordcount';
-import 'tinymce/plugins/colorpicker';
-import 'tinymce/plugins/textcolor';
+// import 'tinymce/plugins/colorpicker';
+// import 'tinymce/plugins/textcolor';
 import 'tinymce/plugins/preview';
 import 'tinymce/plugins/fullscreen';
 // import 'tinymce/plugins/emoticons';
-import VueTinymce from '@tinymce/tinymce-vue';
 
 export default {
   name: 'TinymceEditor',
@@ -34,12 +34,29 @@ export default {
   data() {
     return {
       editorInit: {
-        height: 400,
+        // height: document.body.offsetHeight - 200,
+        height: 600,
+
+        // 去水印
+        branding: false,
+
+        // 允许粘贴图像
+        paste_data_images: true,
+
+        // 拼写检查
+        browser_spellcheck: true,
+
+        // 隐藏编辑器底部的状态栏
+        // statusbar: false,
+
+        // 隐藏最上方menu
+        // menubar: false,
         language: 'zh_CN',
         language_url: '/tinymce/zh_CN.js',
-        skin_url: '/tinymce/skins/lightgray',
+        skin_url: '/tinymce/skins/ui/oxide',
+        content_css: '/tinymce/skins/content/default/content.css',
         plugins:
-          'textcolor table code colorpicker link lists image media wordcount contextmenu preview fullscreen',
+          'table code link lists image media wordcount preview fullscreen',
         toolbar: `fontsizeselect | bold italic underline strikethrough forecolor backcolor | alignleft
           aligncenter alignright alignjustify outdent indent bullist numlist
           blockquote | link unlink image media code | undo redo | removeformat preview fullscreen`,
@@ -56,9 +73,9 @@ export default {
         <br>
         <h2>Got questions or need help?</h2>
         <ul>
-          <li>Our <a href="//www.tinymce.com/docs/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-          <li>Have a specific question? Visit the <a href="https://community.tinymce.com/forum/">Community Forum</a>.</li>
-          <li><a href="https://www.tiny.cloud/docs/demo/full-featured/">full featured example</a></li>
+          <li>Our <a href="https://www.tinymce.com/docs/" target="_blank">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+          <li>Have a specific question? Visit the <a href="https://community.tinymce.com/forum/" target="_blank">Community Forum</a>.</li>
+          <li><a href="https://www.tiny.cloud/docs/demo/full-featured/" target="_blank">full featured example</a></li>
         </ul>`,
     };
   },

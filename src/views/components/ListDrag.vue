@@ -165,7 +165,9 @@
 
 <script>
 import draggable from 'vuedraggable';
-import { items, images, list1, list2 } from './data/dnd-list';
+import {
+  items, images, list1, list2,
+} from './data/dnd-list';
 
 export default {
   name: 'ListDarg',
