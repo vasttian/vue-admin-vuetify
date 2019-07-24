@@ -1,4 +1,5 @@
 <!-- ## vue-admin-vuetify -->
+<h2 align="center">Vuetify v2.0 is coming soon</h2>
 <h2 align="center">vue-admin-vuetify</h2>
 <p>
   <h4 align="center"><code>vue-admin-vuetify</code> is a Front-end component project.</h4>
