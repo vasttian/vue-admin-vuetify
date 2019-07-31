@@ -37,7 +37,7 @@ Currently this is just a **beta version**.
 
 ### :art: Live Demo
 
-[http://67.218.155.2:8020](http://67.218.155.2:8020)
+[http://67.218.155.117:8020](http://67.218.155.117:8020)
 
 ### :rocket: Getting Started
 
