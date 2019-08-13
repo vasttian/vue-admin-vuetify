@@ -39,7 +39,7 @@ module.exports = {
     // svgRule.uses.clear();
     svgRule
       .exclude
-        .add(/src\/components\/svg-icon\/icons/)
+        .add(/src\/components\/svg-icons\/icons/)
         .end()
 
     // 添加 `svg-sprite-loader` Loader
@@ -47,7 +47,7 @@ module.exports = {
       .rule('svgicons')
       .test(/\.svg$/)
       .include
-        .add(/src\/components\/svg-icon\/icons/)
+        .add(/src\/components\/svg-icons\/icons/)
         .end()
       .use('svg-sprite-loader')
         .loader('svg-sprite-loader')

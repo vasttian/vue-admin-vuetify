@@ -14,7 +14,7 @@ import i18n from './i18n';
 import Mock from './mock';
 import './plugins/vuetify';
 import './plugins/echarts';
-import './components/svg-icon';
+import './components/widgets/svg-icons';
 import { parseURL } from './utils/util';
 import VBasicCard from './components/VBasicCard.vue';
 
