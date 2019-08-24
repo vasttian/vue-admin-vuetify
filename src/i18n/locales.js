@@ -264,5 +264,17 @@ export default {
       en: 'Else',
       'zh-CN': '其他',
     },
+    excel: {
+      en: 'Excel',
+      'zh-CN': 'Excel',
+    },
+    uploadExcel: {
+      en: 'Upload Excel',
+      'zh-CN': '上传 Excel',
+    },
+    exportExcel: {
+      en: 'Export Excel',
+      'zh-CN': '导出 Excel',
+    },
   },
 };
