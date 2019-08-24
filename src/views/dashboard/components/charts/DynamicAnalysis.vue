@@ -22,7 +22,12 @@ export default {
       interval: 2000,
     };
   },
-  computed: {},
+  created() {
+    this.chartOption = this.buildChartOption(this.initialData());
+  },
+  beforeDestroy() {
+    clearInterval(this.timer);
+  },
   methods: {
     randomNum() {
       return parseFloat(Math.random() * 10 + 7).toFixed(0);
@@ -185,12 +190,6 @@ export default {
 
       return cnt;
     },
-  },
-  created() {
-    this.chartOption = this.buildChartOption(this.initialData());
-  },
-  beforeDestroy() {
-    clearInterval(this.timer);
   },
 };
 </script>

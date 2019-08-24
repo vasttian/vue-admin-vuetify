@@ -18,7 +18,9 @@ export default {
       chartOption: {},
     };
   },
-  computed: {},
+  created() {
+    this.chartOption = this.buildChartOption();
+  },
   methods: {
     buildChartOption() {
       const xAxisData = [
@@ -227,9 +229,6 @@ export default {
         ],
       };
     },
-  },
-  created() {
-    this.chartOption = this.buildChartOption();
   },
 };
 </script>

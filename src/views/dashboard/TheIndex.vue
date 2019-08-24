@@ -20,7 +20,7 @@
         :key="index"
       >
         <v-card>
-          <separate-indicator :config="config"></separate-indicator>
+          <separate-indicator :config="config" />
         </v-card>
       </v-flex>
     </v-layout>
@@ -83,7 +83,5 @@ export default {
       ],
     };
   },
-  methods: {},
-  created() {},
 };
 </script>
