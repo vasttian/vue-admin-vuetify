@@ -30,11 +30,11 @@
     { "removeUnusedNS": true },
     { "removeUselessStrokeAndFill": true },
     {
-      "removeAttrs": { "attrs": "fill"}
+      "removeAttrs": { "attrs": "fill" }
     },
     { "removeXMLProcInst": true },
     { "removeStyleElement": true },
-    { "removeUnknownsAndDefaults": true},
+    { "removeUnknownsAndDefaults": true },
     { "sortAttrs": true }
   ]
 }

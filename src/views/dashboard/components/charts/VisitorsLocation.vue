@@ -62,7 +62,9 @@ export default {
       ],
     };
   },
-  computed: {},
+  created() {
+    this.chartOption = this.buildChartOption(this.data, this.top);
+  },
   methods: {
     buildChartOption(data, top) {
       /* eslint-disable no-param-reassign */
@@ -240,9 +242,6 @@ export default {
         ],
       };
     },
-  },
-  created() {
-    this.chartOption = this.buildChartOption(this.data, this.top);
   },
 };
 </script>

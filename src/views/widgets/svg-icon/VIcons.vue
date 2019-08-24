@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     generateCode(item) {
-      return `<svg-icon icon-class="${item}"/>`;
+      return `<svg-icon icon-class="${item}" />`;
     },
     handleClipboard(target, text) {
       handleClipboard(target, text);
