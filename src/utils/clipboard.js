@@ -31,7 +31,7 @@ function handleClipboard(target, text) {
   });
   clipboard.on('success', (e) => {
     Vue.prototype.$message({
-      text: 'Copy successfully',
+      text: 'Copied successfully',
       type: 'success',
     });
     removeEventListener();
