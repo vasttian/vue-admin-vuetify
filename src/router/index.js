@@ -9,6 +9,7 @@ import widgets from './modules/widgets';
 import uiComponents from './modules/ui-components';
 import tables from './modules/tables';
 import charts from './modules/charts';
+import excel from './modules/excel';
 
 Vue.use(Router);
 
@@ -64,6 +65,7 @@ export default new Router({
         uiComponents,
         tables,
         charts,
+        excel,
       ],
     },
     {
