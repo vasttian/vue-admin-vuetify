@@ -24,30 +24,7 @@
     >
       Drop a file here or <em>Upload</em>
     </div>
-    <div class="upload-tip">上传文件大小不超过 10MB</div>
-    <div>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th
-              v-for="c in cols"
-              :key="c.key"
-            >{{ c }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="(r, key) in fileData"
-            :key="key"
-          >
-            <td
-              v-for="c in cols"
-              :key="c.key"
-            > {{ r[c.key] }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="upload-tip">上传文件大小不超过 {{ filesizeLimitUnitMB }} MB</div>
   </div>
 </template>
 
@@ -57,8 +34,10 @@ import XLSX from 'xlsx';
 export default {
   name: 'ExcelUpload',
   props: {
-    beforeUpload: Function,
-    onSuccess: Function,
+    filesizeLimitUnitMB: {
+      type: Number,
+      default: 2,
+    },
   },
   data() {
     const SheetJSFT = [
@@ -66,22 +45,22 @@ export default {
       'xlsb',
       'xlsm',
       'xls',
-      'xml',
-      'csv',
-      'txt',
-      'ods',
-      'fods',
-      'uos',
-      'sylk',
-      'dif',
-      'dbf',
-      'prn',
-      'qpw',
-      '123',
-      'wb*',
-      'wq*',
-      'html',
-      'htm',
+      // 'xml',
+      // 'csv',
+      // 'txt',
+      // 'ods',
+      // 'fods',
+      // 'uos',
+      // 'sylk',
+      // 'dif',
+      // 'dbf',
+      // 'prn',
+      // 'qpw',
+      // '123',
+      // 'wb*',
+      // 'wq*',
+      // 'html',
+      // 'htm',
     ]
       .map(x => (`.${x}`))
       .join(',');
@@ -89,15 +68,18 @@ export default {
       loading: false,
       dragover: false,
       sheetJSFT: SheetJSFT,
-      cols: [],
-      fileData: [],
+      headers: [],
+      fileData: {
+        headers: [],
+        data: [],
+      },
     };
   },
   methods: {
     handleUpload(e) {
-      this.loading = 'loading';
+      this.loading = true;
       const files = e.target.files || [];
-      if (files && files[0]) {
+      if (files && files[0] && this.beforeUpload(files[0])) {
         this.readFile(files[0]);
       }
     },
@@ -126,24 +108,36 @@ export default {
         const wsname = wb.SheetNames[0];
         const ws = wb.Sheets[wsname];
         // Convert array of arrays
-        const data = XLSX.utils.sheet_to_json(ws, { header: 1 });
-        this.fileData = data;
-        this.cols = this.makeCols(ws);
+        const data = XLSX.utils.sheet_to_json(ws);
+        this.handleSuccess(this.makeHeaders(ws), data);
       };
       reader.readAsBinaryString(file);
     },
-    makeCols(ws) {
+    handleSuccess(headers, data = []) {
+      this.$emit('update-filedata', { headers, data });
+    },
+    makeHeaders(ws) {
       // console.log('>>>>ws', ws);
       const range = XLSX.utils.decode_range(ws['!ref']);
       const { r } = range.s;
-      const cols = [];
+      const headers = [];
 
       for (let { c } = range.s; c <= range.e.c; c += 1) {
         const col = ws[XLSX.utils.encode_cell({ c, r })];
-        cols.push(col && col.t ? XLSX.utils.format_cell(col) : '');
+        headers.push(col && col.t ? XLSX.utils.format_cell(col) : '');
       }
 
-      return cols;
+      return headers;
+    },
+    beforeUpload(file) {
+      // 1MB = 1,000 KB 1MiB = 1,024KiB
+      const isLimit = file.size / 1000 / 1000 <= this.filesizeLimitUnitMB;
+
+      if (!isLimit) {
+        this.$message.warning(`File size can not exceed ${this.filesizeLimitUnitMB}MB!`);
+      }
+
+      return isLimit;
     },
   },
 };
@@ -152,7 +146,7 @@ export default {
 <style lang="scss" scoped>
 .upload {
   &-dragger {
-    width: 360px;
+    width: 400px;
     height: 180px;
     background-color: #fff;
     border: 2px dashed rgba(156, 146, 146, 0.63);
@@ -165,10 +159,10 @@ export default {
     line-height: 180px;
     margin: 20px auto 10px;
     font-size: 20px;
-  }
 
-  &:hover {
-    box-shadow: 0px 0px 10px #4587dd;
+    &:hover {
+      box-shadow: 0px 0px 10px #4587dd;
+    }
   }
 
   em {
@@ -177,9 +171,9 @@ export default {
   }
 
   &-tip {
+    margin-top: 10px;
     font-size: 13px;
     color: #606266;
-    margin-top: 10px;
     text-align: center;
   }
 
