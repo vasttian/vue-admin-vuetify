@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <excel-upload />
-  </div>
+  <excel-upload />
 </template>
 
 <script>

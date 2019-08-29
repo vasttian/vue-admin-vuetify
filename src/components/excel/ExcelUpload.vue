@@ -1,33 +1,30 @@
 <template>
-  <div>
+  <div class="upload">
     <v-subheader>
       <label for="file">Spreadsheet</label>
     </v-subheader>
     <input
       id="file"
       type="file"
-      ref="excel-upload-input"
-      class="excel-upload-input"
+      ref="uploadInputRef"
+      style="display: none;"
       :accept="sheetJSFT"
       @change="handleUpload"
     >
     <div
-      class="drop-wrapper"
+      class="upload-dragger"
+      :class="{
+        'is-dragover': dragover
+      }"
       @drop="handleDropFile"
       @dragenter="handleSuppress"
       @dragover="handleSuppress"
+      @dragleave.prevent="dragover = false"
+      @click="$refs.uploadInputRef.click()"
     >
-      Drop a file here or
-      <v-btn
-        small
-        color="blue-grey"
-        style="line-height: 30px"
-        @click="handleUpload"
-      >
-        Upload
-      </v-btn>
+      Drop a file here or <em>Upload</em>
     </div>
-
+    <div class="upload-tip">上传文件大小不超过 10MB</div>
     <div>
       <table class="table table-striped">
         <thead>
@@ -35,7 +32,7 @@
             <th
               v-for="c in cols"
               :key="c.key"
-            >{{c}}</th>
+            >{{ c }}</th>
           </tr>
         </thead>
         <tbody>
@@ -86,12 +83,11 @@ export default {
       'html',
       'htm',
     ]
-      .map((x) => {
-        return '.' + x;
-      })
+      .map(x => (`.${x}`))
       .join(',');
     return {
       loading: false,
+      dragover: false,
       sheetJSFT: SheetJSFT,
       cols: [],
       fileData: [],
@@ -108,6 +104,7 @@ export default {
     handleDropFile(e) {
       e.stopPropagation();
       e.preventDefault();
+      this.dragover = false;
       const files = e.dataTransfer.files || [];
       if (files && files[0]) {
         this.readFile(files[0]);
@@ -116,6 +113,7 @@ export default {
     handleSuppress(e) {
       e.stopPropagation();
       e.preventDefault();
+      this.dragover = true;
     },
     readFile(file) {
       const reader = new FileReader();
@@ -152,16 +150,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.drop-wrapper{
-  margin: 0 auto;
-  width: 460px;
-  height: 180px;
-  line-height: 180px;
-  border: 2px dashed rgba(156, 146, 146, 0.63);
-  font-size: 20px;
-  border-radius: 8px;
-  text-align: center;
-  color: rgb(59, 197, 202);
-  position: relative;
+.upload {
+  &-dragger {
+    width: 360px;
+    height: 180px;
+    background-color: #fff;
+    border: 2px dashed rgba(156, 146, 146, 0.63);
+    border-radius: 6px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    line-height: 180px;
+    margin: 20px auto 10px;
+    font-size: 20px;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 10px #4587dd;
+  }
+
+  em {
+    color: #409eff;
+    font-style: normal;
+  }
+
+  &-tip {
+    font-size: 13px;
+    color: #606266;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .is-dragover {
+    background-color: rgba(238, 240, 242, 0.5);
+    border: 2px dashed #83cfc9;
+  }
 }
 </style>
