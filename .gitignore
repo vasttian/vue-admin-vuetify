@@ -1,4 +1,5 @@
 .DS_Store
+__pycache__/
 node_modules
 /dist
 
@@ -18,4 +19,4 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
-*.sw*
+*.sw?
