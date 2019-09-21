@@ -16,6 +16,12 @@ const routes = {
       component: () => import('@/views/excel/ExcelUpload.vue'),
       meta: {},
     },
+    {
+      path: 'export-excel',
+      name: 'ExportExcel',
+      component: () => import('@/views/excel/ExcelExport.vue'),
+      meta: {},
+    },
   ],
 };
 
