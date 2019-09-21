@@ -114,15 +114,16 @@ export default {
   methods: {
     setSort() {
       const el = document.querySelectorAll('.v-table__overflow > table > tbody')[0];
+      const self = this;
       this.sortable = Sortable.create(el, {
         // Class name for the drop placeholder
         ghostClass: 'sortable-ghost',
         setData(dataTransfer) {
           dataTransfer.setData('Text', '');
         },
-        onEnd: (evt) => {
-          const targetRow = this.list.splice(evt.oldIndex, 1)[0];
-          this.list.splice(evt.newIndex, 0, targetRow);
+        onEnd({ newIndex, oldIndex }) {
+          const targetRow = self.list.splice(oldIndex, 1)[0];
+          self.list.splice(newIndex, 0, targetRow);
         },
       });
     },

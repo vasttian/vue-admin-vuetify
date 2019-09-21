@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <vue-tinymce
-      ref="tinymce"
-      :init="editorInit"
-      v-model="content"
-    />
-  </div>
+  <vue-tinymce
+    ref="tinymce"
+    :init="editorInit"
+    v-model="content"
+  />
 </template>
 
 <script>
