@@ -46,7 +46,8 @@ export default {
     },
     toTop() {
       this.$router.push({ hash: '' });
-      smoothScrollTo(document.documentElement, 0, 600);
+      const dom = document.scrollingElement || document.documentElement || document.body;
+      smoothScrollTo(dom, 0, 600);
       // document.querySelector('#main-container').scrollTop = 0;
       // const el = document.body;
       // this.$vuetify.goTo(0);
