@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+cd $HOME/projects/vue-admin-vuetify
+git pull
+npm run build
+sleep 2
+/bin/cp -rf ./dist /data/www/vue-admin-vuetify/
