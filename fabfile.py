@@ -24,7 +24,7 @@ def deploy(build, project_root):
         run('rm -rf deploy')
 
 
-@hosts('root@67.218.155.117:29179')
+@hosts('root@67.218.155.176:29179')
 def deploy_prod(build='prod'):
     """部署到生产环境
 
@@ -41,7 +41,7 @@ def deploy_prod(build='prod'):
     deploy(build, project_root)
 
 
-@hosts('root@67.218.155.117:29179')
+@hosts('root@67.218.176.117:29179')
 def deploy_staging(build='staging'):
     """部署到 staging 环境
 
