@@ -35,7 +35,7 @@
 
 Currently this is just a **beta version**.
 
-### :art: Live Demo
+### :art: Live Demo (Need vpn proxy to view)
 
 [http://67.218.155.117:8020](http://67.218.155.117:8020)
 
