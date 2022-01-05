@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { smoothScrollTo } from '@/utils/util';
+// import { smoothScrollTo } from '@/utils/util';
 
 export default {
   name: 'AppFab',
@@ -46,11 +46,13 @@ export default {
     },
     toTop() {
       this.$router.push({ hash: '' });
-      const dom = document.scrollingElement || document.documentElement || document.body;
-      smoothScrollTo(dom, 0, 600);
+      // const dom = document.scrollingElement || document.documentElement || document.body;
+      // smoothScrollTo(dom, 0, 600);
       // document.querySelector('#main-container').scrollTop = 0;
       // const el = document.body;
-      // this.$vuetify.goTo(0);
+      this.$vuetify.goTo(0, {
+        duration: 600,
+      });
       // el.scrollTo({
       //   top: 0,
       //   behavior: 'smooth',

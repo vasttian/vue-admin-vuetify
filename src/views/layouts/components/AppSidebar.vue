@@ -9,10 +9,12 @@
     clipped="clipped"
     :temporary="temporary"
     mobile-break-point="400"
-    :mini-variant="miniVariant">
+    :mini-variant="miniVariant"
+  >
     <v-list
       expand
-      dense>
+      dense
+    >
       <template v-for="(route, index) in routes">
         <template v-if="route.meta && route.meta.hasMulSub">
           <v-list-group
@@ -64,7 +66,7 @@
 import { mapState } from 'vuex';
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import PerfectScrollbar from 'perfect-scrollbar';
-import { fistLowerUpper } from '@/utils/util';
+import { firstLetterLower } from '@/utils/util';
 
 export default {
   name: 'AppSidebar',
@@ -141,7 +143,7 @@ export default {
         return title;
       }
 
-      return title ? this.$t(`sidebar.${fistLowerUpper(title)}`) : '';
+      return title ? this.$t(`sidebar.${firstLetterLower(title)}`) : '';
     },
   },
   created() {

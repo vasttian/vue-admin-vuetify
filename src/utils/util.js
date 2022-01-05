@@ -509,14 +509,14 @@ export function sortObject(obj, order = 'asc') {
 /**
  * 字符串的首字母大写
  */
-export function fistLetterUpper(str) {
+export function firstLetterUpper(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 /**
  * 字符串的首字母小写
  */
-export function fistLowerUpper(str) {
+export function firstLetterLower(str) {
   return str.charAt(0).toLowerCase() + str.slice(1);
 }
 
