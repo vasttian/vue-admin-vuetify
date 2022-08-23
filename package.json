@@ -43,7 +43,7 @@
     "marked": "^4.0.10",
     "material-design-icons-iconfont": "^5.0.1",
     "mockjs": "^1.0.1-beta3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "nprogress": "^0.2.0",
     "perfect-scrollbar": "^1.4.0",
     "roboto-fontface": "^0.10.0",
