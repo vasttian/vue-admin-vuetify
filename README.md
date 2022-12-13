@@ -37,7 +37,7 @@ Currently this is just a **beta version**.
 
 ### :art: Live Demo (Need vpn proxy to view)
 
-[http://67.218.155.176:8020](http://67.218.155.176:8020)
+[https://vasttian.github.io/vue-admin-vuetify](https://vasttian.github.io/vue-admin-vuetify)
 
 ### :rocket: Getting Started
 
