@@ -33,7 +33,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@tinymce/tinymce-vue": "^3.0.1",
-    "axios": "^0.21.2",
+    "axios": "^0.28.0",
     "clipboard": "^2.0.4",
     "codemirror": "^5.58.2",
     "echarts": "^4.2.1",
