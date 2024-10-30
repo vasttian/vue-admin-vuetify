@@ -51,7 +51,7 @@
     "sortablejs": "^1.9.0",
     "tinymce": "^5.10.9",
     "vconsole": "^3.15.1",
-    "vue": "^2.6.10",
+    "vue": "^3.0.0",
     "vue-baidu-map": "^0.21.21",
     "vue-color": "^2.7.0",
     "vue-echarts": "^4.0.3",
